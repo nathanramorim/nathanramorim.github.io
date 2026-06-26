@@ -1,0 +1,1643 @@
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nathan Amorim – Tech Lead &amp; Solution Architect</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap"
+    rel="stylesheet">
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --primary: #0f172a;
+      --accent: #6366f1;
+      --accent-light: #818cf8;
+      --accent-dim: #1e1b4b;
+      --surface: #1e293b;
+      --surface2: #263447;
+      --border: #334155;
+      --text: #e2e8f0;
+      --text-muted: #94a3b8;
+      --white: #ffffff;
+      --green: #22d3ee;
+      --azure: #0078d4;
+      --azure-light: #60a5fa;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--primary);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 40px;
+      align-items: center;
+      background: linear-gradient(135deg, var(--surface) 0%, var(--accent-dim) 100%);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 48px;
+      margin-bottom: 32px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -80px;
+      right: -80px;
+      width: 360px;
+      height: 360px;
+      background: radial-gradient(circle, rgba(99, 102, 241, .2) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -60px;
+      left: 200px;
+      width: 240px;
+      height: 240px;
+      background: radial-gradient(circle, rgba(0, 120, 212, .15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .avatar-wrap {
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .avatar-ring {
+      width: 168px;
+      height: 168px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--green));
+      padding: 3px;
+      box-shadow: 0 0 48px rgba(99, 102, 241, .5);
+    }
+
+    .avatar-ring img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      background: var(--surface2);
+    }
+
+    .avatar-badge {
+      position: absolute;
+      bottom: 4px;
+      right: 4px;
+      background: linear-gradient(90deg, var(--accent), #8b5cf6);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .5px;
+      padding: 4px 10px;
+      border-radius: 20px;
+      border: 2px solid var(--primary);
+      white-space: nowrap;
+    }
+
+    .hero-body {
+      z-index: 1;
+    }
+
+    .hero-role {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(99, 102, 241, .2);
+      border: 1px solid rgba(99, 102, 241, .4);
+      color: var(--accent-light);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+    }
+
+    .hero-role::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 8px var(--green);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1
+      }
+
+      50% {
+        opacity: .3
+      }
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 3.5vw, 2.9rem);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -1px;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+
+    .hero h1 span {
+      color: var(--accent-light);
+    }
+
+    .hero-tagline {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .hero-sub {
+      font-size: .875rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .pill {
+      background: rgba(99, 102, 241, .15);
+      border: 1px solid rgba(99, 102, 241, .3);
+      color: var(--accent-light);
+      font-size: 11.5px;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 20px;
+    }
+
+    .pill.azure {
+      background: rgba(0, 120, 212, .2);
+      border-color: rgba(0, 120, 212, .4);
+      color: var(--azure-light);
+    }
+
+    /* ── Grid ── */
+    .grid2 {
+      display: grid;
+      grid-template-columns: 1fr 330px;
+      gap: 24px;
+      align-items: start;
+    }
+
+    /* ── Card ── */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin-bottom: 24px;
+    }
+
+    .card:last-child {
+      margin-bottom: 0;
+    }
+
+    .card-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: .68rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent-light);
+      margin-bottom: 20px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .card-title-icon {
+      width: 28px;
+      height: 28px;
+      background: rgba(99, 102, 241, .2);
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      font-size: 14px;
+    }
+
+    /* ── About ── */
+    .about-text {
+      font-size: .9rem;
+      color: var(--text-muted);
+      line-height: 1.85;
+    }
+
+    .about-text p+p {
+      margin-top: 12px;
+    }
+
+    .about-text strong {
+      color: var(--white);
+    }
+
+    .about-text .hl {
+      color: var(--accent-light);
+      font-weight: 600;
+    }
+
+    .about-text .hl-azure {
+      color: var(--azure-light);
+      font-weight: 600;
+    }
+
+    /* ── Timeline ── */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .tl-item {
+      display: grid;
+      grid-template-columns: 20px 1fr;
+      gap: 0 20px;
+    }
+
+    .tl-line {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .tl-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 2px solid var(--primary);
+      box-shadow: 0 0 10px rgba(99, 102, 241, .6);
+      margin-top: 5px;
+      flex-shrink: 0;
+    }
+
+    .tl-dot.azure-dot {
+      background: var(--azure-light);
+      box-shadow: 0 0 10px rgba(96, 165, 250, .6);
+    }
+
+    .tl-dot.green-dot {
+      background: var(--green);
+      box-shadow: 0 0 10px rgba(34, 211, 238, .6);
+    }
+
+    .tl-dot.dim-dot {
+      background: var(--surface2);
+      border-color: var(--border);
+      box-shadow: none;
+    }
+
+    .tl-connector {
+      width: 2px;
+      flex: 1;
+      background: linear-gradient(to bottom, var(--border), transparent);
+      margin: 4px 0;
+      min-height: 16px;
+    }
+
+    .tl-content {
+      padding-bottom: 26px;
+    }
+
+    .tl-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-bottom: 2px;
+    }
+
+    .tl-company {
+      font-size: .72rem;
+      font-weight: 700;
+      color: var(--accent-light);
+      letter-spacing: .5px;
+      text-transform: uppercase;
+    }
+
+    .tl-company.azure-co {
+      color: var(--azure-light);
+    }
+
+    .tl-company.green-co {
+      color: var(--green);
+    }
+
+    .tl-period {
+      font-size: .7rem;
+      color: var(--text-muted);
+      background: var(--surface2);
+      padding: 2px 8px;
+      border-radius: 8px;
+      white-space: nowrap;
+    }
+
+    .tl-role {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .badge-tl {
+      display: inline-block;
+      background: linear-gradient(90deg, var(--accent), #8b5cf6);
+      color: #fff;
+      font-size: 9px;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 10px;
+      letter-spacing: .8px;
+    }
+
+    .badge-arch {
+      background: linear-gradient(90deg, #0078d4, #38bdf8);
+    }
+
+    .badge-ceo {
+      background: linear-gradient(90deg, #059669, #10b981);
+    }
+
+    .tl-desc {
+      font-size: .84rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+    }
+
+    .tl-desc strong {
+      color: var(--text);
+    }
+
+    .tl-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 10px;
+    }
+
+    .tl-tag {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 11px;
+      font-weight: 500;
+      padding: 2px 10px;
+      border-radius: 8px;
+    }
+
+    .tl-tag.azure-tag {
+      border-color: rgba(0, 120, 212, .35);
+      color: var(--azure-light);
+      background: rgba(0, 120, 212, .1);
+    }
+
+    .tl-tag.accent-tag {
+      border-color: rgba(99, 102, 241, .35);
+      color: var(--accent-light);
+      background: rgba(99, 102, 241, .1);
+    }
+
+    /* ── Company group ── */
+    .company-group {
+      background: rgba(255, 255, 255, .02);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 16px 4px;
+      margin-bottom: 24px;
+    }
+
+    .company-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .company-logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      display: grid;
+      place-items: center;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    .company-name {
+      font-size: .85rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    .company-type {
+      font-size: .72rem;
+      color: var(--text-muted);
+    }
+
+    .company-tenure {
+      margin-left: auto;
+      font-size: .72rem;
+      color: var(--text-muted);
+      background: var(--surface2);
+      padding: 3px 10px;
+      border-radius: 8px;
+    }
+
+    /* ── Skills ── */
+    .skill-group {
+      margin-bottom: 20px;
+    }
+
+    .skill-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .skill-group-title {
+      font-size: .68rem;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--accent-light);
+      margin-bottom: 10px;
+    }
+
+    .skill-group-title.azure-title {
+      color: var(--azure-light);
+    }
+
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .skill-chip {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-size: 12px;
+      font-weight: 500;
+      padding: 5px 12px;
+      border-radius: 10px;
+      transition: all .2s;
+    }
+
+    .skill-chip:hover {
+      border-color: var(--accent);
+      color: var(--accent-light);
+      background: rgba(99, 102, 241, .1);
+    }
+
+    .skill-chip.hl {
+      border-color: rgba(99, 102, 241, .5);
+      color: var(--accent-light);
+      background: rgba(99, 102, 241, .12);
+    }
+
+    .skill-chip.hl-azure {
+      border-color: rgba(0, 120, 212, .5);
+      color: var(--azure-light);
+      background: rgba(0, 120, 212, .12);
+    }
+
+    /* ── Metrics ── */
+    .metrics {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .metric {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+    }
+
+    .metric-value {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: var(--accent-light);
+      line-height: 1;
+    }
+
+    .metric-label {
+      font-size: .7rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+      font-weight: 500;
+    }
+
+    /* ── Contact ── */
+    .contact-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: .84rem;
+      color: var(--text-muted);
+    }
+
+    .contact-item>a {
+      font-size: .84rem;
+      color: var(--text-muted);
+    }
+
+    .contact-icon {
+      width: 32px;
+      height: 32px;
+      background: rgba(99, 102, 241, .15);
+      border: 1px solid rgba(99, 102, 241, .3);
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    /* ── Education ── */
+    .edu-item {
+      margin-bottom: 14px;
+    }
+
+    .edu-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .edu-degree {
+      font-weight: 700;
+      color: var(--white);
+      font-size: .9rem;
+    }
+
+    .edu-school {
+      font-size: .82rem;
+      color: var(--accent-light);
+      margin: 2px 0;
+    }
+
+    .edu-year {
+      font-size: .75rem;
+      color: var(--text-muted);
+    }
+
+    .edu-activities {
+      font-size: .78rem;
+      color: var(--text-muted);
+      margin-top: 6px;
+      font-style: italic;
+      line-height: 1.6;
+    }
+
+    /* ── Certifications ── */
+    .cert-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .cert-item {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      transition: border-color .2s;
+    }
+
+    .cert-item:hover {
+      border-color: var(--accent);
+    }
+
+    .cert-name {
+      font-size: .82rem;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.3;
+    }
+
+    .cert-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .cert-org {
+      font-size: .72rem;
+      color: var(--accent-light);
+      font-weight: 600;
+    }
+
+    .cert-date {
+      font-size: .7rem;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    .cert-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-top: 4px;
+    }
+
+    .cert-tag {
+      font-size: 10px;
+      background: rgba(99, 102, 241, .1);
+      border: 1px solid rgba(99, 102, 241, .2);
+      color: var(--accent-light);
+      padding: 1px 7px;
+      border-radius: 6px;
+    }
+
+    /* ── Azure highlight box ── */
+    .azure-box {
+      background: rgba(0, 120, 212, .08);
+      border: 1px solid rgba(0, 120, 212, .3);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-bottom: 14px;
+    }
+
+    .azure-box-title {
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--azure-light);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .azure-services {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .azure-service {
+      background: rgba(0, 120, 212, .15);
+      border: 1px solid rgba(0, 120, 212, .35);
+      color: var(--azure-light);
+      font-size: 11.5px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 8px;
+    }
+
+    /* ── Print / Responsive ── */
+    @media print {
+      body {
+        background: #fff;
+        color: #000;
+      }
+
+      .card {
+        background: #fff;
+        border-color: #e2e8f0;
+      }
+    }
+
+    @media (max-width: 820px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 32px 24px;
+      }
+
+      .hero-sub {
+        justify-content: center;
+      }
+
+      .pills {
+        justify-content: center;
+      }
+
+      .grid2 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .metrics {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .card {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+
+    <!-- ══════════════ HERO ══════════════ -->
+    <section class="hero">
+      <div class="avatar-wrap">
+        <div class="avatar-ring">
+          <!-- Coloque o arquivo da foto na mesma pasta e nomeie "photo.jpg" -->
+          <img src="photo.jpeg" alt="Nathan Amorim" onerror="this.style.background='#263447'">
+        </div>
+        <span class="avatar-badge">⚡ Tech Lead</span>
+      </div>
+
+      <div class="hero-body">
+        <!-- <div class="hero-role">Disponível para novos desafios</div> -->
+        <h1>Nathan <span>Amorim</span></h1>
+        <p class="hero-tagline">Solutions Architect · Tech Lead · Software Engineer</p>
+        <p class="hero-sub">
+          📍 Barbacena, Minas Gerais, Brasil &nbsp;·&nbsp; Software Development
+        </p>
+        <div class="pills">
+          <span class="pill">🏗 Solution Architect</span>
+          <span class="pill">⚡ Tech Lead</span>
+          <span class="pill">🤖 AI-Driven Dev</span>
+          <span class="pill">.NET / C#</span>
+          <span class="pill">TypeScript</span>
+          <span class="pill azure">☁️ Azure</span>
+          <span class="pill">React</span>
+          <span class="pill">Clean Architecture</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="grid2">
+
+      <!-- ══════════ COLUNA PRINCIPAL ══════════ -->
+      <div>
+
+        <!-- Sobre -->
+        <div class="card">
+          <div class="card-title">
+            <span class="card-title-icon">👤</span>
+            Sobre mim
+          </div>
+          <div class="about-text">
+            <p>
+              Entusiasta de tecnologia e movido por desafios complexos, atuo como
+              <strong>Liderança Técnica</strong> na DTI Digital, onde lidero iniciativas
+              de modernização tecnológica com foco em
+              <span class="hl">escalabilidade, modularização e resiliência de sistemas críticos</span>.
+            </p>
+            <p>
+              Atualmente imerso no <span class="hl-azure">ecossistema Azure</span>, trabalho
+              com Event Grid, Service Bus, Azure Functions, App Insights, Key Vault e
+              Azure Storage explorando Tables, Queues e Blob para compor arquiteturas
+              orientadas a eventos robustas e observáveis.
+            </p>
+            <p>
+              Minha stack principal é <strong>.NET / C#</strong>, aplicada com
+              <span class="hl">Clean Architecture, arquitetura hexagonal e microserviços</span>.
+              Além da atuação técnica, lidero times com foco em
+              <strong>mentoria, feedbacks estruturados e disseminação de boas práticas</strong>
+              de engenharia de software.
+            </p>
+            <p>
+              Procuro atuar também no lado estratégico
+              do negócio, conectando tecnologia, processos e resultados sustentáveis,
+              entregando soluções que transformam complexidade em valor real.
+            </p>
+          </div>
+        </div>
+
+        <!-- Azure Ecosystem destaque -->
+        <div class="card" style="padding-top:24px;padding-bottom:24px;">
+          <div class="card-title">
+            <span class="card-title-icon" style="background:rgba(0,120,212,.2)">☁️</span>
+            <span style="color:var(--azure-light)">Azure Ecosystem — Stack Atual</span>
+          </div>
+          <div class="azure-box">
+            <div class="azure-box-title">⚙️ Serviços &amp; Recursos</div>
+            <div class="azure-services">
+              <span class="azure-service">Event Grid</span>
+              <span class="azure-service">Service Bus</span>
+              <span class="azure-service">Queues &amp; Topics</span>
+              <span class="azure-service">Azure Functions</span>
+              <span class="azure-service">App Insights</span>
+              <span class="azure-service">Key Vault</span>
+              <span class="azure-service">Storage Account</span>
+              <span class="azure-service">Blob Storage</span>
+              <span class="azure-service">Table Storage</span>
+              <span class="azure-service">Azure DevOps</span>
+              <span class="azure-service">Portal Azure</span>
+            </div>
+          </div>
+          <div style="font-size:.84rem;color:var(--text-muted);line-height:1.75">
+            Arquiteturas <strong style="color:var(--white)">orientadas a eventos</strong>
+            com integração assíncrona via Service Bus e Event Grid. Observabilidade end-to-end
+            com <strong style="color:var(--azure-light)">Application Insights</strong> métricas,
+            rastreamento distribuído e alertas. Segredos e configurações gerenciados pelo
+            <strong style="color:var(--azure-light)">Key Vault</strong>. Processamento serverless
+            e escalável via <strong style="color:var(--white)">Azure Functions</strong>.
+          </div>
+        </div>
+
+        <!-- forge-sdd -->
+        <div class="card"
+          style="border-color:rgba(99,102,241,.35);background:linear-gradient(135deg,var(--surface) 0%,rgba(99,102,241,.06) 100%);">
+          <div class="card-title">
+            <span class="card-title-icon" style="background:rgba(99,102,241,.2);font-size:16px">🤖</span>
+            <span style="color:var(--accent-light)">Case · Ferramenta de IA para Desenvolvimento</span>
+          </div>
+
+          <div
+            style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:16px">
+            <div>
+              <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px">
+                <span style="font-size:1.15rem;font-weight:900;color:#fff;letter-spacing:-.5px">forge-sdd</span>
+                <span
+                  style="background:linear-gradient(90deg,var(--accent),#8b5cf6);color:#fff;font-size:10px;font-weight:800;padding:2px 8px;border-radius:6px;letter-spacing:.5px">v1.5.2</span>
+                <span
+                  style="background:rgba(34,211,238,.1);border:1px solid rgba(34,211,238,.3);color:var(--green);font-size:10px;font-weight:700;padding:2px 8px;border-radius:6px">AI-POWERED</span>
+              </div>
+              <p style="font-size:.8rem;color:#8b949e;font-family:monospace">@nathanramorim/forge-sdd</p>
+            </div>
+            <a href="https://www.npmjs.com/package/@nathanramorim/forge-sdd" target="_blank"
+              style="display:inline-flex;align-items:center;gap:8px;background:rgba(99,102,241,.2);border:1px solid rgba(99,102,241,.4);color:var(--accent-light);font-size:.78rem;font-weight:700;padding:8px 16px;border-radius:10px;text-decoration:none;white-space:nowrap"
+              onmouseover="this.style.background='rgba(99,102,241,.35)'"
+              onmouseout="this.style.background='rgba(99,102,241,.2)'">
+              📦 Ver pacote
+            </a>
+          </div>
+
+          <p style="font-size:.9rem;color:var(--text-muted);line-height:1.8;margin-bottom:16px">
+            Ferramenta criada para <strong style="color:var(--white)">acelerar e padronizar o desenvolvimento de
+              software
+              orientado por IA</strong>. O Forge-SDD é uma CLI que scaffolda em segundos toda a estrutura de
+            documentação e arquitetura de um projeto, tornando o contexto do sistema
+            <strong style="color:var(--accent-light)">legível e consumível por assistentes de IA</strong>
+            aumentando a precisão das sugestões e reduzindo o tempo de onboarding técnico.
+          </p>
+
+          <!-- Terminal -->
+          <div
+            style="background:#0d1117;border:1px solid #30363d;border-radius:12px;overflow:hidden;margin-bottom:16px">
+            <div
+              style="background:#161b22;padding:8px 16px;display:flex;align-items:center;gap:8px;border-bottom:1px solid #30363d">
+              <span style="width:10px;height:10px;border-radius:50%;background:#ff5f56;display:inline-block"></span>
+              <span style="width:10px;height:10px;border-radius:50%;background:#ffbd2e;display:inline-block"></span>
+              <span style="width:10px;height:10px;border-radius:50%;background:#27c93f;display:inline-block"></span>
+              <span style="font-size:.7rem;color:#8b949e;margin-left:8px;font-family:monospace">terminal</span>
+            </div>
+            <div style="padding:14px 20px;font-family:'Courier New',monospace;font-size:.8rem;line-height:1.9">
+              <p><span style="color:#3fb950">$</span> <span style="color:#8b949e">npm install -g</span> <span
+                  style="color:#79c0ff">@nathanramorim/forge-sdd</span></p>
+              <p><span style="color:#3fb950">$</span> <span style="color:#8b949e">npx forge-sdd init</span></p>
+              <p style="margin-top:4px">
+                <span style="color:#3fb950">✔</span> <span style="color:#8b949e">Estrutura Forge-SDD scaffoldada com
+                  sucesso!</span><br />
+                <span style="color:#3fb950">✔</span> <span style="color:#8b949e">Contexto de arquitetura gerado para
+                  IA.</span><br />
+                <span style="color:#3fb950">✔</span> <span style="color:#8b949e">GitHub Copilot, Claude e Gemini
+                  prontos.</span>
+              </p>
+            </div>
+          </div>
+
+          <!-- Benefícios -->
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px">
+            <div
+              style="background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:10px;padding:12px">
+              <div style="font-size:.72rem;font-weight:700;color:var(--accent-light);margin-bottom:4px">⚡ Produtividade
+              </div>
+              <div style="font-size:.8rem;color:var(--text-muted)">Estrutura completa scaffoldada em segundos</div>
+            </div>
+            <div
+              style="background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:10px;padding:12px">
+              <div style="font-size:.72rem;font-weight:700;color:var(--green);margin-bottom:4px">🧠 Contexto para IA
+              </div>
+              <div style="font-size:.8rem;color:var(--text-muted)">Documentação legível por LLMs nativamente</div>
+            </div>
+            <div
+              style="background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:10px;padding:12px">
+              <div style="font-size:.72rem;font-weight:700;color:var(--accent-light);margin-bottom:4px">📐 Padronização
+              </div>
+              <div style="font-size:.8rem;color:var(--text-muted)">Arquitetura e docs consistentes entre projetos</div>
+            </div>
+            <div
+              style="background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:10px;padding:12px">
+              <div style="font-size:.72rem;font-weight:700;color:var(--green);margin-bottom:4px">🚀 Onboarding</div>
+              <div style="font-size:.8rem;color:var(--text-muted)">Reduz tempo de ramp-up do time técnico</div>
+            </div>
+          </div>
+
+          <!-- AI Compat -->
+          <div
+            style="background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:10px;padding:12px 16px;margin-bottom:14px">
+            <div
+              style="font-size:.68rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:10px">
+              ✨ Compatibilidade com IA
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:8px">
+              <span
+                style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.05);border:1px solid #30363d;color:#e2e8f0;font-size:.78rem;font-weight:600;padding:5px 12px;border-radius:8px">🤖
+                GitHub Copilot</span>
+              <span
+                style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.05);border:1px solid #30363d;color:#e2e8f0;font-size:.78rem;font-weight:600;padding:5px 12px;border-radius:8px">🟠
+                Claude</span>
+              <span
+                style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.05);border:1px solid #30363d;color:#e2e8f0;font-size:.78rem;font-weight:600;padding:5px 12px;border-radius:8px">🔵
+                Gemini</span>
+            </div>
+          </div>
+
+          <!-- Tags -->
+          <div style="display:flex;flex-wrap:wrap;gap:6px">
+            <span
+              style="background:rgba(99,102,241,.12);border:1px solid rgba(99,102,241,.3);color:var(--accent-light);font-size:11px;font-weight:600;padding:3px 10px;border-radius:8px">CLI</span>
+            <span
+              style="background:rgba(99,102,241,.12);border:1px solid rgba(99,102,241,.3);color:var(--accent-light);font-size:11px;font-weight:600;padding:3px 10px;border-radius:8px">AI-Driven
+              Development</span>
+            <span
+              style="background:rgba(99,102,241,.12);border:1px solid rgba(99,102,241,.3);color:var(--accent-light);font-size:11px;font-weight:600;padding:3px 10px;border-radius:8px">Engineering
+              Productivity</span>
+            <span
+              style="background:var(--surface2);border:1px solid var(--border);color:var(--text-muted);font-size:11px;font-weight:500;padding:3px 10px;border-radius:8px">Scaffolding</span>
+            <span
+              style="background:var(--surface2);border:1px solid var(--border);color:var(--text-muted);font-size:11px;font-weight:500;padding:3px 10px;border-radius:8px">Documentação
+              Técnica</span>
+            <span
+              style="background:var(--surface2);border:1px solid var(--border);color:var(--text-muted);font-size:11px;font-weight:500;padding:3px 10px;border-radius:8px">Arquitetura
+              de Software</span>
+            <span
+              style="background:var(--surface2);border:1px solid var(--border);color:var(--text-muted);font-size:11px;font-weight:500;padding:3px 10px;border-radius:8px">npm</span>
+          </div>
+
+        </div>
+
+        <!-- Experiência -->
+        <div class="card">
+          <div class="card-title">
+            <span class="card-title-icon">💼</span>
+            Experiência Profissional
+          </div>
+
+          <!-- DTI Digital -->
+          <div class="company-group">
+            <div class="company-header">
+              <div class="company-logo">🏢</div>
+              <div>
+                <div class="company-name">DTI Digital</div>
+                <div class="company-type">Tempo Integral</div>
+              </div>
+              <span class="company-tenure">4 anos 10 meses</span>
+            </div>
+
+            <div class="timeline">
+              <!-- Solutions Architect -->
+              <div class="tl-item">
+                <div class="tl-line">
+                  <div class="tl-dot azure-dot"></div>
+                  <div class="tl-connector"
+                    style="background:linear-gradient(to bottom,var(--azure-light),transparent)"></div>
+                </div>
+                <div class="tl-content">
+                  <div class="tl-header">
+                    <span class="tl-company azure-co">Solutions Architect</span>
+                    <span class="tl-period">jan/2025 – o momento · 1 a 6 m</span>
+                  </div>
+                  <div class="tl-role">
+                    Arquiteto de Soluções
+                    <span class="badge-tl badge-arch">ARCHITECT</span>
+                  </div>
+                  <p class="tl-desc">
+                    Liderança de iniciativas de modernização tecnológica em projeto estratégico
+                    no setor de <strong>logística e planejamento corporativo</strong>. Decisões
+                    de arquitetura com foco em escalabilidade, modularidade e resiliência.
+                    Atualmente trabalhando com o <strong>ecossistema Azure</strong>: Event Grid,
+                    Service Bus, Azure Functions, App Insights, Key Vault e Storage Account
+                    (Blob, Tables, Queues). Participação ativa em discovery de features,
+                    estruturação de serviços modulares e integração com mensageria assíncrona.
+                    Apoio estratégico em práticas de DevOps, padronização de branches e
+                    governança de código.
+                  </p>
+                  <div class="tl-tags">
+                    <span class="tl-tag azure-tag">Azure</span>
+                    <span class="tl-tag azure-tag">Event Grid</span>
+                    <span class="tl-tag azure-tag">Service Bus</span>
+                    <span class="tl-tag azure-tag">Azure Functions</span>
+                    <span class="tl-tag azure-tag">App Insights</span>
+                    <span class="tl-tag azure-tag">Key Vault</span>
+                    <span class="tl-tag azure-tag">Blob / Table / Queue</span>
+                    <span class="tl-tag accent-tag">.NET / C#</span>
+                    <span class="tl-tag accent-tag">Clean Architecture</span>
+                    <span class="tl-tag">Feature Flags</span>
+                    <span class="tl-tag">Microserviços</span>
+                    <span class="tl-tag">Event-Driven</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tech Lead -->
+              <div class="tl-item">
+                <div class="tl-line">
+                  <div class="tl-dot"></div>
+                  <div class="tl-connector"></div>
+                </div>
+                <div class="tl-content">
+                  <div class="tl-header">
+                    <span class="tl-company">Tech Lead</span>
+                    <span class="tl-period">jan/2022 – jan/2025 · 3 anos 1 m</span>
+                  </div>
+                  <div class="tl-role">
+                    Tech Lead
+                    <span class="badge-tl">TECH LEAD</span>
+                  </div>
+                  <p class="tl-desc">
+                    Liderança de equipe de desenvolvimento em projeto de
+                    <strong>Integrated Business Planning (IBP)</strong>, topologia de time
+                    plataforma. Utilizando metodologias ágeis, Microsoft Azure DevOps, Portal
+                    Azure, <strong>.NET e React</strong>. Gestão e desenvolvimento de pessoas:
+                    feedbacks constantes, acompanhamento individual e treinamentos
+                    personalizados. Ambiente colaborativo de alta performance com entrega
+                    contínua de valor ao negócio.
+                  </p>
+                  <div class="tl-tags">
+                    <span class="tl-tag accent-tag">.NET / C#</span>
+                    <span class="tl-tag azure-tag">Azure</span>
+                    <span class="tl-tag azure-tag">Azure DevOps</span>
+                    <span class="tl-tag accent-tag">React</span>
+                    <span class="tl-tag">Scrum</span>
+                    <span class="tl-tag">Mentoria</span>
+                    <span class="tl-tag">Feedback</span>
+                    <span class="tl-tag">Liderança Técnica</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Software Engineer -->
+              <div class="tl-item">
+                <div class="tl-line">
+                  <div class="tl-dot dim-dot"></div>
+                </div>
+                <div class="tl-content">
+                  <div class="tl-header">
+                    <span class="tl-company">Software Engineer</span>
+                    <span class="tl-period">set/2021 – fev/2022 · 6 meses</span>
+                  </div>
+                  <div class="tl-role">Software Engineer</div>
+                  <div class="tl-tags">
+                    <span class="tl-tag accent-tag">.NET</span>
+                    <span class="tl-tag">React</span>
+                    <span class="tl-tag">Scrum</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Busize Soluções -->
+          <div class="company-group">
+            <div class="company-header">
+              <div class="company-logo">🚀</div>
+              <div>
+                <div class="company-name">Busize Soluções</div>
+                <div class="company-type">Autônomo · Fundador</div>
+              </div>
+              <span class="company-tenure">6+ anos</span>
+            </div>
+
+            <div class="timeline">
+              <div class="tl-item">
+                <div class="tl-line">
+                  <div class="tl-dot green-dot"></div>
+                  <div class="tl-connector" style="background:linear-gradient(to bottom,var(--green),transparent)">
+                  </div>
+                </div>
+                <div class="tl-content">
+                  <div class="tl-header">
+                    <span class="tl-company green-co">CEO</span>
+                    <span class="tl-period">jan/2025 – o momento · 1 a 6 m</span>
+                  </div>
+                  <div class="tl-role">
+                    CEO
+                    <span class="badge-tl badge-ceo">CEO</span>
+                  </div>
+                  <p class="tl-desc">
+                    Liderança da visão, processos e decisões estratégicas da
+                    <strong>Busize</strong>, consultoria tech criativa focada em
+                    conectar estratégia, tecnologia e performance. Entregando soluções
+                    sob medida para empresas que buscam organização, automação e
+                    crescimento com inteligência. Foco em <strong>processos bem
+                      definidos, segurança nas decisões e inovação com responsabilidade</strong>.
+                  </p>
+                  <div class="tl-tags">
+                    <span class="tl-tag">Estratégia</span>
+                    <span class="tl-tag">Consultoria Tech</span>
+                    <span class="tl-tag">Gestão</span>
+                    <span class="tl-tag">Automação</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tl-item">
+                <div class="tl-line">
+                  <div class="tl-dot dim-dot"></div>
+                  <div class="tl-connector"></div>
+                </div>
+                <div class="tl-content">
+                  <div class="tl-header">
+                    <span class="tl-company">Co-Founder</span>
+                    <span class="tl-period">nov/2019 – o momento</span>
+                  </div>
+                  <div class="tl-role">Co-Founder</div>
+                  <div class="tl-tags">
+                    <span class="tl-tag">Empreendedorismo</span>
+                    <span class="tl-tag">Liderança Ágil</span>
+                    <span class="tl-tag">Scrum</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tl-item">
+                <div class="tl-line">
+                  <div class="tl-dot dim-dot"></div>
+                </div>
+                <div class="tl-content">
+                  <div class="tl-header">
+                    <span class="tl-company">Freelancer</span>
+                    <span class="tl-period">jan/2016 – nov/2021 · 5 a 11 m</span>
+                  </div>
+                  <div class="tl-role">Freelance Web Developer</div>
+                  <div class="tl-tags">
+                    <span class="tl-tag">Web Development</span>
+                    <span class="tl-tag">Liderança Ágil</span>
+                    <span class="tl-tag">Software</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- TOTVS -->
+          <div class="company-group" style="margin-bottom:0">
+            <div class="company-header">
+              <div class="company-logo">💊</div>
+              <div>
+                <div class="company-name">TOTVS</div>
+                <div class="company-type">Tempo Integral</div>
+              </div>
+              <span class="company-tenure">3 anos 1 mês</span>
+            </div>
+
+            <div class="timeline">
+              <div class="tl-item">
+                <div class="tl-line">
+                  <div class="tl-dot dim-dot"></div>
+                  <div class="tl-connector"></div>
+                </div>
+                <div class="tl-content">
+                  <div class="tl-header">
+                    <span class="tl-company">TOTVS HealthCare</span>
+                    <span class="tl-period">nov/2019 – set/2021 · 1 a 11 m</span>
+                  </div>
+                  <div class="tl-role">Analista de Desenvolvimento de Software</div>
+                  <div class="tl-tags">
+                    <span class="tl-tag">HealthCare</span>
+                    <span class="tl-tag">Scrum</span>
+                    <span class="tl-tag">Software Development</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tl-item">
+                <div class="tl-line">
+                  <div class="tl-dot dim-dot"></div>
+                </div>
+                <div class="tl-content">
+                  <div class="tl-header">
+                    <span class="tl-company">TOTVS — Belo Horizonte</span>
+                    <span class="tl-period">set/2018 – nov/2019 · 1 a 3 m</span>
+                  </div>
+                  <div class="tl-role">Analista de Desenvolvimento de Software</div>
+                  <div class="tl-tags">
+                    <span class="tl-tag">Scrum</span>
+                    <span class="tl-tag">Software Development</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /card experiência -->
+
+        <!-- Stack Técnica -->
+        <div class="card">
+          <div class="card-title">
+            <span class="card-title-icon">🛠</span>
+            Stack Técnica
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-group-title">Liderança &amp; Arquitetura</div>
+            <div class="skill-list">
+              <span class="skill-chip hl">Tech Lead</span>
+              <span class="skill-chip hl">Solution Architecture</span>
+              <span class="skill-chip hl">Clean Architecture</span>
+              <span class="skill-chip hl">Hexagonal Architecture</span>
+              <span class="skill-chip hl">Event-Driven Architecture</span>
+              <span class="skill-chip hl">Microserviços</span>
+              <span class="skill-chip">DDD</span>
+              <span class="skill-chip">Code Review</span>
+              <span class="skill-chip">Mentoria Técnica</span>
+              <span class="skill-chip">Gestão de Times</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-group-title azure-title">☁️ Azure Ecosystem</div>
+            <div class="skill-list">
+              <span class="skill-chip hl-azure">Event Grid</span>
+              <span class="skill-chip hl-azure">Service Bus</span>
+              <span class="skill-chip hl-azure">Azure Functions</span>
+              <span class="skill-chip hl-azure">App Insights</span>
+              <span class="skill-chip hl-azure">Key Vault</span>
+              <span class="skill-chip hl-azure">Blob Storage</span>
+              <span class="skill-chip hl-azure">Table Storage</span>
+              <span class="skill-chip hl-azure">Queue Storage</span>
+              <span class="skill-chip hl-azure">Azure DevOps</span>
+              <span class="skill-chip">Portal Azure</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-group-title">Backend</div>
+            <div class="skill-list">
+              <span class="skill-chip hl">.NET / C#</span>
+              <span class="skill-chip hl">ASP.NET Core</span>
+              <span class="skill-chip">REST APIs</span>
+              <span class="skill-chip">Entity Framework</span>
+              <span class="skill-chip">Node.js</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-group-title">Frontend</div>
+            <div class="skill-list">
+              <span class="skill-chip hl">TypeScript</span>
+              <span class="skill-chip hl">React</span>
+              <span class="skill-chip">Next.js</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-group-title">DevOps &amp; Qualidade</div>
+            <div class="skill-list">
+              <span class="skill-chip">CI/CD</span>
+              <span class="skill-chip">GitHub Actions</span>
+              <span class="skill-chip">Docker</span>
+              <span class="skill-chip">Kubernetes</span>
+              <span class="skill-chip">Feature Flags</span>
+              <span class="skill-chip">Versionamento</span>
+              <span class="skill-chip">Scrum</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-group-title">AI &amp; Inovação</div>
+            <div class="skill-list">
+              <span class="skill-chip hl">AI-Driven Development</span>
+              <span class="skill-chip hl">Azure OpenAI</span>
+              <span class="skill-chip">Prompt Engineering</span>
+              <span class="skill-chip">LLM Integration</span>
+              <span class="skill-chip">Engineering Productivity</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div><!-- /coluna principal -->
+
+      <!-- ══════════ SIDEBAR ══════════ -->
+      <div>
+
+        <!-- Métricas -->
+        <div class="card">
+          <div class="card-title">
+            <span class="card-title-icon">📊</span>
+            Números
+          </div>
+          <div class="metrics">
+            <div class="metric">
+              <div class="metric-value">9+</div>
+              <div class="metric-label">Anos de experiência</div>
+            </div>
+            <div class="metric">
+              <div class="metric-value">3+</div>
+              <div class="metric-label">Anos como Tech Lead</div>
+            </div>
+            <div class="metric">
+              <div class="metric-value">2</div>
+              <div class="metric-label">Empresas fundadas</div>
+            </div>
+            <div class="metric">
+              <div class="metric-value">☁️</div>
+              <div class="metric-label">Azure First</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contato -->
+        <div class="card">
+          <div class="card-title">
+            <span class="card-title-icon">📬</span>
+            Contato
+          </div>
+          <div class="contact-list">
+            <div class="contact-item">
+              <div class="contact-icon">📍</div>
+              <span>Barbacena, MG – Brasil</span>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">✉️</div>
+              <a href="mailto:nathan.ramorim@gmail.com">nathan.ramorim@gmail.com</a>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">💼</div>
+              <a href="https://linkedin.com/in/nathanamorim" target="_blank">linkedin.com/in/nathanamorim</a>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">🐙</div>
+              <a href="https://github.com/nathanramorim" target="_blank">github.com/nathanramorim</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Formação -->
+        <div class="card">
+          <div class="card-title">
+            <span class="card-title-icon">🎓</span>
+            Formação Acadêmica
+          </div>
+          <div class="edu-item">
+            <div class="edu-degree">Sistemas de Informação</div>
+            <div class="edu-school">Centro Universitário de Belo Horizonte</div>
+            <div class="edu-year">2014 – 2018</div>
+            <div class="edu-activities">
+              Desenvolvimento Java × Arduino (Projeto Interdisciplinar) ·
+              App Mobile "Foca nos Estudos" – Gestor de Estudos (Projeto Interdisciplinar)
+            </div>
+          </div>
+        </div>
+
+        <!-- Idiomas -->
+        <div class="card">
+          <div class="card-title">
+            <span class="card-title-icon">🌐</span>
+            Idiomas
+          </div>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:6px">
+                <span style="font-size:.85rem;font-weight:600">Português</span>
+                <span style="font-size:.75rem;color:var(--accent-light)">Nativo</span>
+              </div>
+              <div style="height:4px;background:var(--border);border-radius:4px">
+                <div
+                  style="width:100%;height:100%;background:linear-gradient(90deg,var(--accent),var(--green));border-radius:4px">
+                </div>
+              </div>
+            </div>
+            <div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:6px">
+                <span style="font-size:.85rem;font-weight:600">Inglês</span>
+                <span style="font-size:.75rem;color:var(--accent-light)">Técnico / Avançado</span>
+              </div>
+              <div style="height:4px;background:var(--border);border-radius:4px">
+                <div
+                  style="width:78%;height:100%;background:linear-gradient(90deg,var(--accent),var(--green));border-radius:4px">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Certificações -->
+        <div class="card">
+          <div class="card-title">
+            <span class="card-title-icon">🏅</span>
+            Licenças &amp; Certificados
+          </div>
+          <div class="cert-list">
+
+            <div class="cert-item">
+              <div class="cert-name">Ambiente de Desenvolvimento Kubernetes</div>
+              <div class="cert-meta">
+                <span class="cert-org">DIO</span>
+                <span class="cert-date">nov/2025</span>
+              </div>
+              <div class="cert-tags">
+                <span class="cert-tag">Kubernetes</span>
+                <span class="cert-tag">Minikube</span>
+              </div>
+            </div>
+
+            <div class="cert-item">
+              <div class="cert-name">Introdução a Kubernetes e Orquestração de Contêineres</div>
+              <div class="cert-meta">
+                <span class="cert-org">DIO</span>
+                <span class="cert-date">nov/2025</span>
+              </div>
+              <div class="cert-tags">
+                <span class="cert-tag">Kubernetes</span>
+                <span class="cert-tag">Microserviços</span>
+              </div>
+            </div>
+
+            <div class="cert-item">
+              <div class="cert-name">Agente para Detecção de Vulnerabilidades em Arquiteturas</div>
+              <div class="cert-meta">
+                <span class="cert-org">DIO</span>
+                <span class="cert-date">nov/2025</span>
+              </div>
+              <div class="cert-tags">
+                <span class="cert-tag">Azure OpenAI</span>
+                <span class="cert-tag">Python</span>
+                <span class="cert-tag">STRIDE</span>
+              </div>
+            </div>
+
+            <div class="cert-item" style="border-color:rgba(99,102,241,.3)">
+              <div class="cert-name">Pré MBA em Finanças Corporativas</div>
+              <div class="cert-meta">
+                <span class="cert-org" style="color:#f59e0b">Exame Corporate Education</span>
+                <span class="cert-date">mai/2025</span>
+              </div>
+              <div class="cert-tags">
+                <span class="cert-tag"
+                  style="color:#f59e0b;border-color:rgba(245,158,11,.3);background:rgba(245,158,11,.1)">Finanças
+                  Corporativas</span>
+              </div>
+            </div>
+
+            <div class="cert-item">
+              <div class="cert-name">Prompts Assertivos para ChatGPT</div>
+              <div class="cert-meta">
+                <span class="cert-org">DIO</span>
+                <span class="cert-date">ago/2024</span>
+              </div>
+              <div class="cert-tags">
+                <span class="cert-tag">IA</span>
+                <span class="cert-tag">GPT</span>
+                <span class="cert-tag">Prompt Eng.</span>
+              </div>
+            </div>
+
+            <div class="cert-item">
+              <div class="cert-name">Benefícios da Nuvem</div>
+              <div class="cert-meta">
+                <span class="cert-org">DIO</span>
+                <span class="cert-date">mar/2024</span>
+              </div>
+              <div class="cert-tags">
+                <span class="cert-tag"
+                  style="color:var(--azure-light);border-color:rgba(96,165,250,.3);background:rgba(96,165,250,.08)">Azure</span>
+                <span class="cert-tag">Cloud</span>
+              </div>
+            </div>
+
+            <div class="cert-item">
+              <div class="cert-name">Computação em Nuvem</div>
+              <div class="cert-meta">
+                <span class="cert-org">DIO</span>
+                <span class="cert-date">mar/2024</span>
+              </div>
+              <div class="cert-tags">
+                <span class="cert-tag"
+                  style="color:var(--azure-light);border-color:rgba(96,165,250,.3);background:rgba(96,165,250,.08)">Azure</span>
+                <span class="cert-tag">Cloud</span>
+              </div>
+            </div>
+
+            <div class="cert-item">
+              <div class="cert-name">Introdução à Inteligência Artificial</div>
+              <div class="cert-meta">
+                <span class="cert-org">DIO</span>
+                <span class="cert-date">dez/2023</span>
+              </div>
+              <div class="cert-tags">
+                <span class="cert-tag">IA</span>
+              </div>
+            </div>
+
+            <div class="cert-item">
+              <div class="cert-name">CI/CD na prática com .NET</div>
+              <div class="cert-meta">
+                <span class="cert-org">DIO</span>
+                <span class="cert-date">dez/2023</span>
+              </div>
+              <div class="cert-tags">
+                <span class="cert-tag">.NET</span>
+                <span class="cert-tag">DevOps</span>
+                <span class="cert-tag">CD</span>
+              </div>
+            </div>
+
+            <div class="cert-item" style="border-color:rgba(99,102,241,.4);background:rgba(99,102,241,.05)">
+              <div class="cert-name">Bootcamp Arquiteto de Software</div>
+              <div class="cert-meta">
+                <span class="cert-org" style="color:var(--accent-light)">IGTI</span>
+                <span class="cert-date">jul/2021</span>
+              </div>
+              <div class="cert-tags">
+                <span class="cert-tag">Arquitetura</span>
+                <span class="cert-tag">Software</span>
+              </div>
+            </div>
+
+            <div class="cert-item">
+              <div class="cert-name">Scrum Foundation Professional Certificate</div>
+              <div class="cert-meta">
+                <span class="cert-org">Certiprof</span>
+                <span class="cert-date">jan/2019</span>
+              </div>
+              <div class="cert-tags">
+                <span class="cert-tag">Scrum</span>
+                <span class="cert-tag">Agile</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div><!-- /sidebar -->
+
+    </div><!-- /grid2 -->
+
+    <p style="text-align:center;font-size:.72rem;color:var(--border);margin-top:12px">
+      Nathan Amorim &nbsp;·&nbsp; Atualizado em Junho 2026
+    </p>
+
+  </div>
+
+</body>
+
+</html>
