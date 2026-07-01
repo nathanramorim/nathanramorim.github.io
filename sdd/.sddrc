@@ -1,0 +1,11 @@
+{
+  "project": "meu-projeto",
+  "version": "1.6.0-beta.0",
+  "agents": ["gemini", "claude"],
+  "telemetry": {
+    "enabled": true,
+    "anonymous": true,
+    "endpoint": "local"
+  },
+  "lang": "pt-BR"
+}

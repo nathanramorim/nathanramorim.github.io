@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Como cheguei no forge-sdd através do harness engineering</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="crt-overlay"></div>
+
+<div class="chrome">
+  <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+  <span class="chrome-title">post-5.md</span>
+  <div class="chrome-nav"><a href="index.html">indice</a></div>
+</div>
+
+<main>
+  <p class="eyebrow">post 5 de 5 · fechamento</p>
+  <h1 class="post-title">Como cheguei no forge-sdd através do harness engineering<span class="cursor">&nbsp;</span></h1>
+
+  <div class="article">
+    <p>Nos posts anteriores expliquei o que é Harness Engineering: não é sobre pedir bem para a IA, é sobre montar o ambiente de trabalho ao redor dela, com as ferramentas certas, boas fontes de informação, um jeito de verificar o resultado e um critério claro de quando parar. Agora quero contar como cheguei nisso na prática, antes mesmo de saber que esse conceito tinha nome.</p>
+    <p>O problema começou simples: um agente de IA até entregava resultado, mas de forma inconsistente. Um dia acertava a estrutura do projeto, no outro inventava uma solução diferente para o mesmo tipo de tarefa. Funcionava na prova de conceito e escorregava na entrega real.</p>
+    <p>A resposta natural, no começo, foi escrever prompts cada vez mais detalhados, o equivalente a caprichar cada vez mais na receita. Funcionou até certo ponto e depois parou de escalar. Ficou claro que o problema não estava em "pedir melhor". Estava em não ter, ao redor do agente, uma cozinha de verdade: specs claras do que precisa ser feito, um arquivo de constituição com as regras inegociáveis do projeto, configuração organizada, e um jeito confiável de verificar se o trabalho entregue realmente atendia ao que foi pedido, antes de considerar a tarefa concluída.</p>
+    <p>Foi assim, tentativa após tentativa, que nasceu a metodologia por trás do <strong>forge-sdd</strong>: Spec-Driven Development, desenvolvimento guiado por especificação. Na prática, isso significa: antes de deixar o agente agir, a gente define com clareza o que precisa existir no final, quais são os limites do projeto, e como vamos saber se deu certo. O agente ainda "pensa" livremente, mas dentro de uma cozinha bem montada, não numa sala vazia.</p>
+    <p>Olhando para trás, entendo que sempre estive fazendo Harness Engineering, só não tinha esse nome ainda. E é engraçado perceber que boa parte do que hoje vira artigo e discussão de mercado, muita gente que trabalha de perto com agentes de IA já vinha descobrindo na prática, no braço, resolvendo problema por problema.</p>
+    <p>Se você constrói ou usa agentes de IA no seu trabalho e sente esse mesmo tipo de inconsistência que eu sentia, vale a pena olhar para o forge-sdd, não como uma ferramenta mágica, mas como um jeito estruturado de montar essa cozinha para os seus próprios projetos.</p>
+  </div>
+
+  <hr class="divider">
+
+  <div class="callout">
+    <span class="label">resumo de chamada</span>
+    <p>Eu não parti da teoria para chegar no forge-sdd, parti de um agente que entregava resultado bom num dia e ruim no outro. No último post da série, conto como isso virou uma metodologia de Spec-Driven Development, e por que hoje entendo que sempre fiz harness engineering sem saber o nome disso. 🛠️</p>
+  </div>
+
+  <div class="hashtags">
+    <span class="hashtag">#ForgeSDD</span>
+    <span class="hashtag">#HarnessEngineering</span>
+    <span class="hashtag">#SpecDrivenDevelopment</span>
+    <span class="hashtag">#InteligenciaArtificial</span>
+    <span class="hashtag">#DesenvolvimentoDeSoftware</span>
+    <span class="hashtag">#Busize</span>
+  </div>
+
+  <details class="production-notes">
+    <summary>notas de produção (não faz parte do post)</summary>
+    <div class="notes-body">
+      <div class="notes-field">
+        <h3>Instruções para imagem de capa</h3>
+        <p>Seguir a base fixa de capa. Título desta peça: "FORGE SDD", em destaque máximo, com leve brilho atrás das letras. Abaixo do título, uma linha menor simulando um comando sendo digitado, cursor piscante ao final. Peça de fechamento da série, pode ter um pouco mais de destaque visual que as anteriores, mantendo a mesma base fixa.</p>
+      </div>
+      <div class="notes-field">
+        <h3>Instruções para imagem diagrama ou ilustração</h3>
+        <p>Seguir a base fixa de ilustração. Elemento específico: um caminho fino e contínuo, sem ramificações, partindo de um pequeno ponto de interrogação num canto e terminando num pequeno bloco sólido com camadas simples empilhadas no outro canto, sugerindo uma jornada com início incerto e final estruturado.</p>
+      </div>
+    </div>
+  </details>
+
+  <div class="post-nav">
+    <a href="post-4.html">&larr; post 4</a>
+    <a class="to-index" href="index.html">indice &rarr;</a>
+  </div>
+</main>
+
+</body>
+</html>
