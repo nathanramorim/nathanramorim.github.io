@@ -1,0 +1,35 @@
+---
+import '../styles/global.css';
+
+interface Props {
+	title: string;
+	chromeTitle: string;
+}
+
+const { title, chromeTitle } = Astro.props;
+---
+
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<title>{title}</title>
+	</head>
+	<body>
+		<div class="crt-overlay"></div>
+
+		<div class="chrome">
+			<span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+			<span class="chrome-title">{chromeTitle}</span>
+			<div class="chrome-nav">
+				<a href="/">home</a>
+				<a href="/blog">blog</a>
+			</div>
+		</div>
+
+		<slot />
+	</body>
+</html>

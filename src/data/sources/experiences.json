@@ -1,0 +1,78 @@
+[
+  {
+    "company": "DTI Digital",
+    "type": "Tempo Integral",
+    "tenure": "4 anos 10 meses",
+    "roles": [
+      {
+        "title": "Solutions Architect",
+        "period": "jan/2025 – o momento",
+        "duration": "1 a 6 m",
+        "badge": "ARCHITECT",
+        "description": "Liderança de iniciativas de modernização tecnológica em projeto estratégico no setor de logística e planejamento corporativo. Decisões de arquitetura com foco em escalabilidade, modularidade e resiliência. Atualmente trabalhando com o ecossistema Azure: Event Grid, Service Bus, Azure Functions, App Insights, Key Vault e Storage Account (Blob, Tables, Queues). Participação ativa em discovery de features, estruturação de serviços modulares e integração com mensageria assíncrona. Apoio estratégico em práticas de DevOps, padronização de branches e governança de código.",
+        "tags": ["Azure", "Event Grid", "Service Bus", "Azure Functions", "App Insights", "Key Vault", "Blob / Table / Queue", ".NET / C#", "Clean Architecture", "Feature Flags", "Microserviços", "Event-Driven"]
+      },
+      {
+        "title": "Tech Lead",
+        "period": "jan/2022 – jan/2025",
+        "duration": "3 anos 1 m",
+        "badge": "TECH LEAD",
+        "description": "Liderança de equipe de desenvolvimento em projeto de Integrated Business Planning (IBP), topologia de time plataforma. Utilizando metodologias ágeis, Microsoft Azure DevOps, Portal Azure, .NET e React. Gestão e desenvolvimento de pessoas: feedbacks constantes, acompanhamento individual e treinamentos personalizados. Ambiente colaborativo de alta performance com entrega contínua de valor ao negócio.",
+        "tags": [".NET / C#", "Azure", "Azure DevOps", "React", "Scrum", "Mentoria", "Feedback", "Liderança Técnica"]
+      },
+      {
+        "title": "Software Engineer",
+        "period": "set/2021 – fev/2022",
+        "duration": "6 meses",
+        "tags": [".NET", "React", "Scrum"]
+      }
+    ]
+  },
+  {
+    "company": "Busize Soluções",
+    "type": "Autônomo · Fundador",
+    "tenure": "6+ anos",
+    "roles": [
+      {
+        "title": "CEO",
+        "period": "jan/2025 – o momento",
+        "duration": "1 a 6 m",
+        "badge": "CEO",
+        "description": "Liderança da visão, processos e decisões estratégicas da Busize, consultoria tech criativa focada em conectar estratégia, tecnologia e performance. Entregando soluções sob medida para empresas que buscam organização, automação e crescimento com inteligência. Foco em processos bem definidos, segurança nas decisões e inovação com responsabilidade.",
+        "tags": ["Estratégia", "Consultoria Tech", "Gestão", "Automação"]
+      },
+      {
+        "title": "Co-Founder",
+        "period": "nov/2019 – o momento",
+        "tags": ["Empreendedorismo", "Liderança Ágil", "Scrum"]
+      },
+      {
+        "title": "Freelance Web Developer",
+        "period": "jan/2016 – nov/2021",
+        "duration": "5 a 11 m",
+        "tags": ["Web Development", "Liderança Ágil", "Software"]
+      }
+    ]
+  },
+  {
+    "company": "TOTVS",
+    "type": "Tempo Integral",
+    "tenure": "3 anos 1 mês",
+    "roles": [
+      {
+        "title": "Analista de Desenvolvimento de Software",
+        "company_detail": "TOTVS HealthCare",
+        "period": "nov/2019 – set/2021",
+        "duration": "1 a 11 m",
+        "tags": ["HealthCare", "Scrum", "Software Development"]
+      },
+      {
+        "title": "Analista de Desenvolvimento de Software",
+        "company_detail": "TOTVS — Belo Horizonte",
+        "period": "set/2018 – nov/2019",
+        "duration": "1 a 3 m",
+        "tags": ["Scrum", "Software Development"]
+      }
+    ]
+  }
+]
