@@ -4,22 +4,24 @@
 ```
 Fase 0-2 (Foundation, LP, Rotas)   [x] done
 Fase 3 — SEO/Polimento             [~] doing (03-5 pendente)
+Fase 4 — Blog Toggle Config        [ ] todo
 ```
 
 ## Features ativas
 | Feature | Branch | Status |
 |---------|--------|--------|
 | feat-03-seo-polimento | feat/seo-polimento | doing |
+| feat-04-blog-toggle-config | feat/blog-toggle-config | todo |
 
 ## Próximo passo
-**Iniciar:** revisar/mergear PRs #1→#4 na main; depois validar 03-5 (deploy real via Actions).
-**Bloqueios:** 03-5 exige push na `main`, só deve rodar após merge da cadeia de PRs.
+**Iniciar:** feat-04-blog-toggle-config (config TOML para habilitar/desabilitar posts).
+**Bloqueios:** 03-5 exige push na `main`, só deve rodar após merge da cadeia de PRs (#1→#4).
 
 ## Handoff da última sessão
-- feat-03-seo-polimento (PR aberto): SEO.astro (OG/Twitter/description) em todas páginas, sitemap via `@astrojs/sitemap`, fontes assíncronas, mobile validado com screenshots, skip-link.
-- `npm run build` gera `sitemap-index.xml`/`sitemap-0.xml` ok.
+- Branch `feat/blog-toggle-config` criada a partir de `feat/seo-polimento`; spec em `feat-04-blog-toggle-config.md`.
+- Objetivo: TOML (`blog.config.toml`) com `enabled` por post, filtrando `GetAllPosts` e `getStaticPaths` de `/blog/[slug]`.
 
 ## Última sessão
-- Implementação de feat-03-seo-polimento (03-1 a 03-4) e abertura de PR.
+- Spec de feat-04-blog-toggle-config criada (sem implementação ainda).
 
 > Histórico completo em `progress-log.md`
