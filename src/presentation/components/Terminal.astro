@@ -1,0 +1,126 @@
+---
+interface Command {
+	prompt: string;
+	output: string[];
+}
+
+const commands: Command[] = [
+	{
+		prompt: 'whoami',
+		output: ['Nathan Amorim — Solutions Architect · Tech Lead · Software Engineer'],
+	},
+	{
+		prompt: 'cat sobre.txt',
+		output: [
+			'Lidero iniciativas de modernização tecnológica com foco em',
+			'escalabilidade, modularização e resiliência de sistemas críticos.',
+			'Stack principal: .NET/C#, Clean Architecture, ecossistema Azure.',
+		],
+	},
+	{
+		prompt: 'ls contato/',
+		output: ['linkedin.com/in/nathanamorim  github.com/nathanramorim'],
+	},
+];
+---
+
+<div class="terminal" id="terminal">
+	{
+		commands.map((command) => (
+			<div class="terminal-line" data-prompt={command.prompt} data-output={command.output.join('\n')} />
+		))
+	}
+</div>
+
+<script>
+	type Line = HTMLElement & { dataset: { prompt: string; output: string } };
+
+	function typeLine(el: HTMLElement, text: string, speed: number): Promise<void> {
+		return new Promise((resolve) => {
+			let i = 0;
+			const span = document.createElement('span');
+			el.appendChild(span);
+			const tick = () => {
+				span.textContent = text.slice(0, i);
+				i += 1;
+				if (i <= text.length) {
+					window.setTimeout(tick, speed);
+				} else {
+					resolve();
+				}
+			};
+			tick();
+		});
+	}
+
+	async function runTerminal() {
+		const container = document.getElementById('terminal');
+		if (!container) return;
+
+		const lines = Array.from(container.querySelectorAll<Line>('.terminal-line'));
+		const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+		container.innerHTML = '';
+
+		for (const line of lines) {
+			const { prompt, output } = line.dataset;
+
+			const promptRow = document.createElement('p');
+			promptRow.className = 'terminal-prompt';
+			const promptSign = document.createElement('span');
+			promptSign.className = 'terminal-sign';
+			promptSign.textContent = '$ ';
+			promptRow.appendChild(promptSign);
+			container.appendChild(promptRow);
+
+			if (reducedMotion) {
+				promptRow.appendChild(document.createTextNode(prompt));
+			} else {
+				await typeLine(promptRow, prompt, 35);
+			}
+
+			for (const outputLine of output.split('\n')) {
+				const outputRow = document.createElement('p');
+				outputRow.className = 'terminal-output';
+				outputRow.textContent = outputLine;
+				container.appendChild(outputRow);
+			}
+		}
+
+		const cursor = document.createElement('span');
+		cursor.className = 'cursor';
+		cursor.innerHTML = '&nbsp;';
+		container.appendChild(cursor);
+	}
+
+	runTerminal();
+</script>
+
+<style>
+	.terminal {
+		background: var(--panel);
+		border: 1px solid var(--panel-border);
+		border-radius: var(--radius);
+		padding: 20px 24px;
+		font-family: var(--mono);
+		font-size: 14px;
+		line-height: 1.8;
+		max-width: 640px;
+		margin: 0 auto 40px;
+		min-height: 168px;
+	}
+
+	.terminal-prompt {
+		margin: 0;
+		color: var(--text);
+	}
+
+	.terminal-sign {
+		color: var(--green);
+	}
+
+	.terminal-output {
+		margin: 0 0 12px;
+		color: var(--text-dim);
+	}
+</style>

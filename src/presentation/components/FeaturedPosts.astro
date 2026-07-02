@@ -1,0 +1,21 @@
+---
+import type { Post } from '../../domain/entities/Post';
+
+interface Props {
+	posts: Post[];
+}
+
+const { posts } = Astro.props;
+---
+
+<section class="index-list featured-posts">
+	{
+		posts.map((post) => (
+			<a class="index-item" href={`/blog/${post.slug}`}>
+				<div class="idx-eyebrow">{post.eyebrow}</div>
+				<div class="idx-title">{post.title}</div>
+				<div class="idx-goal">{post.summary}</div>
+			</a>
+		))
+	}
+</section>

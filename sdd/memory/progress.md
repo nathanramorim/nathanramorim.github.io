@@ -2,25 +2,25 @@
 
 ## Status
 ```
-Fase 0 — Foundation   [x] done
+Fase 0-2 (Foundation, LP, Rotas)   [x] done
+Fase 3 — SEO/Polimento             [~] doing (03-5 pendente)
+Fase 4 — Blog Toggle Config        [x] done
 ```
 
 ## Features ativas
 | Feature | Branch | Status |
 |---------|--------|--------|
-| feat-01-landing-page | feat/landing-page | todo |
+| feat-03-seo-polimento | feat/seo-polimento | doing |
 
 ## Próximo passo
-**Iniciar:** feat-01-landing-page (Landing Page retrô com terminal e posts destacados).
-**Bloqueios:** —
+**Iniciar:** revisar/mergear PRs #1→#5 na main; depois validar 03-5 (deploy real via Actions).
+**Bloqueios:** 03-5 exige push na `main`, só deve rodar após merge da cadeia de PRs.
 
 ## Handoff da última sessão
-- feat-00-foundation concluída (branch `feat/foundation`, PR aberto): Astro+TS inicializado, Clean Architecture em `/src`, `RetroLayout.astro` com CSS global, Content Collections (`src/content.config.ts`, Astro 7 loader API) com os 6 posts convertidos para Markdown, dados extraídos em `src/data/sources/{experiences,skills,projects}.json`, pipeline `.github/workflows/deploy.yml`.
-- `npm run build` e `npm run dev` validados localmente.
+- feat-04-blog-toggle-config concluída (PR aberto): `blog.config.toml` + `BlogConfigRepository` controlam `enabled` por post; `GetAllPosts` e `getStaticPaths` de `/blog/[slug]` filtram desabilitados.
+- Testado desabilitando `post-5`: sumiu de `/blog`/home, sem rota gerada. Revertido para `true`.
 
 ## Última sessão
-- Implementação completa de feat-00-foundation e abertura de PR para revisão.
-
-> Histórico completo em `progress-log.md`
+- Implementação de feat-04-blog-toggle-config e abertura de PR.
 
 > Histórico completo em `progress-log.md`

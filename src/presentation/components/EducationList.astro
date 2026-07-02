@@ -1,0 +1,68 @@
+---
+import type { Education } from '../../domain/entities/Education';
+
+interface Props {
+	education: Education[];
+}
+
+const { education } = Astro.props;
+---
+
+<section class="education-list">
+	{
+		education.map((item) => (
+			<div class="edu-item">
+				<p class="edu-degree">{item.degree}</p>
+				<p class="edu-school">{item.school}</p>
+				<p class="edu-period">{item.period}</p>
+				<p class="edu-activities">{item.activities}</p>
+			</div>
+		))
+	}
+</section>
+
+<style>
+	.education-list {
+		max-width: 760px;
+		margin: 0 auto 40px;
+		padding: 0 24px;
+	}
+
+	.edu-item {
+		border: 1px solid var(--panel-border);
+		border-radius: var(--radius);
+		background: var(--panel);
+		padding: 18px 22px;
+	}
+
+	.edu-degree {
+		font-family: var(--body);
+		font-weight: 700;
+		font-size: 15px;
+		color: var(--text);
+		margin: 0 0 4px;
+	}
+
+	.edu-school {
+		font-family: var(--mono);
+		font-size: 12px;
+		color: var(--cyan);
+		margin: 0 0 4px;
+	}
+
+	.edu-period {
+		font-family: var(--mono);
+		font-size: 11px;
+		color: var(--text-dim);
+		margin: 0 0 10px;
+	}
+
+	.edu-activities {
+		font-family: var(--body);
+		font-size: 13px;
+		font-style: italic;
+		color: var(--text-dim);
+		line-height: 1.6;
+		margin: 0;
+	}
+</style>
