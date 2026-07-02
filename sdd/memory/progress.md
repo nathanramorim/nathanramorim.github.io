@@ -2,26 +2,24 @@
 
 ## Status
 ```
-Fase 0-4 (Foundation → Blog Toggle)   [x] done — no ar em produção
-Fase 5 — Avatar Photo                 [ ] todo
+Fase 0-5 (Foundation → Avatar Photo)   [x] done — no ar em produção
 ```
 
 ## Features ativas
 | Feature | Branch | Status |
 |---------|--------|--------|
-| feat-05-avatar-photo | feat/avatar-photo | todo |
+| — | — | nenhuma pendente |
 
 ## Próximo passo
-**Iniciar:** feat-05-avatar-photo (voltar a exibir a foto de avatar na home e no CV).
+**Iniciar:** aguardando novo pedido de feature (`/nova-feature`) ou revisão do PR de feat-05-avatar-photo.
 **Bloqueios:** —
 
 ## Handoff da última sessão
-- PRs #1-#6 mergeados; `main` no ar em https://nathanramorim.github.io/ (deploy validado, 03-5 concluída).
-- Corrigido: Node 20→22 no workflow; Pages source legacy→workflow (GitHub Actions).
-- Branch `feat/avatar-photo` criada de `main`; spec em `feat-05-avatar-photo.md`.
-- Há um `git stash` em `feat/blog-toggle-config` com edição manual de `blog.config.toml` (posts 2-5 desabilitados) — preservado.
+- feat-05-avatar-photo concluída (PR aberto): `Avatar.astro` (astro:assets, moldura retro) integrado na home e no `/cv`.
+- Validado com build (WebP otimizado, 73kB→~1kB) e screenshots reais desktop/mobile.
+- Pendência aberta: `git stash` em `feat/blog-toggle-config` com edição manual de `blog.config.toml` (posts 2-5 desabilitados), ainda não resolvida com o usuário.
 
 ## Última sessão
-- Deploy em produção validado; spec de feat-05-avatar-photo criada (sem implementação).
+- Implementação de feat-05-avatar-photo e abertura de PR.
 
 > Histórico completo em `progress-log.md`
