@@ -1,11 +1,7 @@
-import { getCollection } from 'astro:content';
 import type { Post } from '../entities/Post';
+import { GetAllPosts } from './GetAllPosts';
 
 export async function GetFeaturedPosts(limit = 3): Promise<Post[]> {
-	const entries = await getCollection('blog');
-
-	return entries
-		.map((entry) => ({ slug: entry.id, ...entry.data }))
-		.sort((a, b) => a.order - b.order)
-		.slice(0, limit);
+	const posts = await GetAllPosts();
+	return posts.slice(0, limit);
 }

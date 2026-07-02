@@ -4,6 +4,9 @@ Este arquivo registra o histórico de entregas de produto deste projeto.
 
 ## Entregas
 
+### 2026-07-02 — Currículo e blog com páginas próprias
+Agora é possível acessar um currículo completo em `/cv`, com toda a trajetória profissional e formação acadêmica, e navegar pelo blog em `/blog`, lendo cada artigo em sua própria página.
+
 ### 2026-07-02 — Nova página inicial
 Agora é possível conhecer a trajetória profissional, os projetos e as competências direto na página inicial, num visual retrô inspirado em terminal, com um terminal interativo de apresentação e os artigos mais recentes do blog em destaque.
 
