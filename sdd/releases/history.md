@@ -4,6 +4,9 @@ Este arquivo registra o histórico de entregas de produto deste projeto.
 
 ## Entregas
 
+### 2026-07-02 — Publicação incremental de artigos do blog
+Agora é possível preparar um artigo do blog com antecedência e só publicá-lo quando estiver pronto, sem precisar apagar ou reescrever nada — basta marcá-lo como publicado quando chegar a hora.
+
 ### 2026-07-02 — Site mais rápido, acessível e fácil de encontrar
 O site agora carrega mais rápido, compartilha uma prévia bonita quando o link é enviado no LinkedIn ou WhatsApp, fica mais fácil de navegar pelo teclado e se adapta melhor a telas de celular.
 

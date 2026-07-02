@@ -1,0 +1,30 @@
+# Controla quais posts do blog estão publicados.
+#
+# Cada post em `src/content/blog/<slug>.md` precisa de uma entrada aqui,
+# identificada pelo nome do arquivo (sem a extensão .md).
+#
+# Fluxo de publicação incremental:
+#   1. Escreva o Markdown do post em src/content/blog/<slug>.md.
+#   2. Adicione a entrada abaixo com enabled = false.
+#   3. Quando o post estiver pronto para ir ao ar, troque para enabled = true.
+#
+# Posts com enabled = false não aparecem em /blog, nos destaques da home,
+# e não geram rota /blog/[slug] (build estático não cria a página).
+
+[posts.post-0]
+enabled = true
+
+[posts.post-1]
+enabled = true
+
+[posts.post-2]
+enabled = true
+
+[posts.post-3]
+enabled = true
+
+[posts.post-4]
+enabled = true
+
+[posts.post-5]
+enabled = true

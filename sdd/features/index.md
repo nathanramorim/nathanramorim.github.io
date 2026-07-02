@@ -19,4 +19,4 @@ main
 | 01 | feat-01-landing-page.md | feat/landing-page | 1 | done |
 | 02 | feat-02-routes.md | feat/routes | 2 | done |
 | 03 | feat-03-seo-polimento.md | feat/seo-polimento | 3 | doing |
-| 04 | feat-04-blog-toggle-config.md | feat/blog-toggle-config | 4 | todo |
+| 04 | feat-04-blog-toggle-config.md | feat/blog-toggle-config | 4 | done |
