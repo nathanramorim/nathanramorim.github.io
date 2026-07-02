@@ -1,0 +1,59 @@
+---
+import skillGroups from '../../data/sources/skills.json';
+---
+
+<section class="skills-section">
+	{
+		skillGroups.map((group) => (
+			<div class="skill-group">
+				<p class="skill-group-title">{group.group}</p>
+				<div class="skill-list">
+					{group.skills.map((skill) => (
+						<span class:list={['skill-chip', { 'skill-chip-hl': skill.highlight }]}>{skill.name}</span>
+					))}
+				</div>
+			</div>
+		))
+	}
+</section>
+
+<style>
+	.skills-section {
+		max-width: 760px;
+		margin: 0 auto 40px;
+		padding: 0 24px;
+	}
+
+	.skill-group {
+		margin-bottom: 18px;
+	}
+
+	.skill-group-title {
+		font-family: var(--mono);
+		font-size: 11px;
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+		color: var(--green);
+		margin: 0 0 8px;
+	}
+
+	.skill-list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 8px;
+	}
+
+	.skill-chip {
+		font-family: var(--mono);
+		font-size: 12px;
+		color: var(--text-dim);
+		border: 1px solid var(--panel-border);
+		border-radius: var(--radius);
+		padding: 4px 10px;
+	}
+
+	.skill-chip-hl {
+		color: var(--cyan);
+		border-color: var(--panel-border-strong);
+	}
+</style>
