@@ -2,25 +2,26 @@
 
 ## Status
 ```
-Fase 0 — Foundation     [x] done
-Fase 1 — Landing Page   [x] done
+Fase 0 — Foundation      [x] done
+Fase 1 — Landing Page    [x] done
+Fase 2 — Rotas           [x] done
 ```
 
 ## Features ativas
 | Feature | Branch | Status |
 |---------|--------|--------|
-| feat-02-routes | feat/routes | todo |
+| feat-03-seo-polimento | feat/seo-polimento | todo |
 
 ## Próximo passo
-**Iniciar:** feat-02-routes (rotas `/cv`, `/blog` e `/blog/[slug]`).
+**Iniciar:** feat-03-seo-polimento (SEO, responsividade e deploy CI/CD).
 **Bloqueios:** —
 
 ## Handoff da última sessão
-- feat-01-landing-page concluída (branch `feat/landing-page`, PR aberto): home com Terminal interativo, grid de projetos (domínio + `ProjectRepository`), seção de skills e posts em destaque via `GetFeaturedPosts`, rodapé com contatos.
-- Links de `FeaturedPosts` apontam para `/blog/[slug]`, ainda não implementada — depende de feat-02-routes.
-- `npm run build` e `npm run dev` validados localmente.
+- feat-02-routes concluída (branch `feat/routes`, PR aberto): `/cv` com timeline de experiências e educação, `/blog` listando posts (mais recentes primeiro) e `/blog/[slug]` renderizando o Markdown com o layout retrô.
+- Slugs de posts agora vêm do título (`slugify`), não do nome do arquivo; `GetFeaturedPosts` (feat-01) ajustado para reaproveitar essa lógica.
+- `npm run build` e as 3 rotas validadas com status 200 no dev server.
 
 ## Última sessão
-- Implementação completa de feat-01-landing-page e abertura de PR para revisão.
+- Implementação completa de feat-02-routes e abertura de PR para revisão.
 
 > Histórico completo em `progress-log.md`

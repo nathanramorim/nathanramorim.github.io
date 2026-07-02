@@ -1,0 +1,49 @@
+---
+import { getCollection, render } from 'astro:content';
+import RetroLayout from '../../layouts/RetroLayout.astro';
+import { slugify } from '../../domain/utils/slugify';
+
+export async function getStaticPaths() {
+	const entries = await getCollection('blog');
+	const sorted = [...entries].sort((a, b) => a.data.order - b.data.order);
+
+	return sorted.map((entry, index) => ({
+		params: { slug: slugify(entry.data.title) },
+		props: {
+			entry,
+			prev: sorted[index - 1],
+			next: sorted[index + 1],
+		},
+	}));
+}
+
+const { entry, prev, next } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<RetroLayout title={`${entry.data.title} — Nathan Amorim`} chromeTitle={`blog/${entry.id}`}>
+	<main>
+		<p class="eyebrow">{entry.data.eyebrow}</p>
+		<h1 class="post-title">{entry.data.title}<span class="cursor">&nbsp;</span></h1>
+
+		<div class="article">
+			<Content />
+		</div>
+
+		<hr class="divider" />
+
+		<div class="callout">
+			<span class="label">resumo de chamada</span>
+			<p>{entry.data.summary}</p>
+		</div>
+
+		<div class="hashtags">
+			{entry.data.hashtags.map((tag: string) => <span class="hashtag">#{tag}</span>)}
+		</div>
+
+		<div class="post-nav">
+			{prev ? <a href={`/blog/${slugify(prev.data.title)}`}>&larr; {prev.data.title}</a> : <a class="to-index" href="/blog">&larr; indice</a>}
+			{next ? <a href={`/blog/${slugify(next.data.title)}`}>{next.data.title} &rarr;</a> : <a class="to-index" href="/blog">indice &rarr;</a>}
+		</div>
+	</main>
+</RetroLayout>
