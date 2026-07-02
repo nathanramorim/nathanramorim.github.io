@@ -1,0 +1,72 @@
+[
+  {
+    "group": "Liderança & Arquitetura",
+    "skills": [
+      { "name": "Tech Lead", "highlight": true },
+      { "name": "Solution Architecture", "highlight": true },
+      { "name": "Clean Architecture", "highlight": true },
+      { "name": "Hexagonal Architecture", "highlight": true },
+      { "name": "Event-Driven Architecture", "highlight": true },
+      { "name": "Microserviços", "highlight": true },
+      { "name": "DDD", "highlight": false },
+      { "name": "Code Review", "highlight": false },
+      { "name": "Mentoria Técnica", "highlight": false },
+      { "name": "Gestão de Times", "highlight": false }
+    ]
+  },
+  {
+    "group": "Azure Ecosystem",
+    "skills": [
+      { "name": "Event Grid", "highlight": true },
+      { "name": "Service Bus", "highlight": true },
+      { "name": "Azure Functions", "highlight": true },
+      { "name": "App Insights", "highlight": true },
+      { "name": "Key Vault", "highlight": true },
+      { "name": "Blob Storage", "highlight": true },
+      { "name": "Table Storage", "highlight": true },
+      { "name": "Queue Storage", "highlight": true },
+      { "name": "Azure DevOps", "highlight": true },
+      { "name": "Portal Azure", "highlight": false }
+    ]
+  },
+  {
+    "group": "Backend",
+    "skills": [
+      { "name": ".NET / C#", "highlight": true },
+      { "name": "ASP.NET Core", "highlight": true },
+      { "name": "REST APIs", "highlight": false },
+      { "name": "Entity Framework", "highlight": false },
+      { "name": "Node.js", "highlight": false }
+    ]
+  },
+  {
+    "group": "Frontend",
+    "skills": [
+      { "name": "TypeScript", "highlight": true },
+      { "name": "React", "highlight": true },
+      { "name": "Next.js", "highlight": false }
+    ]
+  },
+  {
+    "group": "DevOps & Qualidade",
+    "skills": [
+      { "name": "CI/CD", "highlight": false },
+      { "name": "GitHub Actions", "highlight": false },
+      { "name": "Docker", "highlight": false },
+      { "name": "Kubernetes", "highlight": false },
+      { "name": "Feature Flags", "highlight": false },
+      { "name": "Versionamento", "highlight": false },
+      { "name": "Scrum", "highlight": false }
+    ]
+  },
+  {
+    "group": "AI & Inovação",
+    "skills": [
+      { "name": "AI-Driven Development", "highlight": true },
+      { "name": "Azure OpenAI", "highlight": true },
+      { "name": "Prompt Engineering", "highlight": false },
+      { "name": "LLM Integration", "highlight": false },
+      { "name": "Engineering Productivity", "highlight": false }
+    ]
+  }
+]

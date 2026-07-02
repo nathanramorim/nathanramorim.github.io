@@ -1,0 +1,19 @@
+[
+  {
+    "slug": "forge-sdd",
+    "name": "forge-sdd",
+    "package": "@nathanramorim/forge-sdd",
+    "version": "v1.5.2",
+    "tagline": "Ferramenta de IA para Desenvolvimento",
+    "description": "Ferramenta criada para acelerar e padronizar o desenvolvimento de software orientado por IA. O Forge-SDD é uma CLI que scaffolda em segundos toda a estrutura de documentação e arquitetura de um projeto, tornando o contexto do sistema legível e consumível por assistentes de IA, aumentando a precisão das sugestões e reduzindo o tempo de onboarding técnico.",
+    "url": "https://www.npmjs.com/package/@nathanramorim/forge-sdd",
+    "highlights": [
+      { "title": "Produtividade", "description": "Estrutura completa scaffoldada em segundos" },
+      { "title": "Contexto para IA", "description": "Documentação legível por LLMs nativamente" },
+      { "title": "Padronização", "description": "Arquitetura e docs consistentes entre projetos" },
+      { "title": "Onboarding", "description": "Reduz tempo de ramp-up do time técnico" }
+    ],
+    "compatibility": ["GitHub Copilot", "Claude", "Gemini"],
+    "tags": ["CLI", "AI-Driven Development", "Engineering Productivity", "Scaffolding", "Documentação Técnica", "Arquitetura de Software", "npm"]
+  }
+]
