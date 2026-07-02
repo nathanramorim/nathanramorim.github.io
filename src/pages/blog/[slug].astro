@@ -21,7 +21,11 @@ const { entry, prev, next } = Astro.props;
 const { Content } = await render(entry);
 ---
 
-<RetroLayout title={`${entry.data.title} — Nathan Amorim`} chromeTitle={`blog/${entry.id}`}>
+<RetroLayout
+	title={`${entry.data.title} — Nathan Amorim`}
+	description={entry.data.summary}
+	chromeTitle={`blog/${entry.id}`}
+>
 	<main>
 		<p class="eyebrow">{entry.data.eyebrow}</p>
 		<h1 class="post-title">{entry.data.title}<span class="cursor">&nbsp;</span></h1>

@@ -1,12 +1,18 @@
 ---
 import '../styles/global.css';
+import SEO from '../presentation/components/SEO.astro';
 
 interface Props {
 	title: string;
+	description: string;
 	chromeTitle: string;
+	image?: string;
 }
 
-const { title, chromeTitle } = Astro.props;
+const { title, description, chromeTitle, image } = Astro.props;
+
+const FONTS_URL =
+	'https://fonts.googleapis.com/css2?family=Press+Start+2P&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap';
 ---
 
 <html lang="pt-BR">
@@ -16,9 +22,19 @@ const { title, chromeTitle } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
-		<title>{title}</title>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="stylesheet" href={FONTS_URL} media="print" onload="this.media='all'" />
+		<noscript>
+			<link rel="stylesheet" href={FONTS_URL} />
+		</noscript>
+
+		<SEO title={title} description={description} image={image} />
 	</head>
 	<body>
+		<a class="skip-link" href="#main-content">Pular para o conteúdo</a>
+
 		<div class="crt-overlay"></div>
 
 		<div class="chrome">
@@ -31,6 +47,8 @@ const { title, chromeTitle } = Astro.props;
 			</div>
 		</div>
 
-		<slot />
+		<div id="main-content">
+			<slot />
+		</div>
 	</body>
 </html>
