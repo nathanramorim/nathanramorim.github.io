@@ -5,4 +5,5 @@ export interface Post {
 	order: number;
 	summary: string;
 	hashtags: string[];
+	enabled: boolean;
 }

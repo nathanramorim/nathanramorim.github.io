@@ -4,6 +4,9 @@ Este arquivo registra o histórico de entregas de produto deste projeto.
 
 ## Entregas
 
+### 2026-07-02 — Prévia dos próximos artigos do blog e novo ícone do site
+Agora dá para ver os títulos dos próximos artigos do blog antes mesmo deles serem publicados (marcados como "em breve"), em vez de simplesmente não aparecerem. O ícone do site também foi trocado para um alien pixelado, no espírito retrô-arcade.
+
 ### 2026-07-02 — Foto de perfil de volta ao site
 A foto de perfil voltou a aparecer, agora na página inicial e no currículo, com uma moldura que combina com o visual retrô do site.
 

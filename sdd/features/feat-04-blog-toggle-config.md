@@ -10,8 +10,9 @@ Permitir habilitar/desabilitar posts do blog individualmente através de um arqu
 
 ## Critério de conclusão
 ```bash
-# Um post com enabled = false não deve aparecer em /blog nem nos destaques da home,
-# e sua rota /blog/[slug] não deve ser gerada (404 no build estático)
+# Um post com enabled = false deve aparecer em /blog como inativo (sem link, com
+# selo "em breve"), sumir dos destaques da home, e sua rota /blog/[slug] não deve
+# ser gerada (404 no build estático)
 npm run build
 ```
 
@@ -26,6 +27,11 @@ npm run build
 - `BlogConfigRepository` lê `blog.config.toml` via import `?raw` do Vite e faz o parse com `smol-toml`.
 - `getStaticPaths` de `[slug].astro` agora usa `getCollection('blog', filter)` para nem sequer carregar posts desabilitados, e a navegação prev/next só circula entre posts habilitados.
 - Testado manualmente: com `post-5.enabled = false`, o build caiu de 9 para 8 páginas, o post sumiu de `/blog` e da home, e a rota não foi gerada. Revertido para `true` antes do commit final.
+
+### Amendment (branch `feat/blog-inactive-posts`)
+- Ajuste de UX: `GetAllPosts` passou a retornar **todos** os posts (com o campo `enabled` na entidade `Post`), em vez de já filtrar os desabilitados. `/blog` agora lista todos, renderizando os desabilitados como itens não clicáveis (`.index-item-inactive`, opacidade reduzida) com selo "em breve".
+- `GetFeaturedPosts` (destaques da home) continua filtrando apenas os habilitados — não expõe posts inativos na home.
+- `getStaticPaths` de `/blog/[slug].astro` não mudou: posts desabilitados continuam sem rota gerada (sem acesso), apenas visíveis na listagem.
 
 ## Arquivos gerados
 ```
