@@ -18,13 +18,13 @@ enabled = true
 enabled = true
 
 [posts.post-2]
-enabled = true
+enabled = false
 
 [posts.post-3]
-enabled = true
+enabled = false
 
 [posts.post-4]
-enabled = true
+enabled = false
 
 [posts.post-5]
-enabled = true
+enabled = false
