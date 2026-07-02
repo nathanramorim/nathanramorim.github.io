@@ -1,5 +1,6 @@
 ---
 import RetroLayout from '../layouts/RetroLayout.astro';
+import Avatar from '../presentation/components/Avatar.astro';
 import Terminal from '../presentation/components/Terminal.astro';
 import ProjectGrid from '../presentation/components/ProjectGrid.astro';
 import SkillsSection from '../presentation/components/SkillsSection.astro';
@@ -18,10 +19,13 @@ const featuredPosts = await GetFeaturedPosts(3);
 	description="Solutions Architect e Tech Lead especializado em Clean Architecture, ecossistema Azure e desenvolvimento orientado por IA. Conheça projetos, competências e artigos."
 	chromeTitle="nathan-amorim"
 >
-	<header class="index-hero">
-		<p class="eyebrow">whoami</p>
-		<h1>Nathan Amorim<span class="cursor">&nbsp;</span></h1>
-		<p>Solutions Architect · Tech Lead · Software Engineer, movido por desafios complexos e por transformar sistemas críticos em soluções escaláveis e resilientes.</p>
+	<header class="index-hero hero-with-avatar">
+		<Avatar size={120} />
+		<div>
+			<p class="eyebrow">whoami</p>
+			<h1>Nathan Amorim<span class="cursor">&nbsp;</span></h1>
+			<p>Solutions Architect · Tech Lead · Software Engineer, movido por desafios complexos e por transformar sistemas críticos em soluções escaláveis e resilientes.</p>
+		</div>
 	</header>
 
 	<Terminal />

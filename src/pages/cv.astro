@@ -1,5 +1,6 @@
 ---
 import RetroLayout from '../layouts/RetroLayout.astro';
+import Avatar from '../presentation/components/Avatar.astro';
 import ExperienceTimeline from '../presentation/components/ExperienceTimeline.astro';
 import EducationList from '../presentation/components/EducationList.astro';
 import SkillsSection from '../presentation/components/SkillsSection.astro';
@@ -14,10 +15,13 @@ const { experiences, education } = await GetExperienceHistory();
 	description="Trajetória profissional, formação acadêmica e competências técnicas de Nathan Amorim, Solutions Architect e Tech Lead."
 	chromeTitle="cv.md"
 >
-	<header class="index-hero">
-		<p class="eyebrow">cat curriculo.md</p>
-		<h1>Nathan Amorim<span class="cursor">&nbsp;</span></h1>
-		<p>Solutions Architect · Tech Lead · Software Engineer</p>
+	<header class="index-hero hero-with-avatar">
+		<Avatar size={96} />
+		<div>
+			<p class="eyebrow">cat curriculo.md</p>
+			<h1>Nathan Amorim<span class="cursor">&nbsp;</span></h1>
+			<p>Solutions Architect · Tech Lead · Software Engineer</p>
+		</div>
 	</header>
 
 	<section>

@@ -4,6 +4,9 @@ Este arquivo registra o histórico de entregas de produto deste projeto.
 
 ## Entregas
 
+### 2026-07-02 — Foto de perfil de volta ao site
+A foto de perfil voltou a aparecer, agora na página inicial e no currículo, com uma moldura que combina com o visual retrô do site.
+
 ### 2026-07-02 — Publicação incremental de artigos do blog
 Agora é possível preparar um artigo do blog com antecedência e só publicá-lo quando estiver pronto, sem precisar apagar ou reescrever nada — basta marcá-lo como publicado quando chegar a hora.
 
