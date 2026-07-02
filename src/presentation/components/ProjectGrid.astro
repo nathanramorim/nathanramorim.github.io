@@ -1,0 +1,96 @@
+---
+import type { Project } from '../../domain/entities/Project';
+
+interface Props {
+	projects: Project[];
+}
+
+const { projects } = Astro.props;
+---
+
+<section class="project-grid">
+	{
+		projects.map((project) => (
+			<article class="project-card">
+				<header class="project-card-header">
+					<span class="project-name">{project.name}</span>
+					<span class="project-version">{project.version}</span>
+				</header>
+				<p class="project-tagline">{project.tagline}</p>
+				<p class="project-description">{project.description}</p>
+				<div class="project-tags">
+					{project.tags.map((tag) => (
+						<span class="hashtag">#{tag.replace(/\s+/g, '')}</span>
+					))}
+				</div>
+				<a class="project-link" href={project.url} target="_blank" rel="noopener noreferrer">
+					ver pacote &rarr;
+				</a>
+			</article>
+		))
+	}
+</section>
+
+<style>
+	.project-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: 20px;
+		max-width: 760px;
+		margin: 0 auto 40px;
+		padding: 0 24px;
+	}
+
+	.project-card {
+		background: var(--panel);
+		border: 1px solid var(--panel-border);
+		border-radius: var(--radius);
+		padding: 20px 22px;
+	}
+
+	.project-card-header {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		margin-bottom: 8px;
+	}
+
+	.project-name {
+		font-family: var(--pixel);
+		font-size: 14px;
+		color: var(--cyan);
+	}
+
+	.project-version {
+		font-family: var(--mono);
+		font-size: 11px;
+		color: var(--text-dim);
+	}
+
+	.project-tagline {
+		font-family: var(--mono);
+		font-size: 12px;
+		color: var(--green);
+		margin: 0 0 10px;
+	}
+
+	.project-description {
+		font-family: var(--body);
+		font-size: 14px;
+		color: var(--text-dim);
+		line-height: 1.6;
+		margin: 0 0 14px;
+	}
+
+	.project-tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 6px;
+		margin-bottom: 14px;
+	}
+
+	.project-link {
+		font-family: var(--mono);
+		font-size: 13px;
+	}
+</style>
