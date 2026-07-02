@@ -2,9 +2,11 @@
 import { getCollection, render } from 'astro:content';
 import RetroLayout from '../../layouts/RetroLayout.astro';
 import { slugify } from '../../domain/utils/slugify';
+import { BlogConfigRepository } from '../../data/repositories/BlogConfigRepository';
 
 export async function getStaticPaths() {
-	const entries = await getCollection('blog');
+	const blogConfig = new BlogConfigRepository();
+	const entries = await getCollection('blog', (entry) => blogConfig.isEnabled(entry.id));
 	const sorted = [...entries].sort((a, b) => a.data.order - b.data.order);
 
 	return sorted.map((entry, index) => ({
