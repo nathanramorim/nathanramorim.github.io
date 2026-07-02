@@ -8,7 +8,10 @@ export async function GetAllPosts(): Promise<Post[]> {
 	const blogConfig = new BlogConfigRepository();
 
 	return entries
-		.filter((entry) => blogConfig.isEnabled(entry.id))
-		.map((entry) => ({ slug: slugify(entry.data.title), ...entry.data }))
+		.map((entry) => ({
+			...entry.data,
+			slug: slugify(entry.data.title),
+			enabled: blogConfig.isEnabled(entry.id),
+		}))
 		.sort((a, b) => b.order - a.order);
 }

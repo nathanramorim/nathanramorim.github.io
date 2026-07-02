@@ -258,6 +258,20 @@ h1.post-title{
 .index-item .idx-title{font-family:var(--body); font-weight:600; font-size:17px; color:var(--text);}
 .index-item .idx-goal{font-family:var(--body); font-size:14px; color:var(--text-dim); margin-top:6px;}
 
+.index-item-inactive{opacity:0.5; cursor:not-allowed;}
+.index-item-inactive:hover{border-color:var(--panel-border);}
+.idx-badge{
+  font-family:var(--mono);
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:0.4px;
+  color:var(--amber);
+  border:1px solid var(--amber);
+  border-radius:2px;
+  padding:1px 6px;
+  margin-left:6px;
+}
+
 /* responsividade móvel */
 @media (max-width: 640px){
   .chrome{flex-wrap:wrap; row-gap:8px; padding:10px 16px;}

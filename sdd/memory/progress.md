@@ -11,15 +11,15 @@ Fase 0-5 (Foundation → Avatar Photo)   [x] done — no ar em produção
 | — | — | nenhuma pendente |
 
 ## Próximo passo
-**Iniciar:** aguardando novo pedido de feature (`/nova-feature`) ou revisão do PR de feat-05-avatar-photo.
+**Iniciar:** aguardando novo pedido de feature (`/nova-feature`) ou revisão do PR `feat/blog-inactive-posts`.
 **Bloqueios:** —
 
 ## Handoff da última sessão
-- feat-05-avatar-photo concluída (PR aberto): `Avatar.astro` (astro:assets, moldura retro) integrado na home e no `/cv`.
-- Validado com build (WebP otimizado, 73kB→~1kB) e screenshots reais desktop/mobile.
-- Pendência aberta: `git stash` em `feat/blog-toggle-config` com edição manual de `blog.config.toml` (posts 2-5 desabilitados), ainda não resolvida com o usuário.
+- `feat/blog-inactive-posts` (PR aberto): posts desabilitados agora aparecem em `/blog` como inativos (selo "em breve", sem link) em vez de sumir; destaques da home continuam só com habilitados; rota `/blog/[slug]` continua sem acesso para desabilitados.
+- Favicon trocado do foguete padrão do Astro para um ícone pixel-art de space invader (verde, tema arcade), com `.ico` regenerado via `sharp`.
+- Deploy anterior (avatar + config de posts) já confirmado em produção.
 
 ## Última sessão
-- Implementação de feat-05-avatar-photo e abertura de PR.
+- Ajuste de UX de posts inativos + novo favicon; PR aberto para revisão.
 
 > Histórico completo em `progress-log.md`

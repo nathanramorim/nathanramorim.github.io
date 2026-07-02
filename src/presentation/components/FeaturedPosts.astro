@@ -10,12 +10,22 @@ const { posts } = Astro.props;
 
 <section class="index-list featured-posts">
 	{
-		posts.map((post) => (
-			<a class="index-item" href={`/blog/${post.slug}`}>
-				<div class="idx-eyebrow">{post.eyebrow}</div>
-				<div class="idx-title">{post.title}</div>
-				<div class="idx-goal">{post.summary}</div>
-			</a>
-		))
+		posts.map((post) =>
+			post.enabled ? (
+				<a class="index-item" href={`/blog/${post.slug}`}>
+					<div class="idx-eyebrow">{post.eyebrow}</div>
+					<div class="idx-title">{post.title}</div>
+					<div class="idx-goal">{post.summary}</div>
+				</a>
+			) : (
+				<div class="index-item index-item-inactive" aria-disabled="true">
+					<div class="idx-eyebrow">
+						{post.eyebrow} <span class="idx-badge">em breve</span>
+					</div>
+					<div class="idx-title">{post.title}</div>
+					<div class="idx-goal">{post.summary}</div>
+				</div>
+			)
+		)
 	}
 </section>
