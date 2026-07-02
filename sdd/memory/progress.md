@@ -2,25 +2,26 @@
 
 ## Status
 ```
-Fase 0-2 (Foundation, LP, Rotas)   [x] done
-Fase 3 — SEO/Polimento             [~] doing (03-5 pendente)
-Fase 4 — Blog Toggle Config        [x] done
+Fase 0-4 (Foundation → Blog Toggle)   [x] done — no ar em produção
+Fase 5 — Avatar Photo                 [ ] todo
 ```
 
 ## Features ativas
 | Feature | Branch | Status |
 |---------|--------|--------|
-| feat-03-seo-polimento | feat/seo-polimento | doing |
+| feat-05-avatar-photo | feat/avatar-photo | todo |
 
 ## Próximo passo
-**Iniciar:** revisar/mergear PRs #1→#5 na main; depois validar 03-5 (deploy real via Actions).
-**Bloqueios:** 03-5 exige push na `main`, só deve rodar após merge da cadeia de PRs.
+**Iniciar:** feat-05-avatar-photo (voltar a exibir a foto de avatar na home e no CV).
+**Bloqueios:** —
 
 ## Handoff da última sessão
-- feat-04-blog-toggle-config concluída (PR aberto): `blog.config.toml` + `BlogConfigRepository` controlam `enabled` por post; `GetAllPosts` e `getStaticPaths` de `/blog/[slug]` filtram desabilitados.
-- Testado desabilitando `post-5`: sumiu de `/blog`/home, sem rota gerada. Revertido para `true`.
+- PRs #1-#6 mergeados; `main` no ar em https://nathanramorim.github.io/ (deploy validado, 03-5 concluída).
+- Corrigido: Node 20→22 no workflow; Pages source legacy→workflow (GitHub Actions).
+- Branch `feat/avatar-photo` criada de `main`; spec em `feat-05-avatar-photo.md`.
+- Há um `git stash` em `feat/blog-toggle-config` com edição manual de `blog.config.toml` (posts 2-5 desabilitados) — preservado.
 
 ## Última sessão
-- Implementação de feat-04-blog-toggle-config e abertura de PR.
+- Deploy em produção validado; spec de feat-05-avatar-photo criada (sem implementação).
 
 > Histórico completo em `progress-log.md`
