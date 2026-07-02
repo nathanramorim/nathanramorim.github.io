@@ -11,15 +11,14 @@ Fase 0-5 (Foundation → Avatar Photo)   [x] done — no ar em produção
 | — | — | nenhuma pendente |
 
 ## Próximo passo
-**Iniciar:** aguardando novo pedido de feature (`/nova-feature`) ou revisão do PR `feat/blog-inactive-posts`.
+**Iniciar:** aguardando novo pedido de feature (`/nova-feature`).
 **Bloqueios:** —
 
 ## Handoff da última sessão
-- `feat/blog-inactive-posts` (PR aberto): posts desabilitados agora aparecem em `/blog` como inativos (selo "em breve", sem link) em vez de sumir; destaques da home continuam só com habilitados; rota `/blog/[slug]` continua sem acesso para desabilitados.
-- Favicon trocado do foguete padrão do Astro para um ícone pixel-art de space invader (verde, tema arcade), com `.ico` regenerado via `sharp`.
-- Deploy anterior (avatar + config de posts) já confirmado em produção.
+- PR `feat/blog-inactive-posts` mergeado (posts desabilitados visíveis em `/blog` como "em breve"; favicon arcade).
+- Deploy travou: GitHub Pages ficou com o deployment do commit `43fb6e2c9` marcado como `cancelled` (por causa de um timeout anterior) e recusou recriar um novo deployment para o mesmo SHA em `workflow_dispatch` repetidos ("Deployment cancelled" instantâneo). Solução: um novo commit em `main` (este) gera um SHA novo e destrava o próximo deploy automático.
 
 ## Última sessão
-- Ajuste de UX de posts inativos + novo favicon; PR aberto para revisão.
+- Troubleshooting de deploy travado no GitHub Pages (deployment cancelado preso no mesmo SHA).
 
 > Histórico completo em `progress-log.md`
