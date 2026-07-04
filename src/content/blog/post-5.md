@@ -22,4 +22,4 @@ Foi assim, tentativa após tentativa, que nasceu a metodologia por trás do **fo
 
 Olhando para trás, entendo que sempre estive fazendo Harness Engineering, só não tinha esse nome ainda. E é engraçado perceber que boa parte do que hoje vira artigo e discussão de mercado, muita gente que trabalha de perto com agentes de IA já vinha descobrindo na prática, no braço, resolvendo problema por problema.
 
-Se você constrói ou usa agentes de IA no seu trabalho e sente esse mesmo tipo de inconsistência que eu sentia, vale a pena olhar para o forge-sdd, não como uma ferramenta mágica, mas como um jeito estruturado de montar essa cozinha para os seus próprios projetos.
+Se você constrói ou usa agentes de IA no seu trabalho e sente esse mesmo tipo de inconsistência que eu sentia, vale a pena olhar para a iniciativa **Forge SDD**, não como uma ferramenta mágica, mas como um jeito estruturado de montar essa cozinha para os seus próprios projetos. Acesse [forge-sdd.vercel.app](https://forge-sdd.vercel.app) para conferir na prática.

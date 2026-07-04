@@ -1,12 +1,10 @@
 [
   {
     "slug": "forge-sdd",
-    "name": "forge-sdd",
-    "package": "@nathanramorim/forge-sdd",
-    "version": "v1.5.2",
-    "tagline": "Ferramenta de IA para Desenvolvimento",
-    "description": "Ferramenta criada para acelerar e padronizar o desenvolvimento de software orientado por IA. O Forge-SDD é uma CLI que scaffolda em segundos toda a estrutura de documentação e arquitetura de um projeto, tornando o contexto do sistema legível e consumível por assistentes de IA, aumentando a precisão das sugestões e reduzindo o tempo de onboarding técnico.",
-    "url": "https://www.npmjs.com/package/@nathanramorim/forge-sdd",
+    "name": "Forge SDD",
+    "tagline": "Metodologia e contexto para desenvolvimento com IA",
+    "description": "Uma iniciativa focada em padronizar o desenvolvimento de software guiado por Inteligência Artificial (Spec-Driven Development). O projeto estrutura todo o contexto de regras e arquitetura para que assistentes de IA compreendam profundamente o repositório, garantindo entregas mais precisas. Acesse o site oficial para conferir na prática.",
+    "url": "https://forge-sdd.vercel.app",
     "highlights": [
       { "title": "Produtividade", "description": "Estrutura completa scaffoldada em segundos" },
       { "title": "Contexto para IA", "description": "Documentação legível por LLMs nativamente" },

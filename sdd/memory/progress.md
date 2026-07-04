@@ -2,7 +2,7 @@
 
 ## Status
 ```
-Fase 0-5 (Foundation → Avatar Photo)   [x] done — no ar em produção
+Fase 0-6 (Foundation → Atualização Forge SDD Bio)   [x] done — no ar em produção
 ```
 
 ## Features ativas
