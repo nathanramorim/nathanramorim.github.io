@@ -3,7 +3,7 @@
 **Branch:** `claude/blog-post-publishing-pxi4y4`
 **Fase:** 7
 **Depende de:** `feat-04-blog-toggle-config`
-**Status:** `todo`
+**Status:** `done`
 
 ## Objetivo
 Ativar o próximo post do blog pronto para publicação editando manualmente `blog.config.toml`, criando uma PR e fazendo merge para deploy automático via GitHub Pages.
