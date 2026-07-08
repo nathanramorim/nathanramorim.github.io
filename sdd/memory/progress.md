@@ -8,10 +8,10 @@ Fase 0-6 (Foundation → Atualização Forge SDD Bio)   [x] done — no ar em pr
 ## Features ativas
 | Feature | Branch | Status |
 |---------|--------|--------|
-| — | — | nenhuma pendente |
+| feat-07-blog-post-publishing | claude/blog-post-publishing-pxi4y4 | todo |
 
 ## Próximo passo
-**Iniciar:** aguardando novo pedido de feature (`/nova-feature`).
+**Iniciar:** implementar feat-07 (blog-post-publishing) — script para ativar próximo post.
 **Bloqueios:** —
 
 ## Handoff da última sessão
