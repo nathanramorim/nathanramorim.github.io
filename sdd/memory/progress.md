@@ -6,12 +6,12 @@ Fase 0-6 (Foundation → Atualização Forge SDD Bio)   [x] done — no ar em pr
 ```
 
 ## Features ativas
-| Feature | Branch | Status |
-|---------|--------|--------|
-| — | — | nenhuma pendente |
+| Feature | Branch | Status | PR |
+|---------|--------|--------|-----|
+| feat-07-blog-post-publishing | claude/blog-post-publishing-pxi4y4 | in-progress | #11 |
 
 ## Próximo passo
-**Iniciar:** aguardando novo pedido de feature (`/nova-feature`).
+**Aguardando:** aprovação e merge da PR #11 (post-2 activation).
 **Bloqueios:** —
 
 ## Handoff da última sessão
