@@ -21,23 +21,70 @@ const { experiences, education } = await GetExperienceHistory();
 			<p class="eyebrow">cat curriculo.md</p>
 			<h1>Nathan Amorim<span class="cursor">&nbsp;</span></h1>
 			<p>Solutions Architect · Tech Lead · Software Engineer</p>
+			<p class="print-only cv-print-contact">
+				nathan.ramorim@gmail.com · linkedin.com/in/nathanamorim · github.com/nathanramorim
+			</p>
 		</div>
 	</header>
 
+	<div class="cv-download-bar screen-only">
+		<button id="cv-download-pdf" type="button" class="cv-download-btn">⭳ Baixar currículo em PDF</button>
+	</div>
+
 	<section>
 		<p class="eyebrow" style="text-align: center;">tail -f experiencia.log</p>
+		<h2 class="print-only print-heading">Experiência Profissional</h2>
 		<ExperienceTimeline experiences={experiences} />
 	</section>
 
 	<section>
 		<p class="eyebrow" style="text-align: center;">cat formacao.md</p>
+		<h2 class="print-only print-heading">Formação Acadêmica</h2>
 		<EducationList education={education} />
 	</section>
 
 	<section>
 		<p class="eyebrow" style="text-align: center;">ls skills/</p>
+		<h2 class="print-only print-heading">Competências Técnicas</h2>
 		<SkillsSection />
 	</section>
 
 	<SiteFooter />
 </RetroLayout>
+
+<script>
+	document.getElementById('cv-download-pdf')?.addEventListener('click', () => {
+		window.print();
+	});
+</script>
+
+<style>
+	.cv-download-bar {
+		max-width: 760px;
+		margin: 0 auto 32px;
+		padding: 0 24px;
+		display: flex;
+		justify-content: center;
+	}
+
+	.cv-download-btn {
+		font-family: var(--mono);
+		font-size: 13px;
+		color: var(--bg);
+		background: var(--green);
+		border: none;
+		border-radius: var(--radius);
+		padding: 10px 18px;
+		cursor: pointer;
+		transition: filter 0.15s ease;
+	}
+
+	.cv-download-btn:hover {
+		filter: brightness(1.1);
+	}
+
+	.cv-download-btn:focus-visible {
+		outline: 2px solid var(--cyan);
+		outline-offset: 2px;
+	}
+</style>

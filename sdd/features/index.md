@@ -19,3 +19,4 @@ main (feat-00 a feat-04 já mergeadas e em produção)
 | 04 | feat-04-blog-toggle-config.md | feat/blog-toggle-config | 4 | done |
 | 05 | feat-05-avatar-photo.md | feat/avatar-photo | 5 | done |
 | 06 | feat-06-update-forge-sdd-bio.md | feat/update-forge-sdd-bio | 6 | done |
+| 08 | feat-08-cv-pdf-export.md | claude/resume-pdf-export-86hi8l | 8 | done |

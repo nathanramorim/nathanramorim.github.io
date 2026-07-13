@@ -32,4 +32,11 @@ const { size = 120 } = Astro.props;
 		display: block;
 		background: var(--panel);
 	}
+
+	@media print {
+		.avatar-frame {
+			box-shadow: none;
+			background: #ccc;
+		}
+	}
 </style>
