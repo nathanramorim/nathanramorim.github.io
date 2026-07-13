@@ -65,4 +65,36 @@ const { education } = Astro.props;
 		line-height: 1.6;
 		margin: 0;
 	}
+
+	@media print {
+		.education-list {
+			padding: 0;
+			margin: 0 0 20px;
+		}
+
+		.edu-item {
+			background: #fff;
+			border: none;
+			border-bottom: 1px solid #ddd;
+			border-radius: 0;
+			padding: 0 0 14px;
+			break-inside: avoid;
+		}
+
+		.edu-degree {
+			color: #111;
+		}
+
+		.edu-school {
+			color: #333;
+		}
+
+		.edu-period {
+			color: #555;
+		}
+
+		.edu-activities {
+			color: #333;
+		}
+	}
 </style>

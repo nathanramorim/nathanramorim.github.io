@@ -141,4 +141,63 @@ const { experiences } = Astro.props;
 		flex-wrap: wrap;
 		gap: 6px;
 	}
+
+	@media print {
+		.experience-timeline {
+			padding: 0;
+			margin: 0 0 20px;
+		}
+
+		.company-group {
+			background: #fff;
+			border: none;
+			border-bottom: 1px solid #ddd;
+			border-radius: 0;
+			padding: 0 0 14px;
+			margin-bottom: 14px;
+			break-inside: avoid;
+		}
+
+		.company-header {
+			border-bottom: none;
+			padding-bottom: 4px;
+		}
+
+		.company-name {
+			font-family: var(--body);
+			font-size: 14px;
+			font-weight: 700;
+			color: #111;
+		}
+
+		.company-type,
+		.company-tenure {
+			color: #555;
+		}
+
+		.role-item {
+			break-inside: avoid;
+		}
+
+		.role-title {
+			color: #111;
+		}
+
+		.role-badge {
+			color: #111;
+			border-color: #999;
+		}
+
+		.role-period {
+			color: #555;
+		}
+
+		.role-company-detail {
+			color: #333;
+		}
+
+		.role-description {
+			color: #222;
+		}
+	}
 </style>
