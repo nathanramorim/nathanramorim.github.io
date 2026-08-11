@@ -1,49 +1,539 @@
 ---
 import RetroLayout from '../layouts/RetroLayout.astro';
 import Avatar from '../presentation/components/Avatar.astro';
-import Terminal from '../presentation/components/Terminal.astro';
-import ProjectGrid from '../presentation/components/ProjectGrid.astro';
-import SkillsSection from '../presentation/components/SkillsSection.astro';
 import FeaturedPosts from '../presentation/components/FeaturedPosts.astro';
 import SiteFooter from '../presentation/components/SiteFooter.astro';
-import { GetProjectsList } from '../domain/usecases/GetProjectsList';
-import { ProjectRepository } from '../data/repositories/ProjectRepository';
 import { GetFeaturedPosts } from '../domain/usecases/GetFeaturedPosts';
 
-const projects = await new GetProjectsList(new ProjectRepository()).execute();
-const featuredPosts = await GetFeaturedPosts(3);
+const featuredPosts = await GetFeaturedPosts(2);
+
+const WHATSAPP_URL =
+	'https://wa.me/553198953514?text=Ol%C3%A1%20Nathan%2C%20vim%20pelo%20seu%20site%20e%20quero%20conversar%20sobre%20um%20projeto.';
+
+const solutions = [
+	{
+		icon: '🖥️',
+		title: 'Sistemas e produtos digitais',
+		description:
+			'Da plataforma que sustenta uma operação grande ao sistema que organiza o dia a dia de um negócio menor: sistemas web, SaaS e painéis sob medida para o seu processo.',
+		tags: ['Sistemas web', 'SaaS', 'Dashboards'],
+	},
+	{
+		icon: '🔌',
+		title: 'Integrações e automação',
+		description:
+			'Conectando o que sua empresa já usa, ERPs, pagamentos, WhatsApp e outros serviços, e eliminando tarefas manuais que consomem tempo da equipe.',
+		tags: ['APIs', 'WhatsApp & ERPs', 'Automação'],
+	},
+	{
+		icon: '🤖',
+		title: 'Inteligência Artificial aplicada',
+		description:
+			'De um agente simples que atende clientes a automações inteligentes dentro de processos complexos, sempre resolvendo um problema real do negócio.',
+		tags: ['LLMs', 'Agentes de IA', 'Automação inteligente'],
+	},
+	{
+		icon: '🏗️',
+		title: 'Arquitetura e modernização',
+		description:
+			'Estruturação técnica de projetos novos ou evolução de sistemas legados, com foco em performance, escalabilidade e custo, sem parar a operação.',
+		tags: ['Arquitetura', 'Performance', 'Modernização'],
+	},
+];
+
+const processSteps = [
+	{
+		num: '01',
+		title: 'Entendimento do processo e do negócio',
+		description: 'Antes de escrever código, procuro entender como funciona o processo e a operação, e qual é o objetivo real do negócio.',
+	},
+	{
+		num: '02',
+		title: 'Definição da solução',
+		description: 'Analiso os requisitos e proponho uma solução técnica adequada, considerando escopo, prazo, custo e evolução.',
+	},
+	{
+		num: '03',
+		title: 'Desenvolvimento',
+		description: 'Implemento com boas práticas de engenharia de software e comunicação constante durante o projeto.',
+	},
+	{
+		num: '04',
+		title: 'Validação e entrega',
+		description: 'Testo a solução, corrijo os pontos necessários e preparo a entrega para produção.',
+	},
+];
+
+const techGroups = [
+	{ title: 'Back-end', tags: ['Java', 'Node.js', 'PHP / Laravel', '.NET / C#'] },
+	{ title: 'Front-end', tags: ['React', 'Next.js', 'TypeScript'] },
+	{ title: 'Banco de dados', tags: ['SQL Server', 'PostgreSQL', 'MySQL'] },
+	{ title: 'Cloud & DevOps', tags: ['Azure', 'Docker', 'Kubernetes', 'CI/CD'] },
+	{ title: 'Arquitetura', tags: ['APIs REST', 'Microsserviços', 'Sistemas distribuídos', 'Orientada a eventos'] },
+	{ title: 'Inteligência Artificial', tags: ['Integração com LLMs', 'Agentes de IA', 'Automações inteligentes'] },
+];
 ---
 
 <RetroLayout
-	title="Nathan Amorim – Tech Lead & Solution Architect"
-	description="Solutions Architect e Tech Lead especializado em Clean Architecture, ecossistema Azure e desenvolvimento orientado por IA. Conheça projetos, competências e artigos."
+	title="Nathan Amorim · Desenvolvedor Full Stack Sênior"
+	description="Desenvolvedor Full Stack Sênior, Tech Lead e Arquiteto de Soluções. Entendo processo e operação para transformar problemas de negócio em sistemas que funcionam."
 	chromeTitle="nathan-amorim"
 >
 	<header class="index-hero hero-with-avatar">
 		<Avatar size={120} />
 		<div>
-			<p class="eyebrow">whoami</p>
-			<h1>Nathan Amorim<span class="cursor">&nbsp;</span></h1>
-			<p>Solutions Architect · Tech Lead · Software Engineer, movido por desafios complexos e por transformar sistemas críticos em soluções escaláveis e resilientes.</p>
+			<p class="eyebrow">Disponível para novos projetos</p>
+			<h1>Tem um problema no seu negócio? Vamos entender <span class="accent">o que realmente precisa mudar.</span><span class="cursor">&nbsp;</span></h1>
+			<p>
+				Sou Nathan Amorim, resolvedor de problemas, com tecnologia. Desenvolvedor Full Stack Sênior,
+				Tech Lead e Arquiteto de Soluções, com mais de 10 anos de experiência. Nem todo problema se
+				resolve com software. Por isso começo entendendo o processo e a operação do seu negócio,
+				para só então definir se, como e por que a tecnologia é o caminho certo.
+			</p>
+			<div class="hero-actions">
+				<a class="btn-primary" href={WHATSAPP_URL} target="_blank" rel="noopener">💬 Falar sobre meu projeto</a>
+				<a class="btn-outline" href="/cv">Ver currículo completo</a>
+			</div>
 		</div>
 	</header>
 
-	<Terminal />
+	<div class="question-banner">
+		<p>
+			Desenvolvimento de software não deveria começar por "qual tecnologia vamos usar?". Deveria
+			começar por "como funciona o processo que esse software vai sustentar?"
+		</p>
+		<a class="btn-outline banner-cta" href={WHATSAPP_URL} target="_blank" rel="noopener">Contar meu problema</a>
+	</div>
 
 	<section>
-		<p class="eyebrow" style="text-align: center;">cat projetos/</p>
-		<ProjectGrid projects={projects} />
+		<p class="eyebrow" style="text-align: center;">O que eu resolvo</p>
+		<h2 class="section-title">O que posso desenvolver para sua empresa</h2>
+		<p class="section-lead">
+			De uma operação corporativa complexa a um negócio local que precisa organizar o crescimento,
+			a lógica é a mesma: entender o processo antes de escrever código.
+		</p>
+		<div class="solutions-grid">
+			{
+				solutions.map((solution) => (
+					<div class="solution-card">
+						<div class="solution-icon">{solution.icon}</div>
+						<h3>{solution.title}</h3>
+						<p>{solution.description}</p>
+						<div class="solution-tags">
+							{solution.tags.map((tag) => (
+								<span class="hashtag">{tag}</span>
+							))}
+						</div>
+					</div>
+				))
+			}
+		</div>
+	</section>
+
+	<section class="process-section">
+		<p class="eyebrow" style="text-align: center;">Minha forma de trabalhar</p>
+		<h2 class="section-title">Do problema à entrega em produção</h2>
+		<div class="process-grid">
+			{
+				processSteps.map((step) => (
+					<div class="process-step">
+						<div class="process-num">{step.num}</div>
+						<h3>{step.title}</h3>
+						<p>{step.description}</p>
+					</div>
+				))
+			}
+		</div>
 	</section>
 
 	<section>
-		<p class="eyebrow" style="text-align: center;">ls skills/</p>
-		<SkillsSection />
+		<div class="about-grid">
+			<div class="about-text">
+				<p class="eyebrow">Sobre mim</p>
+				<h2 class="about-title">Entender o processo primeiro, o código depois</h2>
+				<p>
+					Sou <strong>Desenvolvedor Full Stack Sênior</strong>, Tech Lead e Arquiteto de Soluções,
+					com mais de <strong>10 anos de experiência</strong> em desenvolvimento de software.
+				</p>
+				<p>
+					Ao longo da minha carreira, deixei de atuar apenas na implementação de código e passei a
+					trabalhar também na <span class="hl">definição de soluções, arquitetura, performance,
+					integração de sistemas e liderança técnica</span> de equipes.
+				</p>
+				<p>
+					Não entrego só software. Antes de desenhar qualquer solução, busco entender como funciona
+					o <strong>processo e a operação</strong> do seu negócio, porque é esse entendimento que
+					define, na prática, como o sistema precisa ser construído para funcionar.
+				</p>
+			</div>
+
+			<div class="why-card">
+				<p class="eyebrow why-eyebrow">Por que trabalhar comigo?</p>
+				<blockquote>
+					Porque desenvolvimento de software não deveria começar pela pergunta:
+					<br /><span class="no">"Qual tecnologia vamos usar?"</span>
+					<br />Deveria começar por:
+					<br /><span class="yes">"Qual problema precisamos resolver?"</span>
+				</blockquote>
+				<p class="why-small">
+					Se você já tem um projeto em mente, um sistema que precisa evoluir ou um processo que
+					está consumindo tempo da sua equipe, podemos conversar sobre a melhor forma de
+					transformar isso em uma solução.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="tech-section">
+		<p class="eyebrow" style="text-align: center;">Tecnologias</p>
+		<h2 class="section-title">Tecnologias que utilizo</h2>
+		<div class="tech-groups">
+			{
+				techGroups.map((group) => (
+					<div class="tech-group">
+						<p class="tech-group-title">{group.title}</p>
+						<div class="solution-tags">
+							{group.tags.map((tag) => (
+								<span class="hashtag">{tag}</span>
+							))}
+						</div>
+					</div>
+				))
+			}
+		</div>
 	</section>
 
 	<section>
-		<p class="eyebrow" style="text-align: center;">tail -f blog/destaques.log</p>
+		<p class="eyebrow" style="text-align: center;">Blog</p>
 		<FeaturedPosts posts={featuredPosts} />
+	</section>
+
+	<section class="footer-cta">
+		<p class="eyebrow" style="text-align: center;">Vamos conversar?</p>
+		<h2 class="section-title">Transforme seu problema em uma solução que funciona</h2>
+		<p class="section-lead">
+			Se você já tem um projeto em mente, um sistema que precisa evoluir ou um processo que está
+			consumindo tempo da sua equipe, vamos conversar sobre a melhor forma de resolver isso.
+		</p>
+		<div class="footer-actions">
+			<a class="btn-primary" href={WHATSAPP_URL} target="_blank" rel="noopener">💬 Falar no WhatsApp</a>
+			<a class="btn-outline" href="https://linkedin.com/in/nathanamorim" target="_blank" rel="noopener">💼 LinkedIn</a>
+		</div>
 	</section>
 
 	<SiteFooter />
 </RetroLayout>
+
+<style>
+	.accent {
+		color: var(--cyan);
+	}
+
+	.hero-actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 12px;
+		margin-top: 20px;
+	}
+
+	.btn-primary,
+	.btn-outline {
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+		font-family: var(--body);
+		font-size: 0.88rem;
+		font-weight: 700;
+		padding: 12px 22px;
+		border-radius: 10px;
+		border: 1px solid transparent;
+	}
+
+	.btn-primary {
+		background: var(--cyan);
+		color: #fff !important;
+	}
+
+	.btn-primary:hover {
+		background: var(--green);
+		text-decoration: none;
+	}
+
+	.btn-outline {
+		background: #fff;
+		color: var(--text) !important;
+		border-color: var(--panel-border);
+	}
+
+	.btn-outline:hover {
+		border-color: var(--cyan);
+		color: var(--cyan) !important;
+		text-decoration: none;
+	}
+
+	.question-banner {
+		max-width: 760px;
+		margin: 32px auto 0;
+		padding: 0 24px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		gap: 20px;
+	}
+
+	.question-banner p {
+		max-width: 520px;
+		font-family: var(--body);
+		font-weight: 700;
+		font-size: 1rem;
+		color: var(--text);
+		line-height: 1.5;
+		margin: 0;
+	}
+
+	.banner-cta {
+		white-space: nowrap;
+	}
+
+	.section-title {
+		max-width: 760px;
+		margin: 0 auto 12px;
+		padding: 0 24px;
+		font-family: var(--body);
+		font-weight: 800;
+		font-size: 1.5rem;
+		color: var(--text);
+		text-align: center;
+	}
+
+	.section-lead {
+		max-width: 640px;
+		margin: 0 auto 32px;
+		padding: 0 24px;
+		font-family: var(--body);
+		color: var(--text-dim);
+		font-size: 0.95rem;
+		text-align: center;
+	}
+
+	.solutions-grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 16px;
+		max-width: 760px;
+		margin: 0 auto 40px;
+		padding: 0 24px;
+	}
+
+	.solution-card {
+		background: var(--panel);
+		border: 1px solid var(--panel-border);
+		border-radius: var(--radius);
+		padding: 22px;
+	}
+
+	.solution-icon {
+		width: 38px;
+		height: 38px;
+		border-radius: 10px;
+		background: #eff4ff;
+		display: grid;
+		place-items: center;
+		font-size: 17px;
+		margin-bottom: 12px;
+	}
+
+	.solution-card h3 {
+		font-family: var(--body);
+		font-weight: 700;
+		font-size: 0.98rem;
+		color: var(--text);
+		margin: 0 0 8px;
+	}
+
+	.solution-card p {
+		font-family: var(--body);
+		font-size: 0.84rem;
+		color: var(--text-dim);
+		line-height: 1.6;
+		margin: 0 0 12px;
+	}
+
+	.solution-tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 6px;
+	}
+
+	.process-section {
+		background: var(--panel);
+		padding-top: 48px;
+		padding-bottom: 48px;
+	}
+
+	.process-grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 16px;
+		max-width: 760px;
+		margin: 0 auto;
+		padding: 0 24px;
+	}
+
+	.process-step {
+		background: #fff;
+		border: 1px solid var(--panel-border);
+		border-radius: var(--radius);
+		padding: 20px;
+	}
+
+	.process-num {
+		font-family: var(--body);
+		font-weight: 900;
+		font-size: 1.4rem;
+		color: var(--panel-border-strong);
+		margin-bottom: 8px;
+	}
+
+	.process-step h3 {
+		font-family: var(--body);
+		font-weight: 700;
+		font-size: 0.9rem;
+		color: var(--text);
+		margin: 0 0 6px;
+	}
+
+	.process-step p {
+		font-family: var(--body);
+		font-size: 0.8rem;
+		color: var(--text-dim);
+		line-height: 1.6;
+		margin: 0;
+	}
+
+	.about-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 40px;
+		max-width: 900px;
+		margin: 0 auto;
+		padding: 0 24px;
+		align-items: start;
+	}
+
+	.about-title {
+		font-family: var(--body);
+		font-weight: 800;
+		font-size: 1.3rem;
+		color: var(--text);
+		margin: 0 0 16px;
+	}
+
+	.about-text p {
+		font-family: var(--body);
+		font-size: 0.9rem;
+		color: var(--text-dim);
+		line-height: 1.8;
+		margin: 0 0 12px;
+	}
+
+	.about-text strong {
+		color: var(--text);
+	}
+
+	.about-text .hl {
+		color: var(--cyan);
+		font-weight: 600;
+	}
+
+	.why-card {
+		background: var(--text);
+		color: #fff;
+		border-radius: var(--radius);
+		padding: 28px;
+	}
+
+	.why-eyebrow {
+		color: #93c5fd !important;
+	}
+
+	.why-card blockquote {
+		font-family: var(--body);
+		font-size: 1rem;
+		font-weight: 600;
+		line-height: 1.6;
+		margin: 0 0 16px;
+	}
+
+	.why-card .no {
+		color: #f87171;
+		text-decoration: line-through;
+		opacity: 0.7;
+	}
+
+	.why-card .yes {
+		color: #93c5fd;
+	}
+
+	.why-small {
+		font-family: var(--body);
+		font-size: 0.84rem;
+		color: #cbd5e1;
+		margin: 0;
+		line-height: 1.6;
+	}
+
+	.tech-section {
+		padding-top: 8px;
+	}
+
+	.tech-groups {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 16px;
+		max-width: 760px;
+		margin: 0 auto 40px;
+		padding: 0 24px;
+	}
+
+	.tech-group {
+		background: var(--panel);
+		border: 1px solid var(--panel-border);
+		border-radius: var(--radius);
+		padding: 18px;
+	}
+
+	.tech-group-title {
+		font-family: var(--body);
+		font-weight: 700;
+		font-size: 0.82rem;
+		color: var(--cyan);
+		margin: 0 0 10px;
+	}
+
+	.footer-cta {
+		text-align: center;
+		padding-top: 56px;
+		padding-bottom: 8px;
+	}
+
+	.footer-actions {
+		display: flex;
+		justify-content: center;
+		gap: 12px;
+		flex-wrap: wrap;
+	}
+
+	@media (max-width: 640px) {
+		.solutions-grid,
+		.process-grid,
+		.tech-groups {
+			grid-template-columns: 1fr;
+		}
+
+		.about-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>
