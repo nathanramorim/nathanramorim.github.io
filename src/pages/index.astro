@@ -146,7 +146,7 @@ const techGroups = [
 		<a class="btn-outline banner-cta" href={WHATSAPP_URL} target="_blank" rel="noopener">Contar meu problema</a>
 	</div>
 
-	<section>
+	<section class="solutions-section">
 		<p class="eyebrow" style="text-align: center;">O que eu resolvo</p>
 		<h2 class="section-title">O que posso desenvolver para sua empresa</h2>
 		<p class="section-lead">
@@ -187,7 +187,7 @@ const techGroups = [
 		</div>
 	</section>
 
-	<section>
+	<section class="about-section">
 		<div class="about-grid">
 			<div class="about-text">
 				<p class="eyebrow">Sobre mim</p>
@@ -258,7 +258,7 @@ const techGroups = [
 		/>
 	</section>
 
-	<section>
+	<section class="blog-section">
 		<p class="eyebrow" style="text-align: center;">Blog</p>
 		<FeaturedPosts posts={featuredPosts} />
 	</section>
@@ -510,12 +510,16 @@ const techGroups = [
 		text-align: center;
 	}
 
+	.solutions-section {
+		padding: 72px 0;
+	}
+
 	.solutions-grid {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		gap: 16px;
 		max-width: 760px;
-		margin: 0 auto 40px;
+		margin: 0 auto;
 		padding: 0 24px;
 	}
 
@@ -561,8 +565,7 @@ const techGroups = [
 
 	.process-section {
 		background: var(--panel);
-		padding-top: 48px;
-		padding-bottom: 48px;
+		padding: 72px 0;
 	}
 
 	.process-grid {
@@ -615,10 +618,14 @@ const techGroups = [
 		align-items: start;
 	}
 
+	.about-section {
+		padding: 72px 0;
+	}
+
 	.about-title {
 		font-family: var(--body);
 		font-weight: 800;
-		font-size: 1.3rem;
+		font-size: 1.5rem;
 		color: var(--text);
 		margin: 0 0 16px;
 	}
@@ -678,7 +685,7 @@ const techGroups = [
 	}
 
 	.tech-section {
-		padding-top: 8px;
+		padding: 72px 0;
 	}
 
 	.tech-groups {
@@ -686,7 +693,7 @@ const techGroups = [
 		grid-template-columns: repeat(3, 1fr);
 		gap: 16px;
 		max-width: 760px;
-		margin: 0 auto 40px;
+		margin: 0 auto;
 		padding: 0 24px;
 	}
 
@@ -707,8 +714,7 @@ const techGroups = [
 
 	.footer-cta {
 		text-align: center;
-		padding-top: 56px;
-		padding-bottom: 8px;
+		padding: 72px 0;
 	}
 
 	.footer-actions {
@@ -720,8 +726,15 @@ const techGroups = [
 
 	.resume-section {
 		background: var(--panel);
-		padding-top: 56px;
-		padding-bottom: 8px;
+		padding: 72px 0;
+	}
+
+	.blog-section {
+		padding: 72px 0;
+	}
+
+	.blog-section :global(.index-list) {
+		margin: 0 auto;
 	}
 
 	@media (max-width: 900px) {
