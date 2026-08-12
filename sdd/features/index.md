@@ -21,4 +21,5 @@ main (feat-00 a feat-04 já mergeadas e em produção)
 | 06 | feat-06-update-forge-sdd-bio.md | feat/update-forge-sdd-bio | 6 | done |
 | 07 | feat-07-blog-post-publishing.md | claude/blog-post-publishing-pxi4y4 | 7 | done |
 | 08 | feat-08-cv-pdf-export.md | claude/resume-pdf-export-86hi8l | 8 | done |
-| 09 | feat-09-blog-post-publishing-post-3.md | claude/publish-post-3 | 9 | in-progress |
+| 09 | feat-09-blog-post-publishing-post-3.md | claude/publish-post-3 | 9 | done |
+| 10 | feat-10-eyebrow-badge-consistency.md | main | 10 | done |

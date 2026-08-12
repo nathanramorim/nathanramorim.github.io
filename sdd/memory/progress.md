@@ -1,25 +1,39 @@
-# Progress — meu-projeto
+# Progress — nathan-amorim (site pessoal)
 
 ## Status
 ```
-Fase 0-8 (Foundation → CV PDF Export)   [x] done — no ar em produção
+Fase 0-10 (Foundation → Eyebrow Badge Consistency)   [x] done — no ar em produção
 ```
 
 ## Features ativas
 | Feature | Branch | Status | PR |
 |---------|--------|--------|-----|
-| feat-09-blog-post-publishing-post-3 | claude/publish-post-3 | in-progress | — |
+| — | — | — | — |
 
 ## Próximo passo
-**Aguardando:** criação e aprovação da PR de `feat-09` (ativação do post-3).
+**Aguardando:** nenhuma feature em andamento no momento.
 **Bloqueios:** —
 
 ## Handoff da última sessão
-- PR #11 (post-2 activation) e PR #12 (feat-08-cv-pdf-export) já mergeadas em `main`.
-- Post-3 ("Os quatro pilares de uma cozinha bem montada") ativado em `blog.config.toml` na branch `claude/publish-post-3`; build valida rota `/blog/os-quatro-pilares-de-uma-cozinha-bem-montada`. Falta abrir PR e mergear.
-- Deploy via GitHub Pages funciona automaticamente a cada merge em `main`.
+- Site inteiro retematizado de retro-terminal (dark) para tema claro/azul
+  com Montserrat, mensagem focada em "o que eu resolvo" em vez de stack
+  técnica (feat direto em `main`, sem branch dedicada — ver commits
+  `654526d`..`f4c10f6`..atual).
+- Home passou a incluir a seção completa de currículo (case, experiência,
+  skills, sidebar com números/contato/formação/idiomas/certificações),
+  reaproveitada também em `/cv` via componente `ResumeSection`.
+- `feat-10-eyebrow-badge-consistency`: corrigidos bugs reais de CSS
+  (eyebrow perdendo cor/tamanho por especificidade, pill esticando 100% da
+  largura, `.question-banner` sem background, falta de variante para fundo
+  escuro, espaçamento entre seções inconsistente). Padrão `.eyebrow` /
+  `.eyebrow-on-dark` e ritmo `padding: 72px 0` documentados na
+  `constitution.md`.
+- Deploy via GitHub Pages funciona automaticamente a cada merge/push em
+  `main`.
 
 ## Última sessão
-- Ativação do post-3 do blog (`feat-09-blog-post-publishing-post-3`).
+- `feat-10-eyebrow-badge-consistency`: consistência do badge eyebrow,
+  contraste sobre fundo escuro, espaçamento entre seções e `color-scheme`
+  para evitar dark mode automático do navegador.
 
 > Histórico completo em `progress-log.md`

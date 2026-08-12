@@ -129,12 +129,12 @@ main{
   display:inline-flex;
   align-items:center;
   gap:8px;
-  font-family:var(--mono);
-  font-size:12px;
-  font-weight:800;
+  font-family:var(--mono) !important;
+  font-size:12px !important;
+  font-weight:800 !important;
   letter-spacing:1.2px;
   text-transform:uppercase;
-  color:var(--cyan);
+  color:var(--cyan) !important;
   background:#eff4ff;
   border:1px solid var(--panel-border-strong);
   padding:6px 14px;
@@ -147,6 +147,13 @@ main{
   width:fit-content;
   margin-left:auto;
   margin-right:auto;
+}
+
+/* padrão: eyebrow sobre fundo escuro (cards dark, ex. why-card) */
+.eyebrow-on-dark{
+  color:#93c5fd !important;
+  background:rgba(255,255,255,.08) !important;
+  border-color:rgba(255,255,255,.2) !important;
 }
 
 h1.post-title{
