@@ -143,7 +143,9 @@ main{
 /* alguns eyebrows recebem text-align:center inline para se centralizar na seção */
 .eyebrow[style*="center"]{
   display:flex;
-  justify-content:center;
+  width:fit-content;
+  margin-left:auto;
+  margin-right:auto;
 }
 
 h1.post-title{

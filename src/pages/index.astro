@@ -455,9 +455,11 @@ const techGroups = [
 	}
 
 	.question-banner {
+		background: linear-gradient(135deg, var(--cyan), var(--green));
 		max-width: 760px;
 		margin: 32px auto 0;
-		padding: 0 24px;
+		padding: 28px 32px;
+		border-radius: var(--radius);
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
@@ -470,13 +472,21 @@ const techGroups = [
 		font-family: var(--body);
 		font-weight: 700;
 		font-size: 1rem;
-		color: var(--text);
+		color: #fff;
 		line-height: 1.5;
 		margin: 0;
 	}
 
 	.banner-cta {
 		white-space: nowrap;
+		background: rgba(255, 255, 255, 0.14) !important;
+		border-color: rgba(255, 255, 255, 0.4) !important;
+		color: #fff !important;
+	}
+
+	.banner-cta:hover {
+		background: #fff !important;
+		color: var(--cyan) !important;
 	}
 
 	.section-title {
