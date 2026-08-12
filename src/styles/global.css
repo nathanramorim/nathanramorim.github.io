@@ -125,13 +125,25 @@ main{
 }
 
 .eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
   font-family:var(--mono);
   font-size:12px;
   font-weight:800;
   letter-spacing:1.2px;
   text-transform:uppercase;
   color:var(--cyan);
+  background:#eff4ff;
+  border:1px solid var(--panel-border-strong);
+  padding:6px 14px;
+  border-radius:999px;
   margin:0 0 18px;
+}
+/* alguns eyebrows recebem text-align:center inline para se centralizar na seção */
+.eyebrow[style*="center"]{
+  display:flex;
+  justify-content:center;
 }
 
 h1.post-title{

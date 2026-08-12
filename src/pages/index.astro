@@ -85,9 +85,8 @@ const techGroups = [
 	description="Desenvolvedor Full Stack Sênior, Tech Lead e Arquiteto de Soluções. Entendo processo e operação para transformar problemas de negócio em sistemas que funcionam."
 	chromeTitle="nathan-amorim"
 >
-	<header class="index-hero hero-with-avatar">
-		<Avatar size={120} />
-		<div>
+	<header class="hero-grid">
+		<div class="hero-copy">
 			<p class="eyebrow">Disponível para novos projetos</p>
 			<h1>Tem um problema no seu negócio? Vamos entender <span class="accent">o que realmente precisa mudar.</span><span class="cursor">&nbsp;</span></h1>
 			<p>
@@ -99,6 +98,42 @@ const techGroups = [
 			<div class="hero-actions">
 				<a class="btn-primary" href={WHATSAPP_URL} target="_blank" rel="noopener">💬 Falar sobre meu projeto</a>
 				<a class="btn-outline" href="/cv">Ver currículo completo</a>
+			</div>
+			<div class="hero-meta">
+				<span class="meta-chip">📍 Barbacena, MG · Brasil</span>
+				<span class="meta-chip">🔍 Processo &amp; Operação</span>
+				<span class="meta-chip">🏗 Arquitetura de Soluções</span>
+				<span class="meta-chip">⚡ Tech Lead</span>
+			</div>
+		</div>
+
+		<div class="hero-card">
+			<Avatar size={120} />
+			<div class="hero-card-name">Nathan Amorim</div>
+			<div class="hero-card-role">Resolvedor de problemas, com tecnologia</div>
+			<div class="chip-list hero-card-chips">
+				<span class="chip">Sistemas sob medida</span>
+				<span class="chip">Automação</span>
+				<span class="chip">Integrações</span>
+				<span class="chip">IA aplicada</span>
+			</div>
+			<div class="hero-card-stats">
+				<div class="stat">
+					<div class="stat-value">10+</div>
+					<div class="stat-label">Anos de experiência</div>
+				</div>
+				<div class="stat">
+					<div class="stat-value">3+</div>
+					<div class="stat-label">Anos como Tech Lead</div>
+				</div>
+				<div class="stat">
+					<div class="stat-value">2</div>
+					<div class="stat-label">Empresas fundadas</div>
+				</div>
+				<div class="stat">
+					<div class="stat-value">IA</div>
+					<div class="stat-label">Aplicada a produtos reais</div>
+				</div>
 			</div>
 		</div>
 	</header>
@@ -247,6 +282,134 @@ const techGroups = [
 <style>
 	.accent {
 		color: var(--cyan);
+	}
+
+	.hero-grid {
+		display: grid;
+		grid-template-columns: 1.15fr 0.85fr;
+		gap: 48px;
+		align-items: center;
+		max-width: 1080px;
+		margin: 0 auto;
+		padding: 56px 24px 20px;
+	}
+
+	.hero-copy h1 {
+		font-family: var(--pixel);
+		font-weight: 900;
+		font-size: clamp(2rem, 3.6vw, 2.8rem);
+		line-height: 1.15;
+		color: var(--text);
+		margin: 14px 0 16px;
+	}
+
+	.hero-copy p {
+		font-family: var(--body);
+		color: var(--text-dim);
+		font-size: 1rem;
+		line-height: 1.7;
+	}
+
+	.hero-meta {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 10px;
+		margin-top: 20px;
+	}
+
+	.meta-chip {
+		display: inline-flex;
+		align-items: center;
+		gap: 6px;
+		font-family: var(--body);
+		font-size: 0.78rem;
+		font-weight: 600;
+		color: var(--text-dim);
+		background: var(--panel);
+		border: 1px solid var(--panel-border);
+		padding: 6px 12px;
+		border-radius: 999px;
+	}
+
+	.hero-card {
+		background: #fff;
+		border: 1px solid var(--panel-border);
+		border-radius: 20px;
+		box-shadow: var(--shadow, 0 1px 2px rgba(15, 23, 42, .04), 0 8px 24px -12px rgba(15, 23, 42, .10));
+		padding: 28px;
+		text-align: center;
+	}
+
+	.hero-card :global(.avatar-frame) {
+		margin: 0 auto;
+	}
+
+	.hero-card-name {
+		font-family: var(--body);
+		font-size: 1.15rem;
+		font-weight: 800;
+		color: var(--text);
+		margin-top: 12px;
+	}
+
+	.hero-card-role {
+		font-family: var(--body);
+		font-size: 0.84rem;
+		color: var(--cyan);
+		font-weight: 700;
+		margin-top: 4px;
+		margin-bottom: 16px;
+	}
+
+	.chip-list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 7px;
+		justify-content: center;
+	}
+
+	.hero-card-chips {
+		margin-bottom: 20px;
+	}
+
+	.chip {
+		background: var(--panel);
+		border: 1px solid var(--panel-border);
+		color: var(--text);
+		font-family: var(--body);
+		font-size: 0.78rem;
+		font-weight: 600;
+		padding: 5px 12px;
+		border-radius: 8px;
+	}
+
+	.hero-card-stats {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 10px;
+	}
+
+	.stat {
+		background: var(--panel);
+		border: 1px solid var(--panel-border);
+		border-radius: 12px;
+		padding: 12px 8px;
+	}
+
+	.stat-value {
+		font-family: var(--body);
+		font-size: 1.35rem;
+		font-weight: 900;
+		color: var(--cyan);
+		line-height: 1;
+	}
+
+	.stat-label {
+		font-family: var(--body);
+		font-size: 0.68rem;
+		color: var(--text-dim);
+		margin-top: 4px;
+		font-weight: 500;
 	}
 
 	.hero-actions {
@@ -549,6 +712,17 @@ const techGroups = [
 		background: var(--panel);
 		padding-top: 56px;
 		padding-bottom: 8px;
+	}
+
+	@media (max-width: 900px) {
+		.hero-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.hero-card {
+			max-width: 360px;
+			margin: 0 auto;
+		}
 	}
 
 	@media (max-width: 640px) {
