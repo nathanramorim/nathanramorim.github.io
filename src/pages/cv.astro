@@ -5,13 +5,22 @@ import ProjectGrid from '../presentation/components/ProjectGrid.astro';
 import ExperienceTimeline from '../presentation/components/ExperienceTimeline.astro';
 import EducationList from '../presentation/components/EducationList.astro';
 import SkillsSection from '../presentation/components/SkillsSection.astro';
+import CertificationsList from '../presentation/components/CertificationsList.astro';
+import LanguagesList from '../presentation/components/LanguagesList.astro';
 import SiteFooter from '../presentation/components/SiteFooter.astro';
 import { GetExperienceHistory } from '../domain/usecases/GetExperienceHistory';
 import { GetProjectsList } from '../domain/usecases/GetProjectsList';
 import { ProjectRepository } from '../data/repositories/ProjectRepository';
 
-const { experiences, education } = await GetExperienceHistory();
+const { experiences, education, certifications, languages } = await GetExperienceHistory();
 const projects = await new GetProjectsList(new ProjectRepository()).execute();
+
+const metrics = [
+	{ value: '10+', label: 'Anos de experiência' },
+	{ value: '3+', label: 'Anos como Tech Lead' },
+	{ value: '2', label: 'Empresas fundadas' },
+	{ value: 'IA', label: 'Aplicada a produtos reais' },
+];
 ---
 
 <RetroLayout
@@ -35,28 +44,68 @@ const projects = await new GetProjectsList(new ProjectRepository()).execute();
 		<button id="cv-download-pdf" type="button" class="cv-download-btn">⬇ Baixar currículo em PDF</button>
 	</div>
 
-	<section class="print-hide-section">
-		<p class="eyebrow" style="text-align: center;">Case · Projeto</p>
-		<ProjectGrid projects={projects} />
-	</section>
+	<div class="cv-layout">
+		<div class="cv-main">
+			<div class="print-hide-section">
+				<p class="eyebrow">Case · Projeto</p>
+				<ProjectGrid projects={projects} />
+			</div>
 
-	<section>
-		<p class="eyebrow" style="text-align: center;">Experiência Profissional</p>
-		<h2 class="print-only print-heading">Experiência Profissional</h2>
-		<ExperienceTimeline experiences={experiences} />
-	</section>
+			<div>
+				<p class="eyebrow">Experiência Profissional</p>
+				<h2 class="print-only print-heading">Experiência Profissional</h2>
+				<ExperienceTimeline experiences={experiences} />
+			</div>
 
-	<section>
-		<p class="eyebrow" style="text-align: center;">Formação Acadêmica</p>
-		<h2 class="print-only print-heading">Formação Acadêmica</h2>
-		<EducationList education={education} />
-	</section>
+			<div>
+				<p class="eyebrow">Competências Técnicas</p>
+				<h2 class="print-only print-heading">Competências Técnicas</h2>
+				<SkillsSection />
+			</div>
+		</div>
 
-	<section>
-		<p class="eyebrow" style="text-align: center;">Competências Técnicas</p>
-		<h2 class="print-only print-heading">Competências Técnicas</h2>
-		<SkillsSection />
-	</section>
+		<aside class="cv-sidebar">
+			<div class="cv-card">
+				<p class="cv-card-title">Números</p>
+				<div class="metrics-grid">
+					{
+						metrics.map((metric) => (
+							<div class="metric">
+								<div class="metric-value">{metric.value}</div>
+								<div class="metric-label">{metric.label}</div>
+							</div>
+						))
+					}
+				</div>
+			</div>
+
+			<div class="cv-card">
+				<p class="cv-card-title">Contato</p>
+				<div class="contact-list">
+					<a href="mailto:nathan.ramorim@gmail.com">✉️ nathan.ramorim@gmail.com</a>
+					<a href="https://linkedin.com/in/nathanamorim" target="_blank" rel="noopener">💼 linkedin.com/in/nathanamorim</a>
+					<a href="https://github.com/nathanramorim" target="_blank" rel="noopener">🐙 github.com/nathanramorim</a>
+					<span class="contact-location">📍 Barbacena, MG · Brasil</span>
+				</div>
+			</div>
+
+			<div class="cv-card">
+				<p class="cv-card-title">Formação Acadêmica</p>
+				<h2 class="print-only print-heading">Formação Acadêmica</h2>
+				<EducationList education={education} />
+			</div>
+
+			<div class="cv-card">
+				<p class="cv-card-title">Idiomas</p>
+				<LanguagesList languages={languages} />
+			</div>
+
+			<div class="cv-card">
+				<p class="cv-card-title">Licenças &amp; Certificados</p>
+				<CertificationsList certifications={certifications} />
+			</div>
+		</aside>
+	</div>
 
 	<SiteFooter />
 </RetroLayout>
@@ -97,9 +146,164 @@ const projects = await new GetProjectsList(new ProjectRepository()).execute();
 		outline-offset: 2px;
 	}
 
+	.cv-layout {
+		display: grid;
+		grid-template-columns: 1fr 320px;
+		gap: 24px;
+		align-items: start;
+		max-width: 1080px;
+		margin: 0 auto 40px;
+		padding: 0 24px;
+	}
+
+	.cv-main {
+		display: flex;
+		flex-direction: column;
+		gap: 32px;
+		min-width: 0;
+	}
+
+	.cv-main :global(.project-grid),
+	.cv-main :global(.experience-timeline),
+	.cv-main :global(.skills-section) {
+		max-width: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.cv-main .eyebrow {
+		text-align: left;
+	}
+
+	.cv-sidebar {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+
+	.cv-card {
+		background: var(--panel);
+		border: 1px solid var(--panel-border);
+		border-radius: var(--radius);
+		padding: 20px;
+	}
+
+	.cv-card-title {
+		font-family: var(--body);
+		font-size: 0.68rem;
+		font-weight: 800;
+		letter-spacing: 1.4px;
+		text-transform: uppercase;
+		color: var(--cyan);
+		margin: 0 0 14px;
+		padding-bottom: 10px;
+		border-bottom: 1px solid var(--panel-border);
+	}
+
+	.cv-card :global(.education-list),
+	.cv-card :global(.edu-item) {
+		max-width: none;
+		margin: 0;
+		padding: 0;
+		background: transparent;
+		border: none;
+	}
+
+	.metrics-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 10px;
+	}
+
+	.metric {
+		background: var(--bg);
+		border: 1px solid var(--panel-border);
+		border-radius: 10px;
+		padding: 12px 8px;
+		text-align: center;
+	}
+
+	.metric-value {
+		font-family: var(--body);
+		font-weight: 800;
+		font-size: 1.3rem;
+		color: var(--cyan);
+	}
+
+	.metric-label {
+		font-family: var(--body);
+		font-size: 0.68rem;
+		color: var(--text-dim);
+		margin-top: 2px;
+	}
+
+	.contact-list {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		font-family: var(--body);
+		font-size: 0.84rem;
+	}
+
+	.contact-list a {
+		color: var(--text-dim);
+	}
+
+	.contact-list a:hover {
+		color: var(--cyan);
+	}
+
+	.contact-location {
+		color: var(--text-dim);
+	}
+
 	@media print {
 		.print-hide-section {
 			display: none;
+		}
+
+		.cv-layout {
+			display: block;
+			max-width: 100%;
+			padding: 0;
+		}
+
+		.cv-sidebar {
+			margin-top: 20px;
+		}
+
+		.cv-card {
+			background: #fff;
+			border: none;
+			border-bottom: 1px solid #ddd;
+			border-radius: 0;
+			padding: 0 0 14px;
+			margin-bottom: 14px;
+			break-inside: avoid;
+		}
+
+		.cv-card-title {
+			color: #111;
+		}
+
+		.metric-value {
+			color: #111;
+		}
+
+		.metric {
+			background: #fff;
+			border: 1px solid #ddd;
+		}
+
+		.contact-list a,
+		.contact-location {
+			color: #333 !important;
+		}
+	}
+
+	@media (max-width: 820px) {
+		.cv-layout {
+			grid-template-columns: 1fr;
 		}
 	}
 </style>

@@ -63,11 +63,8 @@ a:focus-visible, button:focus-visible{outline:2px solid var(--cyan); outline-off
   top:0;
   z-index:40;
 }
-.dot{width:9px; height:9px; border-radius:50%; display:inline-block;}
-.dot.red{background:#fca5a5;}
-.dot.yellow{background:#fcd34d;}
-.dot.green{background:#86efac;}
-.chrome-title{margin-left:8px; font-size:13px; font-weight:800; color:var(--text); letter-spacing:-0.2px;}
+.chrome-title{font-size:16px; font-weight:800; color:var(--text); letter-spacing:-0.2px;}
+.chrome-title:hover{text-decoration:none; color:var(--cyan);}
 .chrome-nav{margin-left:auto; display:flex; align-items:center; gap:20px; font-size:13px;}
 .chrome-nav a{color:var(--text-dim); font-weight:600;}
 .chrome-nav a:hover{color:var(--cyan); text-decoration:none;}
@@ -80,16 +77,8 @@ a:focus-visible, button:focus-visible{outline:2px solid var(--cyan); outline-off
 }
 .chrome-nav .chrome-cta:hover{background:var(--green); text-decoration:none;}
 
-.cursor{
-  display:inline-block;
-  width:0.5ch;
-  background:var(--cyan);
-  margin-left:2px;
-  animation:blink 1s steps(1) infinite;
-}
-@keyframes blink{50%{opacity:0;}}
+.cursor{display:none;}
 @media (prefers-reduced-motion: reduce){
-  .cursor{animation:none;}
   html{scroll-behavior:auto;}
 }
 

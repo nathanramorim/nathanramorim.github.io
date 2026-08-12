@@ -1,0 +1,119 @@
+---
+import type { Certification } from '../../domain/entities/Certification';
+
+interface Props {
+	certifications: Certification[];
+}
+
+const { certifications } = Astro.props;
+---
+
+<div class="cert-list">
+	{
+		certifications.map((cert) => (
+			<div class="cert-item">
+				<p class="cert-name">{cert.name}</p>
+				<div class="cert-meta">
+					<span class="cert-org">{cert.org}</span>
+					<span class="cert-date">{cert.date}</span>
+				</div>
+				<div class="cert-tags">
+					{cert.tags.map((tag) => (
+						<span class="cert-tag">{tag}</span>
+					))}
+				</div>
+			</div>
+		))
+	}
+</div>
+
+<style>
+	.cert-list {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+	}
+
+	.cert-item {
+		background: var(--bg);
+		border: 1px solid var(--panel-border);
+		border-radius: 10px;
+		padding: 10px 14px;
+	}
+
+	.cert-name {
+		font-family: var(--body);
+		font-weight: 700;
+		font-size: 0.82rem;
+		color: var(--text);
+		line-height: 1.3;
+		margin: 0 0 4px;
+	}
+
+	.cert-meta {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 8px;
+	}
+
+	.cert-org {
+		font-family: var(--body);
+		font-size: 0.72rem;
+		font-weight: 600;
+		color: var(--cyan);
+	}
+
+	.cert-date {
+		font-family: var(--body);
+		font-size: 0.7rem;
+		color: var(--text-dim);
+		white-space: nowrap;
+	}
+
+	.cert-tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 4px;
+		margin-top: 6px;
+	}
+
+	.cert-tag {
+		font-family: var(--body);
+		font-size: 10px;
+		background: var(--panel);
+		border: 1px solid var(--panel-border);
+		color: var(--text-dim);
+		padding: 1px 7px;
+		border-radius: 6px;
+	}
+
+	@media print {
+		.cert-item {
+			background: #fff;
+			border: none;
+			border-bottom: 1px solid #ddd;
+			border-radius: 0;
+			padding: 0 0 8px;
+			margin-bottom: 8px;
+			break-inside: avoid;
+		}
+
+		.cert-name {
+			color: #111;
+		}
+
+		.cert-org {
+			color: #333;
+		}
+
+		.cert-date {
+			color: #555;
+		}
+
+		.cert-tag {
+			color: #333;
+			border-color: #ccc;
+		}
+	}
+</style>

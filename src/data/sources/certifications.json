@@ -1,0 +1,68 @@
+[
+  {
+    "name": "Ambiente de Desenvolvimento Kubernetes",
+    "org": "DIO",
+    "date": "nov/2025",
+    "tags": ["Kubernetes", "Minikube"]
+  },
+  {
+    "name": "Introdução a Kubernetes e Orquestração de Contêineres",
+    "org": "DIO",
+    "date": "nov/2025",
+    "tags": ["Kubernetes", "Microsserviços"]
+  },
+  {
+    "name": "Agente para Detecção de Vulnerabilidades em Arquiteturas",
+    "org": "DIO",
+    "date": "nov/2025",
+    "tags": ["Azure OpenAI", "Python", "STRIDE"]
+  },
+  {
+    "name": "Pré MBA em Finanças Corporativas",
+    "org": "Exame Corporate Education",
+    "date": "mai/2025",
+    "tags": ["Finanças Corporativas"]
+  },
+  {
+    "name": "Prompts Assertivos para ChatGPT",
+    "org": "DIO",
+    "date": "ago/2024",
+    "tags": ["IA", "GPT", "Prompt Eng."]
+  },
+  {
+    "name": "Benefícios da Nuvem",
+    "org": "DIO",
+    "date": "mar/2024",
+    "tags": ["Azure", "Cloud"]
+  },
+  {
+    "name": "Computação em Nuvem",
+    "org": "DIO",
+    "date": "mar/2024",
+    "tags": ["Azure", "Cloud"]
+  },
+  {
+    "name": "Introdução à Inteligência Artificial",
+    "org": "DIO",
+    "date": "dez/2023",
+    "tags": ["IA"]
+  },
+  {
+    "name": "CI/CD na prática com .NET",
+    "org": "DIO",
+    "date": "dez/2023",
+    "tags": [".NET", "DevOps", "CD"]
+  },
+  {
+    "name": "Bootcamp Arquiteto de Software",
+    "org": "IGTI",
+    "date": "jul/2021",
+    "tags": ["Arquitetura", "Software"]
+  },
+  {
+    "name": "Scrum Foundation Professional Certificate",
+    "org": "Certiprof",
+    "date": "jan/2019",
+    "tags": ["Scrum", "Agile"]
+  }
+]

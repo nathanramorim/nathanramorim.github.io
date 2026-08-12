@@ -1,0 +1,78 @@
+---
+import type { Language } from '../../domain/entities/Language';
+
+interface Props {
+	languages: Language[];
+}
+
+const { languages } = Astro.props;
+---
+
+<div class="lang-list">
+	{
+		languages.map((lang) => (
+			<div class="lang-row">
+				<div class="lang-head">
+					<span class="lang-name">{lang.name}</span>
+					<span class="lang-level">{lang.level}</span>
+				</div>
+				<div class="lang-bar">
+					<div class="lang-bar-fill" style={`width:${lang.percent}%`} />
+				</div>
+			</div>
+		))
+	}
+</div>
+
+<style>
+	.lang-list {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+	}
+
+	.lang-head {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 6px;
+		font-family: var(--body);
+		font-size: 0.85rem;
+	}
+
+	.lang-name {
+		font-weight: 600;
+		color: var(--text);
+	}
+
+	.lang-level {
+		font-size: 0.75rem;
+		color: var(--cyan);
+	}
+
+	.lang-bar {
+		height: 5px;
+		background: var(--panel-border);
+		border-radius: 4px;
+	}
+
+	.lang-bar-fill {
+		height: 100%;
+		background: var(--cyan);
+		border-radius: 4px;
+	}
+
+	@media print {
+		.lang-name,
+		.lang-level {
+			color: #111;
+		}
+
+		.lang-bar {
+			background: #ddd;
+		}
+
+		.lang-bar-fill {
+			background: #333;
+		}
+	}
+</style>
