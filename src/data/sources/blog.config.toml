@@ -28,3 +28,6 @@ enabled = false
 
 [posts.post-5]
 enabled = false
+
+[posts.post-6]
+enabled = true

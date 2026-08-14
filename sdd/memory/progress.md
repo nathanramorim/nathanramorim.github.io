@@ -3,15 +3,16 @@
 ## Status
 ```
 Fase 0-10 (Foundation → Eyebrow Badge Consistency)   [x] done — no ar em produção
+Fase 11 (Blog Post: Cross Session Messaging)         [ ] in-progress
 ```
 
 ## Features ativas
 | Feature | Branch | Status | PR |
 |---------|--------|--------|-----|
-| — | — | — | — |
+| feat-11-blog-post-cross-session-messaging | feat/blog-post-cross-session-messaging | in-progress | — |
 
 ## Próximo passo
-**Aguardando:** nenhuma feature em andamento no momento.
+**Aguardando:** validar post-6 localmente (rota + botão de PDF), ativar em `blog.config.toml` e publicar.
 **Bloqueios:** —
 
 ## Handoff da última sessão

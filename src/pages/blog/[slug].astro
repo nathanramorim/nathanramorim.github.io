@@ -47,6 +47,8 @@ const { Content } = await render(entry);
 			{entry.data.hashtags.map((tag: string) => <span class="hashtag">#{tag}</span>)}
 		</div>
 
+		<p class="post-signature">Nathan Amorim · <a href="https://nathanramorim.github.io">nathanramorim.github.io</a></p>
+
 		<div class="post-nav">
 			{prev ? <a href={`/blog/${slugify(prev.data.title)}`}>&larr; {prev.data.title}</a> : <a class="to-index" href="/blog">&larr; indice</a>}
 			{next ? <a href={`/blog/${slugify(next.data.title)}`}>{next.data.title} &rarr;</a> : <a class="to-index" href="/blog">indice &rarr;</a>}
