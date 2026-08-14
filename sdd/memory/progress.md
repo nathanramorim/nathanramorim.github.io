@@ -9,10 +9,10 @@ Fase 11 (Blog Post: Cross Session Messaging)         [ ] in-progress
 ## Features ativas
 | Feature | Branch | Status | PR |
 |---------|--------|--------|-----|
-| feat-11-blog-post-cross-session-messaging | feat/blog-post-cross-session-messaging | in-progress | — |
+| feat-11-blog-post-cross-session-messaging | feat/blog-post-cross-session-messaging | in-progress | [#14](https://github.com/nathanramorim/nathanramorim.github.io/pull/14) |
 
 ## Próximo passo
-**Aguardando:** validar post-6 localmente (rota + botão de PDF), ativar em `blog.config.toml` e publicar.
+**Aguardando:** review e merge da PR #14 (post-6 já validado localmente — rota, lista, hashtags, assinatura e link de PDF confirmados).
 **Bloqueios:** —
 
 ## Handoff da última sessão
