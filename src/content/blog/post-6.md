@@ -34,7 +34,7 @@ A sessão migração-db manda uma mensagem via `SendMessage` pra sessão api-pag
 
 A mensagem nunca leva histórico de conversa nem arquivos, só texto. E chega entre uma ação e outra: nunca interrompe uma ferramenta em execução.
 
-Reparei que isso só funciona bem porque tem [harness engineering](/blog/voce-sabe-o-que-e-harness-engineering) por trás: o ambiente ao redor do agente é que sabe descobrir outras sessões e decidir quando vale a pena avisar alguém, não o modelo "pensando melhor" sozinho. É o mesmo princípio que apliquei pra chegar no [forge-sdd](/blog/como-cheguei-no-forge-sdd-atraves-do-harness-engineering): a ferramenta certa, no momento certo, importa mais que o prompt perfeito.
+Reparei que isso só funciona bem porque tem [harness engineering](/blog/voce-sabe-o-que-e-harness-engineering) por trás: o ambiente ao redor do agente é que sabe descobrir outras sessões e decidir quando vale a pena avisar alguém, não o modelo "pensando melhor" sozinho. É o mesmo princípio que apliquei pra chegar no [forge-sdd](https://forge-sdd.vercel.app): a ferramenta certa, no momento certo, importa mais que o prompt perfeito.
 
 **Você controla**
 
