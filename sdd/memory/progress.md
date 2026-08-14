@@ -2,39 +2,32 @@
 
 ## Status
 ```
-Fase 0-10 (Foundation → Eyebrow Badge Consistency)   [x] done — no ar em produção
-Fase 11 (Blog Post: Cross Session Messaging)         [ ] in-progress
+Fase 0-11 (Foundation → Blog Post Cross Session Messaging)   [x] done — no ar em produção
+Fase 12 (Simplify Nav / Hide Resume)                         [ ] in-progress
 ```
 
 ## Features ativas
 | Feature | Branch | Status | PR |
 |---------|--------|--------|-----|
-| feat-11-blog-post-cross-session-messaging | feat/blog-post-cross-session-messaging | in-progress | [#14](https://github.com/nathanramorim/nathanramorim.github.io/pull/14) |
+| feat-12-simplify-nav-hide-resume | feat/simplify-nav-hide-resume | in-progress | — |
 
 ## Próximo passo
-**Aguardando:** review e merge da PR #14 (post-6 já validado localmente — rota, lista, hashtags, assinatura e link de PDF confirmados).
+**Aguardando:** implementar remoção do link "Currículo" do nav e da seção
+"Trajetória profissional" da home, validar local, abrir PR.
 **Bloqueios:** —
 
 ## Handoff da última sessão
-- Site inteiro retematizado de retro-terminal (dark) para tema claro/azul
-  com Montserrat, mensagem focada em "o que eu resolvo" em vez de stack
-  técnica (feat direto em `main`, sem branch dedicada — ver commits
-  `654526d`..`f4c10f6`..atual).
-- Home passou a incluir a seção completa de currículo (case, experiência,
-  skills, sidebar com números/contato/formação/idiomas/certificações),
-  reaproveitada também em `/cv` via componente `ResumeSection`.
-- `feat-10-eyebrow-badge-consistency`: corrigidos bugs reais de CSS
-  (eyebrow perdendo cor/tamanho por especificidade, pill esticando 100% da
-  largura, `.question-banner` sem background, falta de variante para fundo
-  escuro, espaçamento entre seções inconsistente). Padrão `.eyebrow` /
-  `.eyebrow-on-dark` e ritmo `padding: 72px 0` documentados na
-  `constitution.md`.
-- Deploy via GitHub Pages funciona automaticamente a cada merge/push em
-  `main`.
+- PR #14 (post-6 + skill de linkagem interna do blog) mergeada em `main`.
+- Discovery 02 criada a partir de pesquisa informal do usuário: público
+  leigo (público-alvo real do site) teve dificuldade de entender a home;
+  público técnico entendeu fácil. Hipótese: seção de currículo técnico
+  embutida na home compete com as seções de comunicação de valor.
+- Decisão D1 confirmada: rota `/cv` continua existindo, só sai do nav
+  principal (não apaga dados nem a página).
+- `feat-12-simplify-nav-hide-resume` criada para implementar a
+  simplificação.
 
 ## Última sessão
-- `feat-10-eyebrow-badge-consistency`: consistência do badge eyebrow,
-  contraste sobre fundo escuro, espaçamento entre seções e `color-scheme`
-  para evitar dark mode automático do navegador.
+- Discovery 02 (simplificação de navegação) + início da feat-12.
 
 > Histórico completo em `progress-log.md`

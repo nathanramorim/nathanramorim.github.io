@@ -2,16 +2,10 @@
 import RetroLayout from '../layouts/RetroLayout.astro';
 import Avatar from '../presentation/components/Avatar.astro';
 import FeaturedPosts from '../presentation/components/FeaturedPosts.astro';
-import ResumeSection from '../presentation/components/ResumeSection.astro';
 import SiteFooter from '../presentation/components/SiteFooter.astro';
 import { GetFeaturedPosts } from '../domain/usecases/GetFeaturedPosts';
-import { GetExperienceHistory } from '../domain/usecases/GetExperienceHistory';
-import { GetProjectsList } from '../domain/usecases/GetProjectsList';
-import { ProjectRepository } from '../data/repositories/ProjectRepository';
 
 const featuredPosts = await GetFeaturedPosts(2);
-const { experiences, education, certifications, languages } = await GetExperienceHistory();
-const projects = await new GetProjectsList(new ProjectRepository()).execute();
 
 const WHATSAPP_URL =
 	'https://wa.me/553198953514?text=Ol%C3%A1%20Nathan%2C%20vim%20pelo%20seu%20site%20e%20quero%20conversar%20sobre%20um%20projeto.';
@@ -97,7 +91,6 @@ const techGroups = [
 			</p>
 			<div class="hero-actions">
 				<a class="btn-primary" href={WHATSAPP_URL} target="_blank" rel="noopener">💬 Falar sobre meu projeto</a>
-				<a class="btn-outline" href="/cv">Ver currículo completo</a>
 			</div>
 			<div class="hero-meta">
 				<span class="meta-chip">📍 Barbacena, MG · Brasil</span>
@@ -242,20 +235,6 @@ const techGroups = [
 				))
 			}
 		</div>
-	</section>
-
-	<section class="resume-section">
-		<p class="eyebrow" style="text-align: center;">Currículo</p>
-		<h2 class="section-title">Trajetória profissional</h2>
-		<p class="section-lead">Experiência, formação e certificações completas.</p>
-		<ResumeSection
-			experiences={experiences}
-			education={education}
-			certifications={certifications}
-			languages={languages}
-			projects={projects}
-			downloadMode="link"
-		/>
 	</section>
 
 	<section class="blog-section">
@@ -718,11 +697,6 @@ const techGroups = [
 		justify-content: center;
 		gap: 12px;
 		flex-wrap: wrap;
-	}
-
-	.resume-section {
-		background: var(--panel);
-		padding: 72px 0;
 	}
 
 	.blog-section {

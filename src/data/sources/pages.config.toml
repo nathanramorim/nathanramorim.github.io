@@ -1,0 +1,9 @@
+# Controla quais páginas "extras" do site estão habilitadas.
+#
+# Mesmo padrão de blog.config.toml: cada página aqui precisa estar
+# registrada com enabled = true/false. Página com enabled = false não
+# aparece no nav e, ao ser acessada por URL direta, redireciona pra home.
+# Nenhum dado ou componente é apagado — só fica indisponível até religar.
+
+[pages.cv]
+enabled = true

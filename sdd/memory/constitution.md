@@ -12,7 +12,7 @@ técnico para desenvolvedores.
 | Linguagem | TypeScript | Tipagem em entidades/usecases (Clean Architecture) |
 | Estilo | CSS puro com variáveis (`src/styles/global.css`) + `<style>` scoped por página/componente | Sem framework CSS; tema claro/azul + Montserrat |
 | Hospedagem | GitHub Pages | `.github/workflows/deploy.yml`, deploy automático a cada push em `main` |
-| Config | `src/data/sources/*.json` + `blog.config.toml` | Conteúdo (experiências, skills, certificações, posts) fora do código |
+| Config | `src/data/sources/*.json` + `blog.config.toml` + `pages.config.toml` | Conteúdo (experiências, skills, certificações, posts) fora do código; liga/desliga incremental de posts e páginas |
 | Secrets | nenhum (site 100% estático, sem backend) | — |
 
 ## Decisões resolvidas
@@ -58,6 +58,18 @@ técnico para desenvolvedores.
   texto corrido — nunca uma seção solta de "posts relacionados", nunca
   link forçado sem conexão real. Objetivo: SEO on-page e navegabilidade
   entre posts.
+
+### Publicação incremental (páginas e posts)
+- Qualquer página ou post que precise de liga/desliga sem deploy de
+  código novo usa o padrão `*.config.toml` + `*ConfigRepository`:
+  `blog.config.toml`/`BlogConfigRepository` para posts,
+  `pages.config.toml`/`PagesConfigRepository` para páginas fixas (ex.
+  `/cv`). Página desabilitada faz `Astro.redirect('/', 302)` (o build
+  estático gera meta-refresh + `noindex`) em vez de sumir do repositório
+  — nenhum dado ou componente é apagado, só fica indisponível até
+  religar. Ao criar uma nova página que pode precisar ser
+  desligada/religada no futuro, seguir esse mesmo padrão em vez de
+  inventar um mecanismo novo.
 
 ### Dark mode do navegador
 - O site é light-only por design. `color-scheme: light only` está declarado
