@@ -3,7 +3,7 @@
 **Branch:** `feat/blog-post-cross-session-messaging`
 **Fase:** 11
 **Depende de:** `feat-07-blog-post-publishing` (fluxo de publicação incremental do blog)
-**Status:** `in-progress`
+**Status:** `done`
 
 ## Objetivo
 Publicar um novo post no blog ("Já usei sessão cruzada do Claude Code sem
