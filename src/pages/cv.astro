@@ -6,6 +6,11 @@ import SiteFooter from '../presentation/components/SiteFooter.astro';
 import { GetExperienceHistory } from '../domain/usecases/GetExperienceHistory';
 import { GetProjectsList } from '../domain/usecases/GetProjectsList';
 import { ProjectRepository } from '../data/repositories/ProjectRepository';
+import { PagesConfigRepository } from '../data/repositories/PagesConfigRepository';
+
+if (!new PagesConfigRepository().isEnabled('cv')) {
+	return Astro.redirect('/', 302);
+}
 
 const { experiences, education, certifications, languages } = await GetExperienceHistory();
 const projects = await new GetProjectsList(new ProjectRepository()).execute();
