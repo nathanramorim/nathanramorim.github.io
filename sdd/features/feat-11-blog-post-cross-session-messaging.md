@@ -64,6 +64,12 @@ npm run build
       `content-disposition: attachment; filename="sessaocruzadaguia.pdf"`).
 - [x] **11-6** Ativar `post-6` (`enabled = true`), build final.
 - [x] **11-7** Atualizar `sdd/features/index.md` e `sdd/memory/progress.md`.
+- [x] **11-8** Linkar `post-6` aos posts relacionados da série Harness
+      Engineering (`post-0`, `post-5`) com âncora contextual dentro do
+      texto — validado via `grep` no HTML gerado.
+- [x] **11-9** Criar skill `.claude/skills/blog-internal-linking/SKILL.md`
+      para aplicar essa análise automaticamente em posts futuros; registrar
+      em `sdd/skills/index.md` e `constitution.md`.
 
 ## Arquivos gerados/alterados
 ```
