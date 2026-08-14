@@ -3,15 +3,16 @@
 ## Status
 ```
 Fase 0-10 (Foundation → Eyebrow Badge Consistency)   [x] done — no ar em produção
+Fase 11 (Blog Post: Cross Session Messaging)         [ ] in-progress
 ```
 
 ## Features ativas
 | Feature | Branch | Status | PR |
 |---------|--------|--------|-----|
-| — | — | — | — |
+| feat-11-blog-post-cross-session-messaging | feat/blog-post-cross-session-messaging | in-progress | [#14](https://github.com/nathanramorim/nathanramorim.github.io/pull/14) |
 
 ## Próximo passo
-**Aguardando:** nenhuma feature em andamento no momento.
+**Aguardando:** review e merge da PR #14 (post-6 já validado localmente — rota, lista, hashtags, assinatura e link de PDF confirmados).
 **Bloqueios:** —
 
 ## Handoff da última sessão

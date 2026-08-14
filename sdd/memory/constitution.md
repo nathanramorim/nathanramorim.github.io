@@ -50,6 +50,15 @@ técnico para desenvolvedores.
   seção. Títulos que fogem desse padrão (ex. layouts em duas colunas) devem
   manter o mesmo `font-size`/`font-weight`, ajustando só alinhamento.
 
+### Blog — linkagem interna
+- Todo post novo ou editado passa pela skill
+  [`blog-internal-linking`](../../.claude/skills/blog-internal-linking/SKILL.md):
+  checar conexão temática genuína com posts já publicados e adicionar
+  link interno contextual (`[âncora descritiva](/blog/slug)`) dentro do
+  texto corrido — nunca uma seção solta de "posts relacionados", nunca
+  link forçado sem conexão real. Objetivo: SEO on-page e navegabilidade
+  entre posts.
+
 ### Dark mode do navegador
 - O site é light-only por design. `color-scheme: light only` está declarado
   via `<meta>` (`RetroLayout.astro`) e CSS (`:root` em `global.css`) para
@@ -72,3 +81,5 @@ técnico para desenvolvedores.
    conforme já padronizado em datas e headers.
 7. Mudanças visuais relevantes (novo padrão de componente, nova cor, etc.)
    devem ser registradas aqui, não só no código.
+8. Todo post de blog novo/editado passa pela skill `blog-internal-linking`
+   antes de publicar (ver Design System > Blog).

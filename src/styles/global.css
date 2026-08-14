@@ -177,6 +177,45 @@ h1.post-title{
 .article strong{color:var(--cyan); font-weight:600;}
 .article p:last-child{margin-bottom:0;}
 
+.article ul{margin:0 0 22px; padding-left:22px;}
+.article li{
+  font-family:var(--body);
+  font-size:18px;
+  line-height:1.75;
+  color:var(--text);
+  margin-bottom:8px;
+}
+.article li strong{color:var(--cyan); font-weight:600;}
+
+/* CTA reutilizável dentro do corpo de um post */
+.article-cta{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  background:var(--cyan);
+  color:#fff;
+  font-family:var(--body);
+  font-weight:700;
+  font-size:15px;
+  padding:12px 22px;
+  border-radius:10px;
+  text-decoration:none;
+  margin:8px 0 22px;
+}
+.article-cta:hover{background:var(--green); text-decoration:none; color:#fff;}
+
+/* assinatura padrão ao final de um post */
+.post-signature{
+  margin-top:40px;
+  padding-top:20px;
+  border-top:1px solid var(--panel-border);
+  font-family:var(--body);
+  font-size:13px;
+  color:var(--text-dim);
+  text-align:center;
+}
+.post-signature a{color:var(--cyan);}
+
 .divider{
   border:none;
   border-top:1px dashed var(--panel-border-strong);
