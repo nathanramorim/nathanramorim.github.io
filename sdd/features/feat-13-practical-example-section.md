@@ -26,10 +26,13 @@ fiz → Resultado" em 3 blocos, texto sem jargão técnico (nada de
 "sistema", "automação", "integração" no corpo do exemplo — ver
 `criteria-03` seção 2).
 
-Cenário escolhido: loja pequena que recebia pedido por WhatsApp,
-anotava em caderno e depois copiava pra planilha à mão — perdia pedido e
-descobria só quando o cliente reclamava. Cobre o padrão de trabalho real
-do usuário (integração com WhatsApp) sem citar cliente nenhum.
+Cenário: **case real anonimizado** trazido pelo usuário após a primeira
+versão (hipotética) ir ao ar na PR #17 — ver D2/D3 em `spec/decisions.md`.
+Empresa fazia gestão manual (Excel, Word, agenda de papel) e a
+comunicação com cliente final era por WhatsApp, com documento indo e
+vindo e às vezes se perdendo. Solução: plataforma central de documentos,
+contratos e pendências, com encaminhamento unilateral pro WhatsApp do
+cliente. Nenhum nome de cliente/empresa é citado.
 
 ## Critério de conclusão
 ```bash
