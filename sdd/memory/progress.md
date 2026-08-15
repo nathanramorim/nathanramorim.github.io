@@ -9,10 +9,10 @@ Fase 13 (Practical Example Section)                   [ ] in-progress
 ## Features ativas
 | Feature | Branch | Status | PR |
 |---------|--------|--------|-----|
-| feat-13-practical-example-section | feat/practical-example-section | in-progress | — |
+| feat-13-practical-example-section | feat/practical-example-section | in-progress | [#17](https://github.com/nathanramorim/nathanramorim.github.io/pull/17) |
 
 ## Próximo passo
-**Aguardando:** commit, push e PR da feat-13 (já validada localmente).
+**Aguardando:** review e merge da PR #17.
 **Bloqueios:** —
 
 ## Handoff da última sessão
