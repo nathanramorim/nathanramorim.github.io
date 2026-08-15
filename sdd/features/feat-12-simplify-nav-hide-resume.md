@@ -3,7 +3,7 @@
 **Branch:** `feat/simplify-nav-hide-resume`
 **Fase:** 12
 **Depende de:** `sdd/discovery/discovery-02-simplificacao-navegacao.md`, `criteria-02-simplificacao-navegacao.md`
-**Status:** `in-progress`
+**Status:** `done`
 
 ## Objetivo
 Simplificar a navegação principal para **Início** e **Blog** apenas,

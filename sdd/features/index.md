@@ -24,4 +24,5 @@ main (feat-00 a feat-04 já mergeadas e em produção)
 | 09 | feat-09-blog-post-publishing-post-3.md | claude/publish-post-3 | 9 | done |
 | 10 | feat-10-eyebrow-badge-consistency.md | main | 10 | done |
 | 11 | feat-11-blog-post-cross-session-messaging.md | feat/blog-post-cross-session-messaging | 11 | done |
-| 12 | feat-12-simplify-nav-hide-resume.md | feat/simplify-nav-hide-resume | 12 | in-progress |
+| 12 | feat-12-simplify-nav-hide-resume.md | feat/simplify-nav-hide-resume | 12 | done |
+| 13 | feat-13-practical-example-section.md | feat/practical-example-section | 13 | in-progress |
