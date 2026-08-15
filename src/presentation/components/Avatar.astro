@@ -10,7 +10,7 @@ const { size = 120 } = Astro.props;
 ---
 
 <div class="avatar-frame" style={`--avatar-size: ${size}px`}>
-	<Image src={avatar} alt="Foto de Nathan Amorim" width={size} height={size} />
+	<Image src={avatar} alt="Foto de Nathan Amorim" width={size * 3} height={size * 3} quality={90} />
 </div>
 
 <style>

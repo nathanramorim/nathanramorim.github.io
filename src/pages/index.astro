@@ -41,6 +41,24 @@ const solutions = [
 	},
 ];
 
+const practicalExample = [
+	{
+		label: 'Situação',
+		icon: '😵‍💫',
+		text: 'Uma empresa fazia toda a gestão na mão: contrato numa pasta, documento em outra, pendência anotada na agenda de papel. Pra falar com o cliente era tudo pelo WhatsApp, documento indo e voltando, e às vezes um arquivo se perdia no meio do caminho ou demorava demais pra achar.',
+	},
+	{
+		label: 'O que eu fiz',
+		icon: '🛠️',
+		text: 'Fiz um lugar só onde a empresa guarda contrato, documento e pendência, e de lá o próprio usuário já manda o que precisar direto pro WhatsApp do cliente, sem sair caçando arquivo espalhado.',
+	},
+	{
+		label: 'Resultado',
+		icon: '✅',
+		text: 'Nada mais se perde entre uma conversa e outra, e todo mundo sabe exatamente onde está cada documento e cada pendência.',
+	},
+];
+
 const processSteps = [
 	{
 		num: '01',
@@ -158,6 +176,23 @@ const techGroups = [
 								<span class="hashtag">{tag}</span>
 							))}
 						</div>
+					</div>
+				))
+			}
+		</div>
+	</section>
+
+	<section class="example-section">
+		<p class="eyebrow" style="text-align: center;">Um exemplo prático</p>
+		<h2 class="section-title">Como isso funciona no dia a dia</h2>
+		<p class="section-lead">Sem termo técnico, só a situação e o que muda na prática.</p>
+		<div class="example-grid">
+			{
+				practicalExample.map((step) => (
+					<div class="example-card">
+						<div class="example-icon">{step.icon}</div>
+						<p class="example-label">{step.label}</p>
+						<p class="example-text">{step.text}</p>
 					</div>
 				))
 			}
@@ -542,6 +577,53 @@ const techGroups = [
 		gap: 6px;
 	}
 
+	.example-section {
+		padding: 72px 0;
+	}
+
+	.example-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 16px;
+		max-width: 900px;
+		margin: 0 auto;
+		padding: 0 24px;
+	}
+
+	.example-card {
+		background: var(--panel);
+		border: 1px solid var(--panel-border);
+		border-radius: var(--radius);
+		padding: 22px;
+	}
+
+	.example-icon {
+		width: 38px;
+		height: 38px;
+		border-radius: 10px;
+		background: #eff4ff;
+		display: grid;
+		place-items: center;
+		font-size: 17px;
+		margin-bottom: 12px;
+	}
+
+	.example-label {
+		font-family: var(--body);
+		font-weight: 700;
+		font-size: 0.98rem;
+		color: var(--cyan);
+		margin: 0 0 8px;
+	}
+
+	.example-text {
+		font-family: var(--body);
+		font-size: 0.86rem;
+		color: var(--text-dim);
+		line-height: 1.6;
+		margin: 0;
+	}
+
 	.process-section {
 		background: var(--panel);
 		padding: 72px 0;
@@ -720,6 +802,7 @@ const techGroups = [
 
 	@media (max-width: 640px) {
 		.solutions-grid,
+		.example-grid,
 		.process-grid,
 		.tech-groups {
 			grid-template-columns: 1fr;

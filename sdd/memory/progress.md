@@ -2,32 +2,38 @@
 
 ## Status
 ```
-Fase 0-11 (Foundation → Blog Post Cross Session Messaging)   [x] done — no ar em produção
-Fase 12 (Simplify Nav / Hide Resume)                         [ ] in-progress
+Fase 0-12 (Foundation → Simplify Nav / Hide Resume)   [x] done — no ar em produção
+Fase 13 (Practical Example Section)                   [ ] in-progress
 ```
 
 ## Features ativas
 | Feature | Branch | Status | PR |
 |---------|--------|--------|-----|
-| feat-12-simplify-nav-hide-resume | feat/simplify-nav-hide-resume | in-progress | — |
+| feat-13-practical-example-section | feat/practical-example-section | in-progress | [#17](https://github.com/nathanramorim/nathanramorim.github.io/pull/17) |
 
 ## Próximo passo
-**Aguardando:** implementar remoção do link "Currículo" do nav e da seção
-"Trajetória profissional" da home, validar local, abrir PR.
+**Aguardando:** review e merge da PR #17.
 **Bloqueios:** —
 
 ## Handoff da última sessão
-- PR #14 (post-6 + skill de linkagem interna do blog) mergeada em `main`.
-- Discovery 02 criada a partir de pesquisa informal do usuário: público
-  leigo (público-alvo real do site) teve dificuldade de entender a home;
-  público técnico entendeu fácil. Hipótese: seção de currículo técnico
-  embutida na home compete com as seções de comunicação de valor.
-- Decisão D1 confirmada: rota `/cv` continua existindo, só sai do nav
-  principal (não apaga dados nem a página).
-- `feat-12-simplify-nav-hide-resume` criada para implementar a
-  simplificação.
+- PR #15 (simplificação de nav + flag `/cv`) e PR #16 (fix do link
+  forge-sdd) mergeadas em `main`.
+- Discovery 03: feedback indica que a comunicação da home funciona bem
+  pro público corporativo mas ainda tem ruído pro público leigo — não é
+  mais problema estrutural (já resolvido na feat-12), é a linguagem
+  abstrata das seções ("sistemas", "processo") não ancorar pra quem não
+  tem repertório técnico.
+- Decisões D2/D3: exemplo prático é cenário hipotético (não cliente
+  real), conteúdo sugerido pelo Claude com base no perfil de trabalho já
+  documentado.
+- `feat-13-practical-example-section`: nova seção "Situação → O que fiz
+  → Resultado" (cenário de loja perdendo pedido de WhatsApp em
+  caderno/planilha) inserida entre "O que eu resolvo" e "Minha forma de
+  trabalhar", sem alterar nenhuma seção existente. Validada localmente,
+  falta commit/push/PR.
 
 ## Última sessão
-- Discovery 02 (simplificação de navegação) + início da feat-12.
+- Discovery 03 (comunicação pra público leigo) + feat-13 (seção de
+  exemplo prático).
 
 > Histórico completo em `progress-log.md`
