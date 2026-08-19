@@ -52,7 +52,8 @@ npm run build
       `.solutions-grid`/`.solution-card`, já responsivos.
 - [x] **14-5** `npm run build` + validação do HTML gerado (`dist/index.html`)
       confirma posição e conteúdo corretos.
-- [ ] **14-6** Commit, push, PR.
+- [x] **14-6** Commit criado em `feat/case-saas-proprio` (branch única de
+      entrega). Push/PR pendente de confirmação do usuário.
 - [x] **14-7** Atualizar `sdd/features/index.md` e `sdd/memory/progress.md`.
 
 ## Arquivos gerados/alterados
