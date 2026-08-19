@@ -31,8 +31,10 @@ do carrossel 01, incluindo o ponto final em cyan).
 ## Slides
 1. `01.png` — capa: foto do Nathan de um lado, chamada "Quem é o Nathan e
    como ele pode te ajudar" do outro
-2. `02.png` — quem sou eu: nome, cargo, tagline e estatísticas (10+ anos,
+2. `02.png` — quem sou eu: nome, cargo, tagline, estatísticas (10+ anos,
    3+ anos como Tech Lead, 1 empresa fundada, IA aplicada a produtos reais)
+   e chips pessoais (Barbacena/MG, Arquitetura de Soluções, Cristão — dado
+   pessoal informado diretamente pelo Nathan, não extraído do site)
 3. `03.png` — como posso ajudar 1/4: Sistemas e produtos digitais
 4. `04.png` — como posso ajudar 2/4: Integrações e automação
 5. `05.png` — como posso ajudar 3/4: Inteligência Artificial aplicada
