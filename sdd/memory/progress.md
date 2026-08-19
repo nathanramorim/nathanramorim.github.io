@@ -2,38 +2,32 @@
 
 ## Status
 ```
-Fase 0-12 (Foundation → Simplify Nav / Hide Resume)   [x] done — no ar em produção
-Fase 13 (Practical Example Section)                   [ ] in-progress
+Fase 0-13 (Foundation → Practical Example Section)   [x] done — no ar em produção
+Fase 14 (Case SaaS Próprio)                          [ ] in-progress
 ```
 
 ## Features ativas
 | Feature | Branch | Status | PR |
 |---------|--------|--------|-----|
-| feat-13-practical-example-section | feat/practical-example-section | in-progress | [#17](https://github.com/nathanramorim/nathanramorim.github.io/pull/17) |
+| feat-14-case-saas-proprio | feat/case-saas-proprio | in-progress | — |
 
 ## Próximo passo
-**Aguardando:** review e merge da PR #17.
+**Aguardando:** commit, push e PR da `feat/case-saas-proprio`.
 **Bloqueios:** —
 
 ## Handoff da última sessão
-- PR #15 (simplificação de nav + flag `/cv`) e PR #16 (fix do link
-  forge-sdd) mergeadas em `main`.
-- Discovery 03: feedback indica que a comunicação da home funciona bem
-  pro público corporativo mas ainda tem ruído pro público leigo — não é
-  mais problema estrutural (já resolvido na feat-12), é a linguagem
-  abstrata das seções ("sistemas", "processo") não ancorar pra quem não
-  tem repertório técnico.
-- Decisões D2/D3: exemplo prático é cenário hipotético (não cliente
-  real), conteúdo sugerido pelo Claude com base no perfil de trabalho já
-  documentado.
-- `feat-13-practical-example-section`: nova seção "Situação → O que fiz
-  → Resultado" (cenário de loja perdendo pedido de WhatsApp em
-  caderno/planilha) inserida entre "O que eu resolvo" e "Minha forma de
-  trabalhar", sem alterar nenhuma seção existente. Validada localmente,
-  falta commit/push/PR.
+- Discovery 04: mercado migrando de SaaS de terceiros pra SaaS próprio,
+  sem considerar segurança/manutenção/escala — corrigir depois de já em
+  operação custa até 5x mais.
+- Decisões D4/D6: nova seção na home (não em `/cv`), case 100%
+  prospectivo (sem cliente real).
+- `feat-14-case-saas-proprio`: nova seção `.saas-section` inserida entre
+  "O que eu resolvo" e "Um exemplo prático", com os dois caminhos
+  (evoluir SaaS existente / começar do zero) e CTA de WhatsApp. Build
+  validado localmente, falta commit/push/PR.
 
 ## Última sessão
-- Discovery 03 (comunicação pra público leigo) + feat-13 (seção de
-  exemplo prático).
+- Discovery 04 (case SaaS próprio) + `/split-features` (plan-04,
+  feat-14) + implementação da seção na home.
 
 > Histórico completo em `progress-log.md`

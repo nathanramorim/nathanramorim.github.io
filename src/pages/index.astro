@@ -10,6 +10,26 @@ const featuredPosts = await GetFeaturedPosts(2);
 const WHATSAPP_URL =
 	'https://wa.me/553198953514?text=Ol%C3%A1%20Nathan%2C%20vim%20pelo%20seu%20site%20e%20quero%20conversar%20sobre%20um%20projeto.';
 
+const riskyFlow = [
+	{ icon: '🤖', label: 'IA' },
+	{ icon: '💻', label: 'Software próprio' },
+	{ icon: '📈', label: 'Crescimento' },
+	{ icon: '⚠️', label: 'Aparece o problema' },
+];
+
+const riskyConsequences = [
+	'Parte do sistema precisa ser refeita do zero',
+	'A manutenção trava e ninguém mexe sem quebrar algo',
+	'O custo pra manter a IA fica exorbitante',
+];
+
+const healthyFlow = [
+	{ icon: '🤝', label: 'Consultoria' },
+	{ icon: '🏗️', label: 'Estrutura' },
+	{ icon: '🔧', label: 'Construção' },
+	{ icon: '🚀', label: 'Evolução sem travar' },
+];
+
 const solutions = [
 	{
 		icon: '🖥️',
@@ -99,22 +119,22 @@ const techGroups = [
 >
 	<header class="hero-grid">
 		<div class="hero-copy">
-			<p class="eyebrow">Aberto a consultoria e projetos</p>
-			<h1>Tem um problema no seu negócio? Vamos entender <span class="accent">o que realmente precisa mudar.</span><span class="cursor">&nbsp;</span></h1>
+			<p class="eyebrow">Um novo jeito de ter software</p>
+			<h1>Sua empresa quer ter o próprio sistema? <span class="accent">Faça isso sem pagar caro depois.</span><span class="cursor">&nbsp;</span></h1>
 			<p>
-				Sou Nathan Amorim, resolvedor de problemas, com tecnologia. Desenvolvedor Full Stack Sênior,
-				Tech Lead e Arquiteto de Soluções, com mais de 10 anos de experiência. Nem todo problema se
-				resolve com software. Por isso começo entendendo o processo e a operação do seu negócio,
-				para só então definir se, como e por que a tecnologia é o caminho certo.
+				Cada vez mais empresas estão trocando a mensalidade de sistema de terceiro por ter o
+				próprio sistema, do jeito que o negócio precisa, e hoje isso ficou mais fácil com IA
+				ajudando a construir. O problema é que isso só funciona bem se começar do jeito certo,
+				pensando em quem vai cuidar desse sistema amanhã. Sem isso, o problema não aparece logo de
+				cara. Aparece depois, com tudo já em uso, e aí consertar pode custar até 5 vezes mais. Eu
+				ajudo tanto quem já tem um sistema e quer evoluir, quanto quem vai começar agora do zero.
 			</p>
 			<div class="hero-actions">
 				<a class="btn-primary" href={WHATSAPP_URL} target="_blank" rel="noopener">💬 Falar sobre meu projeto</a>
 			</div>
 			<div class="hero-meta">
-				<span class="meta-chip">📍 Barbacena, MG · Brasil</span>
-				<span class="meta-chip">🔍 Processo &amp; Operação</span>
-				<span class="meta-chip">🏗 Arquitetura de Soluções</span>
-				<span class="meta-chip">⚡ Tech Lead</span>
+				<span class="meta-chip">🔧 Já tenho um sistema</span>
+				<span class="meta-chip">🚀 Vou começar do zero</span>
 			</div>
 		</div>
 
@@ -149,6 +169,57 @@ const techGroups = [
 		</div>
 	</header>
 
+	<section class="flow-section">
+		<p class="eyebrow" style="text-align: center;">Os dois caminhos</p>
+		<h2 class="section-title">O que acontece em cada caminho</h2>
+		<p class="section-lead">
+			O mesmo ponto de partida, IA ajudando a construir mais rápido, leva a resultados bem
+			diferentes dependendo de como o projeto começa.
+		</p>
+
+		<div class="flow-diagram flow-risky">
+			<p class="flow-diagram-title">Sem estrutura desde o início</p>
+			<div class="flow-steps">
+				{
+					riskyFlow.map((step, i) => (
+						<>
+							<div class="flow-step">
+								<span class="flow-step-icon">{step.icon}</span>
+								<span class="flow-step-label">{step.label}</span>
+							</div>
+							{i < riskyFlow.length - 1 && <span class="flow-arrow">→</span>}
+						</>
+					))
+				}
+			</div>
+			<div class="flow-consequences">
+				{
+					riskyConsequences.map((item) => (
+						<div class="flow-consequence">{item}</div>
+					))
+				}
+			</div>
+		</div>
+
+		<div class="flow-diagram flow-healthy">
+			<p class="flow-diagram-title">Comigo desde o início</p>
+			<div class="flow-steps">
+				{
+					healthyFlow.map((step, i) => (
+						<>
+							<div class="flow-step">
+								<span class="flow-step-icon">{step.icon}</span>
+								<span class="flow-step-label">{step.label}</span>
+							</div>
+							{i < healthyFlow.length - 1 && <span class="flow-arrow">→</span>}
+						</>
+					))
+				}
+			</div>
+			<p class="flow-caption">Evolução consistente, livre desses problemas.</p>
+		</div>
+	</section>
+
 	<div class="question-banner">
 		<p>
 			Desenvolvimento de software não deveria começar por "qual tecnologia vamos usar?". Deveria
@@ -179,6 +250,26 @@ const techGroups = [
 					</div>
 				))
 			}
+		</div>
+	</section>
+
+	<section class="saas-section">
+		<p class="eyebrow" style="text-align: center;">Aberto a consultoria e projetos</p>
+		<h2 class="section-title">Tem um problema no seu negócio? Vamos entender o que realmente precisa mudar</h2>
+		<p class="section-lead">
+			Sou Nathan Amorim, resolvedor de problemas, com tecnologia. Desenvolvedor Full Stack Sênior,
+			Tech Lead e Arquiteto de Soluções, com mais de 10 anos de experiência. Nem todo problema se
+			resolve com software. Por isso começo entendendo o processo e a operação do seu negócio, para
+			só então definir se, como e por que a tecnologia é o caminho certo.
+		</p>
+		<div class="hero-actions" style="justify-content: center;">
+			<a class="btn-primary" href={WHATSAPP_URL} target="_blank" rel="noopener">💬 Falar sobre meu projeto</a>
+		</div>
+		<div class="hero-meta" style="justify-content: center;">
+			<span class="meta-chip">📍 Barbacena, MG · Brasil</span>
+			<span class="meta-chip">🔍 Processo &amp; Operação</span>
+			<span class="meta-chip">🏗 Arquitetura de Soluções</span>
+			<span class="meta-chip">⚡ Tech Lead</span>
 		</div>
 	</section>
 
@@ -575,6 +666,105 @@ const techGroups = [
 		display: flex;
 		flex-wrap: wrap;
 		gap: 6px;
+	}
+
+	.saas-section {
+		padding: 72px 0;
+	}
+
+	.flow-section {
+		padding: 72px 0;
+	}
+
+	.flow-diagram {
+		max-width: 760px;
+		margin: 0 auto 24px;
+		padding: 24px;
+		border-radius: var(--radius);
+		border: 1px solid var(--panel-border);
+		background: var(--panel);
+	}
+
+	.flow-risky {
+		border-color: #f3c4c4;
+		background: #fdf4f4;
+	}
+
+	.flow-healthy {
+		border-color: #bfe0c9;
+		background: #f3faf5;
+	}
+
+	.flow-diagram-title {
+		font-family: var(--body);
+		font-weight: 700;
+		font-size: 0.95rem;
+		color: var(--text);
+		margin: 0 0 16px;
+		text-align: center;
+	}
+
+	.flow-steps {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+		gap: 10px;
+	}
+
+	.flow-step {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 4px;
+		background: #fff;
+		border: 1px solid var(--panel-border);
+		border-radius: var(--radius);
+		padding: 12px 14px;
+		min-width: 100px;
+		text-align: center;
+	}
+
+	.flow-step-icon {
+		font-size: 1.1rem;
+	}
+
+	.flow-step-label {
+		font-family: var(--body);
+		font-size: 0.76rem;
+		font-weight: 600;
+		color: var(--text);
+	}
+
+	.flow-arrow {
+		font-size: 1.1rem;
+		color: var(--text-dim);
+	}
+
+	.flow-consequences {
+		margin-top: 18px;
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+	}
+
+	.flow-consequence {
+		font-family: var(--body);
+		font-size: 0.82rem;
+		color: var(--red);
+		background: #fff;
+		border: 1px solid #f3c4c4;
+		border-radius: var(--radius);
+		padding: 8px 14px;
+	}
+
+	.flow-caption {
+		margin: 18px 0 0;
+		text-align: center;
+		font-family: var(--body);
+		font-size: 0.85rem;
+		font-weight: 600;
+		color: var(--green);
 	}
 
 	.example-section {
