@@ -22,9 +22,10 @@ estatísticas do slide 06 (10+ anos, 3+ anos liderando equipes, 1 empresa
 fundada) vêm do `.hero-card` da home. O slide 01 (capa) reproduz o
 `.hero-card` quase literalmente — mesmo avatar, nome, tagline "Resolvedor
 de problemas, com tecnologia" e os 4 chips originais (Sistemas sob medida,
-Automação, Integrações, IA aplicada) — mas sem endereço/localização e com
-o chip "Cristão" adicionado, ambos a pedido do Nathan. O chip "Cristão" é
-um dado pessoal informado diretamente por ele, não extraído do site.
+Automação, Integrações, IA aplicada) — mas sem endereço/localização, a
+pedido explícito do Nathan (nenhuma menção a "Barbacena" em nenhum slide
+do carrossel). O chip "Cristão" no slide 06 é um dado pessoal informado
+diretamente por ele, não extraído do site.
 
 ## Identidade visual
 Extraída diretamente do design system em produção do site
@@ -40,9 +41,8 @@ pontos).
 
 ## Slides
 1. `01.png` — capa: réplica fiel do card `.hero-card` da landing page
-   (`src/pages/index.astro`, mesmo avatar, nome, tagline, chips e grid de
-   estatísticas), sem o endereço/localização e com o chip "Cristão"
-   adicionado
+   (`src/pages/index.astro`, mesmo avatar, nome, tagline, os 4 chips e a
+   grid de estatísticas, sem alteração), sem endereço/localização
 2. `02.png` — a ideia central: "Eu resolvo problemas com tecnologia."
 3. `03.png` — contexto: a IA ajuda a criar sistemas muito mais rápido
 4. `04.png` — o risco: criar rápido sem planejamento custa caro depois
@@ -50,8 +50,8 @@ pontos).
 5. `05.png` — como ele ajuda: "Estruturar antes de criar", para o sistema
    crescer sem travar
 6. `06.png` — sobre mim: estatísticas (10+ anos, 3+ anos liderando
-   equipes, 1 empresa fundada, IA usada em projetos reais) e chips
-   pessoais (Barbacena/MG, Cristão)
+   equipes, 1 empresa fundada, IA usada em projetos reais) e o chip
+   pessoal "Cristão"
 7. `07.png` — CTA final: "Falar sobre meu projeto" + assinatura
 
 Não existe ainda cronograma de publicação no projeto, então os arquivos não
