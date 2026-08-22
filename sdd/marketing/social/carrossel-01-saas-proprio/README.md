@@ -35,3 +35,8 @@ logotipo em SVG no projeto — a identidade usa o wordmark em texto
 
 Não existe ainda cronograma de publicação no projeto, então os arquivos
 não seguem numeração de calendário — apenas a ordem do carrossel.
+
+## Legenda
+`legenda.md` — texto pronto pra publicar junto com o carrossel, com CTA
+"link na bio" (em vez do link direto do WhatsApp, já que Instagram/LinkedIn
+não permitem link clicável na legenda).
