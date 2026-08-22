@@ -1,0 +1,260 @@
+---
+import RetroLayout from '../layouts/RetroLayout.astro';
+import Avatar from '../presentation/components/Avatar.astro';
+import { PagesConfigRepository } from '../data/repositories/PagesConfigRepository';
+
+if (!new PagesConfigRepository().isEnabled('bio')) {
+	return Astro.redirect('/', 302);
+}
+
+const waEvoluir =
+	'https://wa.me/553198953514?text=Ol%C3%A1%20Nathan%2C%20j%C3%A1%20tenho%20um%20sistema%20e%20quero%20evoluir%20ele%20com%20voc%C3%AA.';
+const waComecar =
+	'https://wa.me/553198953514?text=Ol%C3%A1%20Nathan%2C%20quero%20come%C3%A7ar%20um%20projeto%20do%20zero%20com%20voc%C3%AA.';
+---
+
+<RetroLayout
+	title="Nathan Amorim · Sistemas e IA aplicada"
+	description="Ajudo empresas a automatizar o trabalho com IA e a construir sistemas que aguentam crescer, com engenharia de verdade por trás."
+	chromeTitle="bio"
+>
+	<main class="bio-page">
+		<header class="bio-hero">
+			<Avatar size={104} />
+			<p class="eyebrow">Sistemas e IA aplicada</p>
+			<h1>Nathan Amorim</h1>
+			<p class="bio-tagline">Ajudo empresas a automatizar o trabalho com IA e a estruturar sistemas que aguentam crescer.</p>
+			<div class="bio-stat">
+				<span class="bio-stat-value">10+</span>
+				<span class="bio-stat-label">anos resolvendo problema com tecnologia</span>
+			</div>
+		</header>
+
+		<section class="bio-intro">
+			<p class="eyebrow">Deixa eu me apresentar</p>
+			<p>
+				Sou o Nathan Amorim. Resolvo problemas com tecnologia há mais de 10 anos, hoje como <strong>Desenvolvedor Full
+				Stack Sênior, Tech Lead e Arquiteto de Soluções</strong>. No caminho, fundei minha
+				própria empresa e deixei de atuar só na implementação de código: passei a trabalhar também em definição de
+				soluções, arquitetura, performance e liderança técnica de equipes.
+			</p>
+			<p>
+				Hoje a inteligência artificial ajuda a criar sistemas muito mais rápido. Isso é ótimo, mas rápido não é a
+				mesma coisa que certo: sem estrutura, a manutenção trava, o sistema fica grande demais pra entender, e
+				consertar depois custa até 5 vezes mais.
+			</p>
+			<p>
+				É por isso que uso IA de um jeito diferente. Construo agentes de inteligência artificial que automatizam e
+				facilitam processos dentro de empresas, geram conteúdo e tiram tarefa repetitiva da mão da sua equipe, sempre
+				estruturando isso antes de sair criando.
+			</p>
+			<p>
+				Se você já tem um sistema e quer evoluir, ou vai começar agora do zero, eu ajudo a estruturar direito desde o
+				início, pra crescer sem travar e sem custar caro depois.
+			</p>
+		</section>
+
+		<p class="bio-divider-name">Nathan Amorim</p>
+
+		<section class="bio-offers">
+			<p class="eyebrow" style="text-align: center;">Como eu posso ajudar</p>
+
+			<div class="bio-offers-grid">
+				<article class="bio-card">
+					<span class="bio-card-index">01 / 02 · já tenho um sistema</span>
+					<h2>Vamos evoluir o que você já tem</h2>
+					<p>
+						Seu sistema já existe, mas está lento, caro de manter ou difícil de mexer? Eu entro, entendo o que já foi
+						construído e estruturo pra crescer sem travar.
+					</p>
+					<a class="bio-card-cta" href={waEvoluir} target="_blank" rel="noopener">Quero evoluir meu sistema →</a>
+				</article>
+
+				<article class="bio-card">
+					<span class="bio-card-index">02 / 02 · vou começar do zero</span>
+					<h2>Vamos construir com a base certa</h2>
+					<p>
+						Tem uma ideia ou um processo manual que já virou dor de cabeça? Eu ajudo a estruturar antes de criar, pra
+						você não pagar caro depois consertando o que foi feito rápido demais.
+					</p>
+					<a class="bio-card-cta" href={waComecar} target="_blank" rel="noopener">Quero começar meu projeto →</a>
+				</article>
+			</div>
+		</section>
+
+		<footer class="bio-footer">
+			<span>nathanamorim.github.io</span>
+			<span>© 2026</span>
+		</footer>
+	</main>
+</RetroLayout>
+
+<style>
+	.bio-page {
+		max-width: 640px;
+		margin: 0 auto;
+		padding: 48px 24px 64px;
+	}
+
+	.bio-hero {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	}
+
+	.bio-hero :global(.avatar-frame) {
+		margin-bottom: 20px;
+	}
+
+	.bio-hero h1 {
+		font-family: var(--pixel);
+		font-weight: 900;
+		font-size: clamp(2rem, 7vw, 2.6rem);
+		color: var(--text);
+		margin: 4px 0 10px;
+	}
+
+	.bio-tagline {
+		font-family: var(--body);
+		font-size: 1.05rem;
+		color: var(--text-dim);
+		line-height: 1.6;
+		max-width: 460px;
+	}
+
+	.bio-stat {
+		margin-top: 20px;
+		display: inline-flex;
+		align-items: baseline;
+		gap: 8px;
+		background: var(--panel);
+		border: 1px solid var(--panel-border);
+		border-radius: 999px;
+		padding: 10px 20px;
+	}
+
+	.bio-stat-value {
+		font-family: var(--body);
+		font-weight: 900;
+		font-size: 1.2rem;
+		color: var(--cyan);
+	}
+
+	.bio-stat-label {
+		font-family: var(--body);
+		font-weight: 600;
+		font-size: 0.85rem;
+		color: var(--text-dim);
+	}
+
+	.bio-intro {
+		margin-top: 56px;
+	}
+
+	.bio-intro p:not(.eyebrow) {
+		font-family: var(--body);
+		font-size: 1.05rem;
+		line-height: 1.75;
+		color: var(--text);
+		margin: 0 0 20px;
+	}
+
+	.bio-intro p:last-child {
+		margin-bottom: 0;
+	}
+
+	.bio-intro strong {
+		color: var(--cyan);
+		font-weight: 700;
+	}
+
+	.bio-divider-name {
+		margin: 64px 0;
+		text-align: center;
+		font-family: var(--pixel);
+		font-weight: 900;
+		font-size: clamp(1.6rem, 6vw, 2.2rem);
+		color: var(--panel-border-strong);
+	}
+
+	.bio-offers .eyebrow {
+		margin: 0 auto 20px;
+	}
+
+	.bio-offers-grid {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+	}
+
+	.bio-card {
+		background: var(--panel);
+		border: 1px solid var(--panel-border);
+		border-radius: var(--radius);
+		padding: 28px;
+	}
+
+	.bio-card-index {
+		font-family: var(--mono);
+		font-size: 0.75rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.6px;
+		color: var(--cyan);
+	}
+
+	.bio-card h2 {
+		font-family: var(--body);
+		font-weight: 800;
+		font-size: 1.25rem;
+		color: var(--text);
+		margin: 12px 0 10px;
+	}
+
+	.bio-card p {
+		font-family: var(--body);
+		font-size: 0.95rem;
+		line-height: 1.65;
+		color: var(--text-dim);
+		margin: 0 0 20px;
+	}
+
+	.bio-card-cta {
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+		font-family: var(--body);
+		font-weight: 700;
+		font-size: 0.92rem;
+		color: #fff !important;
+		background: var(--cyan);
+		padding: 12px 20px;
+		border-radius: 10px;
+	}
+
+	.bio-card-cta:hover {
+		background: var(--green);
+		text-decoration: none;
+	}
+
+	.bio-footer {
+		margin-top: 56px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		font-family: var(--mono);
+		font-size: 0.78rem;
+		color: var(--text-dim);
+	}
+
+	@media (min-width: 640px) {
+		.bio-offers-grid {
+			flex-direction: row;
+		}
+
+		.bio-card {
+			flex: 1;
+		}
+	}
+</style>
