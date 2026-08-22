@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-label="Ilustração do Hub de Agentes, painel de administração de agentes de IA">
+  <rect x="0" y="0" width="1200" height="750" rx="20" fill="#f6f8fb"/>
+  <rect x="0" y="0" width="1200" height="750" rx="20" fill="none" stroke="#e4e9f0" stroke-width="2"/>
+  <rect x="0" y="0" width="1200" height="56" rx="20" fill="#ffffff"/>
+  <rect x="0" y="36" width="1200" height="20" fill="#ffffff"/>
+  <circle cx="34" cy="28" r="7" fill="#dc2626"/>
+  <circle cx="58" cy="28" r="7" fill="#d97706"/>
+  <circle cx="82" cy="28" r="7" fill="#16a34a"/>
+  <rect x="120" y="18" width="280" height="20" rx="10" fill="#eef2f7"/>
+  <text x="140" y="33" font-family="monospace" font-size="12" fill="#5b6675">hub-agentes.app/admin</text>
+  <line x1="0" y1="56" x2="1200" y2="56" stroke="#e4e9f0" stroke-width="2"/>
+
+  <rect x="0" y="56" width="230" height="694" fill="#ffffff"/>
+  <line x1="230" y1="56" x2="230" y2="750" stroke="#e4e9f0" stroke-width="2"/>
+  <g font-family="Arial, sans-serif" font-size="15" fill="#5b6675">
+    <rect x="24" y="92" width="182" height="38" rx="9" fill="#eaf1ff"/>
+    <circle cx="46" cy="111" r="5" fill="#2563eb"/>
+    <text x="62" y="116" fill="#2563eb" font-weight="600">Agentes</text>
+
+    <circle cx="46" cy="167" r="5" fill="#94a3b8"/>
+    <text x="62" y="172">Tenants</text>
+
+    <circle cx="46" cy="211" r="5" fill="#94a3b8"/>
+    <text x="62" y="216">Preços</text>
+
+    <circle cx="46" cy="255" r="5" fill="#94a3b8"/>
+    <text x="62" y="260">Billing</text>
+  </g>
+
+  <text x="260" y="110" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#0f172a">Seus agentes</text>
+  <rect x="1010" y="80" width="140" height="40" rx="9" fill="#2563eb"/>
+  <text x="1034" y="105" font-family="Arial, sans-serif" font-size="14" fill="#ffffff" font-weight="600">+ Novo agente</text>
+
+  <g>
+    <rect x="260" y="150" width="290" height="150" rx="12" fill="#ffffff" stroke="#e4e9f0" stroke-width="2"/>
+    <circle cx="296" cy="188" r="18" fill="#dbeafe"/>
+    <text x="288" y="194" font-family="Arial" font-size="16" fill="#2563eb">🤖</text>
+    <rect x="330" y="180" width="150" height="12" rx="6" fill="#0f172a" opacity="0.85"/>
+    <rect x="330" y="200" width="100" height="10" rx="5" fill="#94a3b8"/>
+    <rect x="280" y="252" width="70" height="24" rx="12" fill="#dcfce7"/>
+    <text x="292" y="268" font-family="Arial" font-size="11" fill="#16a34a">ativo</text>
+    <rect x="440" y="252" width="90" height="24" rx="12" fill="#eef2f7"/>
+    <text x="452" y="268" font-family="monospace" font-size="11" fill="#5b6675">12k tokens</text>
+  </g>
+
+  <g>
+    <rect x="576" y="150" width="290" height="150" rx="12" fill="#ffffff" stroke="#e4e9f0" stroke-width="2"/>
+    <circle cx="612" cy="188" r="18" fill="#fef3c7"/>
+    <text x="604" y="194" font-family="Arial" font-size="16" fill="#d97706">🤖</text>
+    <rect x="646" y="180" width="120" height="12" rx="6" fill="#0f172a" opacity="0.85"/>
+    <rect x="646" y="200" width="150" height="10" rx="5" fill="#94a3b8"/>
+    <rect x="596" y="252" width="70" height="24" rx="12" fill="#dcfce7"/>
+    <text x="608" y="268" font-family="Arial" font-size="11" fill="#16a34a">ativo</text>
+    <rect x="756" y="252" width="90" height="24" rx="12" fill="#eef2f7"/>
+    <text x="768" y="268" font-family="monospace" font-size="11" fill="#5b6675">4k tokens</text>
+  </g>
+
+  <g>
+    <rect x="892" y="150" width="258" height="150" rx="12" fill="#ffffff" stroke="#e4e9f0" stroke-width="2"/>
+    <circle cx="928" cy="188" r="18" fill="#e0e7ff"/>
+    <text x="920" y="194" font-family="Arial" font-size="16" fill="#4f46e5">🤖</text>
+    <rect x="962" y="180" width="110" height="12" rx="6" fill="#0f172a" opacity="0.85"/>
+    <rect x="962" y="200" width="130" height="10" rx="5" fill="#94a3b8"/>
+    <rect x="912" y="252" width="90" height="24" rx="12" fill="#fee2e2"/>
+    <text x="924" y="268" font-family="Arial" font-size="11" fill="#dc2626">pausado</text>
+  </g>
+
+  <rect x="260" y="330" width="890" height="330" rx="12" fill="#ffffff" stroke="#e4e9f0" stroke-width="2"/>
+  <text x="288" y="368" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#0f172a">Consumo por modelo</text>
+  <g stroke="#e4e9f0" stroke-width="1">
+    <line x1="288" y1="600" x2="1112" y2="600"/>
+  </g>
+  <g>
+    <rect x="330" y="470" width="60" height="130" rx="6" fill="#2563eb" opacity="0.85"/>
+    <rect x="430" y="510" width="60" height="90" rx="6" fill="#60a5fa"/>
+    <rect x="530" y="430" width="60" height="170" rx="6" fill="#2563eb" opacity="0.85"/>
+    <rect x="630" y="540" width="60" height="60" rx="6" fill="#93c5fd"/>
+    <rect x="730" y="490" width="60" height="110" rx="6" fill="#60a5fa"/>
+    <rect x="830" y="460" width="60" height="140" rx="6" fill="#2563eb" opacity="0.85"/>
+    <rect x="930" y="520" width="60" height="80" rx="6" fill="#93c5fd"/>
+  </g>
+</svg>

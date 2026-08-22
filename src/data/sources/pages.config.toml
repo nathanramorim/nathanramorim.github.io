@@ -8,5 +8,8 @@
 [pages.cv]
 enabled = true
 
+[pages.projetos]
+enabled = true
+
 [pages.bio]
 enabled = true
