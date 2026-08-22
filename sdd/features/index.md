@@ -4,10 +4,11 @@
 
 ```
 main (feat-00 a feat-04 já mergeadas e em produção)
-└─ feat/avatar-photo
-   └─ feat/update-forge-sdd-bio
-      └─ feat/practical-example-section
-         └─ feat/case-saas-proprio
+├─ feat/avatar-photo
+│  └─ feat/update-forge-sdd-bio
+│     └─ feat/practical-example-section
+│        └─ feat/case-saas-proprio
+└─ feat/portfolio-projetos
 ```
 
 ## Índice
@@ -29,3 +30,4 @@ main (feat-00 a feat-04 já mergeadas e em produção)
 | 12 | feat-12-simplify-nav-hide-resume.md | feat/simplify-nav-hide-resume | 12 | done |
 | 13 | feat-13-practical-example-section.md | feat/practical-example-section | 13 | in-progress |
 | 14 | feat-14-case-saas-proprio.md | feat/case-saas-proprio | 14 | in-progress |
+| 15 | feat-15-portfolio-projetos.md | feat/portfolio-projetos | 15 | in-progress |

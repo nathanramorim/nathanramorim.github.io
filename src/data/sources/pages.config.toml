@@ -7,3 +7,6 @@
 
 [pages.cv]
 enabled = true
+
+[pages.projetos]
+enabled = true

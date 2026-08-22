@@ -1,0 +1,92 @@
+---
+import RetroLayout from '../layouts/RetroLayout.astro';
+import SiteFooter from '../presentation/components/SiteFooter.astro';
+import PortfolioGrid from '../presentation/components/PortfolioGrid.astro';
+import { GetPortfolioProjects } from '../domain/usecases/GetPortfolioProjects';
+import { PortfolioProjectRepository } from '../data/repositories/PortfolioProjectRepository';
+import { PagesConfigRepository } from '../data/repositories/PagesConfigRepository';
+
+if (!new PagesConfigRepository().isEnabled('projetos')) {
+	return Astro.redirect('/', 302);
+}
+
+const projects = await new GetPortfolioProjects(new PortfolioProjectRepository()).execute();
+
+const WHATSAPP_URL =
+	'https://wa.me/553198953514?text=Ol%C3%A1%20Nathan%2C%20vim%20pelo%20seu%20portf%C3%B3lio%20e%20quero%20conversar%20sobre%20um%20projeto.';
+---
+
+<RetroLayout
+	title="Projetos · Nathan Amorim"
+	description="Sistemas, SaaS e sites que já desenvolvi: qual era o problema de cada um, o que eu fiz e o resultado na prática."
+	chromeTitle="projetos"
+>
+	<header class="index-hero">
+		<p class="eyebrow">Projetos</p>
+		<h1>Cada projeto aqui começou com uma pergunta simples<span class="cursor">&nbsp;</span></h1>
+		<p>
+			É simples assim: qual é o problema, e como a gente resolve isso? Foi essa pergunta que guiou
+			cada um dos projetos abaixo, de sistemas que uso todo santo dia até ferramentas que criei só
+			pra mim mesmo. Sem enrolação técnica: pra cada um, conto qual era a dor, o que eu fiz e o que
+			mudou na prática.
+		</p>
+	</header>
+
+	<section class="portfolio-section">
+		<PortfolioGrid projects={projects} />
+	</section>
+
+	<section class="footer-cta">
+		<p class="eyebrow" style="text-align: center;">Tem um problema parecido?</p>
+		<h2 class="section-title">Me conta o que está travando no seu negócio</h2>
+		<p class="section-lead">
+			Se algum desses projetos se parece com um problema que você tem, ou nem se parece e ainda
+			assim quer trocar uma ideia, é só chamar.
+		</p>
+		<div class="footer-actions">
+			<a class="btn-primary" href={WHATSAPP_URL} target="_blank" rel="noopener">💬 Falar no WhatsApp</a>
+			<a class="btn-outline" href="/">← Voltar pro início</a>
+		</div>
+	</section>
+
+	<SiteFooter />
+</RetroLayout>
+
+<style>
+	.portfolio-section {
+		padding: 8px 0 72px;
+	}
+
+	.footer-cta {
+		padding: 8px 0 72px;
+	}
+
+	.footer-actions {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 12px;
+		margin-top: 20px;
+	}
+
+	.section-title {
+		max-width: 760px;
+		margin: 0 auto 12px;
+		padding: 0 24px;
+		font-family: var(--body);
+		font-weight: 800;
+		font-size: 1.5rem;
+		color: var(--text);
+		text-align: center;
+	}
+
+	.section-lead {
+		max-width: 640px;
+		margin: 0 auto 8px;
+		padding: 0 24px;
+		font-family: var(--body);
+		color: var(--text-dim);
+		font-size: 0.95rem;
+		text-align: center;
+	}
+</style>

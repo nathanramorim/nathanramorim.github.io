@@ -1,0 +1,183 @@
+---
+import type { PortfolioProject } from '../../domain/entities/PortfolioProject';
+
+interface Props {
+	projects: PortfolioProject[];
+}
+
+const { projects } = Astro.props;
+---
+
+<div class="portfolio-grid">
+	{
+		projects.map((project) => (
+			<article class:list={['portfolio-card', { 'portfolio-card-destaque': project.destaque }]}>
+				<div class="portfolio-image-wrap">
+					<img src={project.image} alt={project.imageAlt} loading="lazy" width="1200" height="750" />
+				</div>
+				<div class="portfolio-body">
+					<p class="portfolio-status">{project.status}</p>
+					<h3 class="portfolio-name">{project.name}</h3>
+					<p class="portfolio-tagline">{project.tagline}</p>
+
+					<div class="portfolio-field">
+						<p class="portfolio-field-label">🤔 O problema</p>
+						<p class="portfolio-field-text">{project.problema}</p>
+					</div>
+					<div class="portfolio-field">
+						<p class="portfolio-field-label">🛠️ O que eu fiz</p>
+						<p class="portfolio-field-text">{project.solucao}</p>
+					</div>
+					<div class="portfolio-field">
+						<p class="portfolio-field-label">✅ Resultado</p>
+						<p class="portfolio-field-text">{project.resultado}</p>
+					</div>
+
+					<div class="portfolio-tags">
+						{project.stack.map((tech) => (
+							<span class="hashtag">{tech}</span>
+						))}
+					</div>
+
+					{project.link && (
+						<a class="portfolio-link" href={project.link} target="_blank" rel="noopener noreferrer">
+							{project.linkLabel ?? 'ver projeto'} &rarr;
+						</a>
+					)}
+				</div>
+			</article>
+		))
+	}
+</div>
+
+<style>
+	.portfolio-grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 20px;
+		max-width: 1080px;
+		margin: 0 auto;
+		padding: 0 24px;
+	}
+
+	.portfolio-card {
+		background: var(--panel);
+		border: 1px solid var(--panel-border);
+		border-radius: var(--radius);
+		overflow: hidden;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.portfolio-card-destaque {
+		grid-column: 1 / -1;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.portfolio-image-wrap {
+		background: #fff;
+		border-bottom: 1px solid var(--panel-border);
+		aspect-ratio: 16 / 10;
+		overflow: hidden;
+	}
+
+	.portfolio-card-destaque {
+		align-items: center;
+	}
+
+	.portfolio-card-destaque .portfolio-image-wrap {
+		border-bottom: none;
+		border-right: 1px solid var(--panel-border);
+	}
+
+	.portfolio-image-wrap img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+	}
+
+	.portfolio-body {
+		padding: 22px;
+		display: flex;
+		flex-direction: column;
+		flex: 1;
+	}
+
+	.portfolio-status {
+		font-family: var(--mono);
+		font-size: 11px;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.4px;
+		color: var(--cyan);
+		margin: 0 0 8px;
+	}
+
+	.portfolio-name {
+		font-family: var(--body);
+		font-weight: 800;
+		font-size: 1.15rem;
+		color: var(--text);
+		margin: 0 0 6px;
+	}
+
+	.portfolio-tagline {
+		font-family: var(--body);
+		font-size: 0.9rem;
+		color: var(--text-dim);
+		font-style: italic;
+		margin: 0 0 16px;
+	}
+
+	.portfolio-field {
+		margin-bottom: 14px;
+	}
+
+	.portfolio-field-label {
+		font-family: var(--body);
+		font-weight: 700;
+		font-size: 0.8rem;
+		color: var(--text);
+		margin: 0 0 4px;
+	}
+
+	.portfolio-field-text {
+		font-family: var(--body);
+		font-size: 0.86rem;
+		color: var(--text-dim);
+		line-height: 1.6;
+		margin: 0;
+	}
+
+	.portfolio-tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 6px;
+		margin: 4px 0 14px;
+	}
+
+	.portfolio-link {
+		font-family: var(--body);
+		font-weight: 700;
+		font-size: 0.86rem;
+		margin-top: auto;
+	}
+
+	@media (max-width: 900px) {
+		.portfolio-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.portfolio-card-destaque {
+			grid-template-columns: 1fr;
+		}
+
+		.portfolio-card-destaque .portfolio-image-wrap {
+			border-right: none;
+			border-bottom: 1px solid var(--panel-border);
+			aspect-ratio: 16 / 10;
+		}
+	}
+</style>
