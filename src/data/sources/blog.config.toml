@@ -24,10 +24,10 @@ enabled = true
 enabled = true
 
 [posts.post-4]
-enabled = false
+enabled = true
 
 [posts.post-5]
-enabled = false
+enabled = true
 
 [posts.post-6]
 enabled = true

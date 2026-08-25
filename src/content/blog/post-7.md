@@ -26,7 +26,7 @@ Três coisas costumam aparecer, sempre na mesma ordem, sempre depois que já é 
 
 **Código sem engenharia por trás.** Rápido de escrever não é a mesma coisa que pensado pra durar. Sem alguém cuidando de segurança, de como o sistema escala e de como ele se comporta sob uso real, o que sai bonito na tela pode estar com o alicerce fraco por baixo.
 
-É o mesmo princípio que expliquei sobre [harness engineering](/blog/voce-sabe-o-que-e-harness-engineering): o que decide se um projeto de IA funciona de verdade não é só o que ela gera rápido, é o ambiente e a estrutura ao redor disso. Com um SaaS construído com ajuda de IA é igual, só que o "ambiente" aqui é a engenharia por trás do sistema.
+É o mesmo princípio que expliquei sobre [harness engineering](/blog/voce-sabe-o-que-e-harness-engineering): o que decide se um projeto de IA funciona de verdade não é só o que ela gera rápido, é o ambiente e a estrutura ao redor disso. Com um SaaS construído com ajuda de IA é igual, só que o "ambiente" aqui é a engenharia por trás do sistema. Foi seguindo essa mesma lógica que cheguei no [forge-sdd](/blog/como-cheguei-no-forge-sdd-atraves-do-harness-engineering), definir a estrutura antes de deixar a IA construir, não depois que o sistema já cresceu demais para caber na cabeça de alguém.
 
 > antes de operar: parece que funciona
 > depois de operar: aparece o problema, e consertar já custa até 5x mais
