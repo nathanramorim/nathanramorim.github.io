@@ -35,9 +35,9 @@ site.
    - Link para o repositório da trilha:
      `https://github.com/nathanramorim/estudo-llm-rag`.
    - Ao criar o arquivo, rodar a skill `blog-internal-linking` para avaliar
-     conexão genuína com posts já publicados (ex.: post-6/post-7 sobre
-     harness engineering e forge-sdd, já que o post cita o forge-sdd como
-     terreno prático da trilha).
+     conexão genuína com posts já publicados. **Nota:** a trilha de estudos
+     (`estudo-llm-rag`) é um projeto isolado, sem relação com o forge-sdd —
+     não forçar link com os posts do forge-sdd/harness engineering.
 
 2. **Publicar no config** — `src/data/sources/blog.config.toml`: adicionar
    `[posts.post-8]` com `enabled = true`.
