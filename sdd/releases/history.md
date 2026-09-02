@@ -4,6 +4,9 @@ Este arquivo registra o histórico de entregas de produto deste projeto.
 
 ## Entregas
 
+### 2026-09-01 — Novo artigo sobre embeddings e imagem de capa nos posts
+Novo artigo no blog explicando o que são embeddings e por que eles são a causa mais comum de erro em sistemas de IA com busca (RAG). Os artigos agora também podem ter uma imagem de capa própria, que aparece quando o link é compartilhado no LinkedIn ou WhatsApp.
+
 ### 2026-07-02 — Prévia dos próximos artigos do blog e novo ícone do site
 Agora dá para ver os títulos dos próximos artigos do blog antes mesmo deles serem publicados (marcados como "em breve"), em vez de simplesmente não aparecerem. O ícone do site também foi trocado para um alien pixelado, no espírito retrô-arcade.
 

@@ -8,19 +8,20 @@ Fase 15 (Portfólio de Projetos)                      [x] done — publicado no 
 ```
 
 ## Features ativas
-Nenhuma no momento (`feat-16-blog-completo-forge-sdd-beta` implementada,
-aguardando merge da branch `feat/blog-completo-forge-sdd-beta`).
+Nenhuma no momento (`feat-17-post-embeddings-fundamentos` implementada,
+aguardando merge da branch `feat/post-embeddings-fundamentos`).
 
 ## Próximo passo
 **Melhoria futura:** Trocar os 3 cards ilustrados na página `/projetos` (Hub de Agentes, Agenda Isô, Gestor de Aluguéis) por screenshot real quando disponíveis.
 **Bloqueios:** —
 
 ## Handoff da última sessão
-- `feat-16-blog-completo-forge-sdd-beta`: post-4 e post-5 liberados (série
-  Harness Engineering completa no ar), post-5 passou a recomendar a versão
-  beta do forge-sdd (v2.0.0-beta + v2.2.0-beta), link de post-6 para o
-  forge-sdd virou interno (`/blog/como-cheguei-no-forge-sdd-atraves-do-harness-engineering`)
-  e post-7 ganhou link genuíno para o mesmo post. Build local verificado com sucesso.
+- `feat-17-post-embeddings-fundamentos`: post-8 criado (embeddings/RAG),
+  sem em-dash no corpo, com link interno genuíno pro post-5 (forge-sdd).
+  Campo `cover` adicionado ao schema da collection `blog` e wired em
+  `[slug].astro` → `RetroLayout` → `SEO.astro` (og:image/twitter:image).
+  Imagem de capa gerada em `public/blog/post-8-cover.svg`, estilo retro do
+  site. Build local e preview no browser verificados com sucesso.
   Falta abrir PR e mergear em `main`.
 
 ## Última sessão

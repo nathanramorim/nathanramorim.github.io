@@ -177,6 +177,15 @@ h1.post-title{
 .article strong{color:var(--cyan); font-weight:600;}
 .article p:last-child{margin-bottom:0;}
 
+.article img{
+  display:block;
+  width:100%;
+  height:auto;
+  margin:0 0 22px;
+  border-radius:var(--radius);
+  border:1px solid var(--panel-border);
+}
+
 .article ul{margin:0 0 22px; padding-left:22px;}
 .article li{
   font-family:var(--body);
