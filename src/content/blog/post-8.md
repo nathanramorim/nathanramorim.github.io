@@ -2,7 +2,7 @@
 title: "Chatbots erram. A causa quase nunca é a que você imagina"
 eyebrow: "trilha de estudos · embeddings"
 order: 8
-summary: "Debugando um sistema de RAG, quase culpei 'a IA que alucina'. O problema real estava em um fundamento que eu tinha pulado: embedding. Entender isso muda completamente como você debuga IA. 🧭"
+summary: "Pesquisando os motivos de alucinação em sistemas de RAG, quase culpei 'a IA que alucina'. O problema real estava em um fundamento que eu tinha pulado: embedding. Entender isso muda completamente como você debuga IA. 🧭"
 cover: "/blog/post-8-cover.svg"
 hashtags:
   - InteligenciaArtificial
@@ -13,7 +13,7 @@ hashtags:
   - CarreiraTech
 ---
 
-Semana passada eu estava debugando um sistema de RAG (Retrieval-Augmented Generation) e cometi um erro comum: joguei a culpa na "IA que alucina". Foi aí que percebi um buraco na minha própria base técnica. Resolvi voltar pro fundamento antes de seguir em frente.
+Semana passada pesquisei os principais motivos de alucinação em sistemas de RAG (Retrieval-Augmented Generation) e percebi um erro comum: jogar a culpa na "IA que alucina". Foi aí que percebi um buraco na minha própria base técnica. Resolvi voltar pro fundamento antes de seguir em frente.
 
 O fundamento se chama embedding, e é provavelmente o conceito mais subestimado de quem trabalha com IA generativa.
 
