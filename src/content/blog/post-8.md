@@ -23,6 +23,8 @@ Todo texto que um modelo de linguagem processa é convertido em uma lista de nú
 
 Isso parece abstrato, então pensa assim: é como se cada frase ganhasse uma "coordenada de GPS do significado". "Cachorro" e "gato" caem num bairro parecido desse mapa. "Carro" e "estrada" caem em outro. É exatamente essa coordenada que permite buscar por significado, não por palavra exata.
 
+![Ilustração do espaço vetorial de embeddings: frases sobre animais de estimação, transporte e culinária formam três grupos separados, cada ponto representando uma frase](/blog/post-8-embedding-illustration.svg)
+
 **Por que isso importa pra quem usa RAG**
 
 Um sistema de RAG não funciona porque "a IA é inteligente". Funciona porque, por trás dele, existe uma busca vetorial comparando a pergunta do usuário com os documentos disponíveis, usando exatamente essa lógica de proximidade. Quando o sistema erra ou "alucina", na maioria das vezes o problema não está no modelo de linguagem em si. Está na qualidade dessa busca: embeddings mal escolhidos, documentos mal divididos (chunking), ou contexto insuficiente chegando no prompt.

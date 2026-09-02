@@ -53,13 +53,13 @@
   <circle cx="520" cy="480" r="4" fill="#c7d2e0" />
 
   <!-- text column -->
-  <text x="630" y="180" class="mono" font-size="14" fill="#2563eb">post-8 · trilha de estudos</text>
+  <text x="630" y="180" class="mono" font-size="14" fill="#2563eb">módulo 1 · trilha de estudos</text>
   <text x="630" y="250" class="body" font-size="40" font-weight="800" fill="#0f172a">Chatbots erram.</text>
   <text x="630" y="300" class="body" font-size="40" font-weight="800" fill="#0f172a">A causa quase nunca</text>
   <text x="630" y="350" class="body" font-size="40" font-weight="800" fill="#0f172a">é a que você imagina</text>
 
-  <text x="630" y="410" class="body" font-size="18" fill="#5b6675">O fundamento por trás do RAG</text>
-  <text x="630" y="436" class="body" font-size="18" fill="#5b6675">que quase ninguém revisita: embeddings.</text>
+  <text x="630" y="410" class="body" font-size="18" fill="#5b6675">O fundamento do RAG, explicado</text>
+  <text x="630" y="436" class="body" font-size="18" fill="#5b6675">com código de exemplo no GitHub.</text>
 
   <text x="630" y="500" class="mono" font-size="15" fill="#1d4ed8">nathanramorim.github.io</text>
 </svg>
