@@ -32,3 +32,4 @@ main (feat-00 a feat-04 já mergeadas e em produção)
 | 14 | feat-14-case-saas-proprio.md | feat/case-saas-proprio | 14 | done |
 | 15 | feat-15-portfolio-projetos.md | feat/portfolio-projetos | 15 | done |
 | 16 | feat-16-blog-completo-forge-sdd-beta.md | feat/blog-completo-forge-sdd-beta | 16 | done |
+| 17 | feat-17-post-embeddings-fundamentos.md | feat/post-embeddings-fundamentos | 17 | done |

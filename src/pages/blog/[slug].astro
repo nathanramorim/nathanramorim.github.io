@@ -27,6 +27,7 @@ const { Content } = await render(entry);
 	title={`${entry.data.title} · Nathan Amorim`}
 	description={entry.data.summary}
 	chromeTitle={`blog/${entry.id}`}
+	image={entry.data.cover}
 >
 	<main>
 		<p class="eyebrow">{entry.data.eyebrow}</p>
