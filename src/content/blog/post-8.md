@@ -33,9 +33,9 @@ Entender embedding muda completamente como você debuga um problema de IA. Você
 
 Botei a mão na massa: gerei embeddings de frases de assuntos variados via API, calculei a similaridade entre elas e visualizei o resultado num gráfico 2D. Ver os agrupamentos se formarem, pets num canto, transporte em outro, culinária em outro, tornou um conceito abstrato em algo concreto e visual.
 
-Esse exercício é o primeiro módulo de uma trilha de estudos que estou construindo pra mim mesmo. O objetivo não é só "usar" IA generativa, mas entender o que acontece por baixo de cada peça do pipeline: embeddings, chunking, bancos vetoriais, RAG do zero, frameworks, fine-tuning e avaliação, antes de aplicar isso em projetos maiores.
+Esse exercício é o módulo 1 de uma trilha de estudos que estou construindo pra mim mesmo, focada em entender o que acontece por baixo de cada peça de um pipeline de RAG antes de aplicar isso em projetos maiores.
 
-Todo o código dessa trilha está aberto no repositório [estudo-llm-rag](https://github.com/nathanramorim/estudo-llm-rag): cada pasta corresponde a um módulo, com o script funcionando e as anotações do que aprendi.
+O código de exemplo do módulo 1, o script pronto que gera os embeddings, calcula a similaridade e desenha o gráfico, está no repositório [estudo-llm-rag](https://github.com/nathanramorim/estudo-llm-rag), pra quem quiser consultar ou rodar.
 
 **Pra quem está começando na área**
 
