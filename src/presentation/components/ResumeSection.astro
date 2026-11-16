@@ -10,6 +10,7 @@ import EducationList from './EducationList.astro';
 import SkillsSection from './SkillsSection.astro';
 import CertificationsList from './CertificationsList.astro';
 import LanguagesList from './LanguagesList.astro';
+import podcasts from '../../data/sources/podcasts.json';
 
 interface Props {
 	experiences: Experience[];
@@ -24,7 +25,7 @@ const { experiences, education, certifications, languages, projects, downloadMod
 
 const metrics = [
 	{ value: '10+', label: 'Anos de experiência' },
-	{ value: '3+', label: 'Anos como Tech Lead' },
+	{ value: '5+', label: 'Anos liderando times' },
 	{ value: '1', label: 'Empresa fundada' },
 	{ value: 'IA', label: 'Aplicada a produtos reais' },
 ];
@@ -93,6 +94,17 @@ const metrics = [
 			<p class="cv-card-title">Formação Acadêmica</p>
 			<h2 class="print-only print-heading">Formação Acadêmica</h2>
 			<EducationList education={education} />
+		</div>
+
+		<div class="cv-card">
+			<p class="cv-card-title">Podcasts</p>
+			<div class="contact-list">
+				{
+					podcasts.map((ep) => (
+						<a href={ep.url} target="_blank" rel="noopener">🎙️ {ep.titulo} · {ep.programa} ({ep.ano})</a>
+					))
+				}
+			</div>
 		</div>
 
 		<div class="cv-card">

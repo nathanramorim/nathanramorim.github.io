@@ -5,6 +5,7 @@ import PortfolioGrid from '../presentation/components/PortfolioGrid.astro';
 import { GetPortfolioProjects } from '../domain/usecases/GetPortfolioProjects';
 import { PortfolioProjectRepository } from '../data/repositories/PortfolioProjectRepository';
 import { PagesConfigRepository } from '../data/repositories/PagesConfigRepository';
+import ferramentas from '../data/sources/ferramentas.json';
 
 if (!new PagesConfigRepository().isEnabled('projetos')) {
 	return Astro.redirect('/', 302);
@@ -26,14 +27,39 @@ const WHATSAPP_URL =
 		<h1>Cada projeto aqui começou com uma pergunta simples<span class="cursor">&nbsp;</span></h1>
 		<p>
 			É simples assim: qual é o problema, e como a gente resolve isso? Foi essa pergunta que guiou
-			cada um dos projetos abaixo, de sistemas que uso todo santo dia até ferramentas que criei só
-			pra mim mesmo. Sem enrolação técnica: pra cada um, conto qual era a dor, o que eu fiz e o que
+			cada um dos projetos abaixo, de sistemas que uso todo santo dia até ferramentas abertas que
+			criei pra trabalhar com IA. Sem enrolação técnica: pra cada um, conto qual era a dor, o que eu fiz e o que
 			mudou na prática.
 		</p>
 	</header>
 
 	<section class="portfolio-section">
 		<PortfolioGrid projects={projects} />
+	</section>
+
+	<section class="ferramentas-section" id="ferramentas">
+		<p class="eyebrow" style="text-align: center;">Ferramentas abertas</p>
+		<h2 class="section-title">O que criei pra trabalhar com IA no dia a dia</h2>
+		<p class="section-lead">
+			Além do Forge SDD, três plugins abertos (open source) pra Claude Code e agy. Uso todos nos
+			meus projetos, e qualquer pessoa pode usar também.
+		</p>
+		<div class="ferramentas-grid">
+			{
+				ferramentas.map((f) => (
+					<a class="ferramenta" href={f.url} target="_blank" rel="noopener">
+						<img src={f.imagem} alt={`Banner do ${f.nome}`} loading="lazy" width="1280" height="420" />
+						<div class="ferramenta-body">
+							<h3>{f.nome}</h3>
+							<p class="ferramenta-frase">{f.frase}</p>
+							<p><strong>Problema:</strong> {f.problema}</p>
+							<p><strong>Solução:</strong> {f.solucao}</p>
+							<span class="ferramenta-link">ver no GitHub →</span>
+						</div>
+					</a>
+				))
+			}
+		</div>
 	</section>
 
 	<section class="footer-cta">
@@ -53,6 +79,115 @@ const WHATSAPP_URL =
 </RetroLayout>
 
 <style>
+	.decisoes-section,
+	.ferramentas-section {
+		padding: 72px 0;
+	}
+
+	.decisoes-list {
+		max-width: 1000px;
+		margin: 32px auto 0;
+		padding: 0 24px;
+		display: flex;
+		flex-direction: column;
+		gap: 48px;
+	}
+
+	.decisao h3,
+	.ferramenta h3 {
+		font-family: var(--body);
+		font-weight: 800;
+		color: var(--text);
+		margin: 0 0 12px;
+	}
+
+	.decisao img,
+	.ferramenta img {
+		width: 100%;
+		height: auto;
+		display: block;
+		border-radius: 12px;
+		border: 1px solid var(--panel-border);
+	}
+
+	.decisao-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 16px;
+		margin-top: 16px;
+	}
+
+	.decisao-grid p {
+		margin: 0;
+		font-family: var(--body);
+		font-size: 0.92rem;
+		color: var(--text-dim);
+	}
+
+	.decisao-grid .decisao-label {
+		font-weight: 800;
+		color: var(--text);
+		margin-bottom: 6px;
+	}
+
+	.ferramentas-grid {
+		max-width: 1100px;
+		margin: 32px auto 0;
+		padding: 0 24px;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 20px;
+	}
+
+	.ferramenta {
+		display: flex;
+		flex-direction: column;
+		text-decoration: none;
+		border: 1px solid var(--panel-border);
+		border-radius: 14px;
+		overflow: hidden;
+		background: var(--bg);
+		transition: transform 0.15s ease, box-shadow 0.15s ease;
+	}
+
+	.ferramenta:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 8px 24px rgba(37, 99, 235, 0.12);
+	}
+
+	.ferramenta img {
+		border: none;
+		border-radius: 0;
+	}
+
+	.ferramenta-body {
+		padding: 16px 18px 20px;
+		font-family: var(--body);
+		font-size: 0.9rem;
+		color: var(--text-dim);
+	}
+
+	.ferramenta-body p {
+		margin: 0 0 8px;
+	}
+
+	.ferramenta-frase {
+		color: var(--text) !important;
+		font-weight: 600;
+	}
+
+	.ferramenta-link {
+		color: var(--cyan);
+		font-weight: 700;
+	}
+
+	@media (max-width: 860px) {
+		.decisao-grid,
+		.ferramentas-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+
 	.portfolio-section {
 		padding: 8px 0 72px;
 	}

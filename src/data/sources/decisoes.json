@@ -1,0 +1,18 @@
+[
+  {
+    "titulo": "Trocar o sistema antigo sem desligar a operação",
+    "imagem": "/images/decisoes/legado-monolito-modular.svg",
+    "imagemAlt": "Migração do sistema legado para monólito modular em três fases, com uma fachada de rotas na frente",
+    "desafio": "Uma plataforma de planejamento de um cliente B2B rodava num sistema antigo que precisava evoluir, mas a operação não podia parar.",
+    "decisao": "Migrar aos poucos para um monólito modular, usando o padrão de estrangulamento. Uma fachada recebe todas as chamadas e decide, parte por parte, se vai pro sistema antigo ou pro módulo novo.",
+    "porque": "Cada parte migra separada, com teste e com volta fácil se algo der errado. Quem usa não percebe a troca."
+  },
+  {
+    "titulo": "Dois aplicativos e uma API, separados por quem usa",
+    "imagem": "/images/decisoes/dois-frontends-uma-api.svg",
+    "imagemAlt": "App do cliente e painel da gestão separados, falando com uma única API",
+    "desafio": "Num app de agendamento, o cliente final precisa de algo simples e sempre no ar. A gestão do negócio precisa ganhar funções novas o tempo todo.",
+    "decisao": "Dois aplicativos, um pra cada tipo de usuário, falando com uma única API que controla o acesso de cada um.",
+    "porque": "O app do cliente continua funcionando enquanto a gestão evolui, sem medo de quebrar nada. A regra do negócio fica num lugar só."
+  }
+]

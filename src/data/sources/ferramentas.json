@@ -1,0 +1,26 @@
+[
+  {
+    "nome": "diagram-studio",
+    "frase": "Diagrama técnico bonito e padronizado, sem abrir ferramenta de desenho",
+    "problema": "Todo diagrama sai num estilo diferente, desalinhado, e dá trabalho manter.",
+    "solucao": "Você descreve o que quer e ele gera a imagem em SVG e PNG, com setas retas, texto que cabe e assinatura. Os desenhos desta página saíram dele.",
+    "imagem": "/images/ferramentas/diagram-studio.svg",
+    "url": "https://github.com/nathanramorim/diagram-studio"
+  },
+  {
+    "nome": "readme-studio",
+    "frase": "A página de apresentação do projeto pronta em um comando",
+    "problema": "README sem padrão, que não explica nem vende o projeto.",
+    "solucao": "Lê o projeto, gera banner com a marca, selos e tabela de versões, e só grava depois do seu sim.",
+    "imagem": "/images/ferramentas/readme-studio.svg",
+    "url": "https://github.com/nathanramorim/readme-studio"
+  },
+  {
+    "nome": "drive-hub-sync",
+    "frase": "A documentação de todos os projetos organizada num lugar só",
+    "problema": "Documento de cada projeto espalhado, sem visão do todo.",
+    "solucao": "Gera a documentação e sincroniza uma estrutura padrão no Google Drive, pronta pro NotebookLM conhecer todos os projetos. Código e senhas nunca sobem.",
+    "imagem": "/images/ferramentas/drive-hub-sync.svg",
+    "url": "https://github.com/nathanramorim/drive-hub-sync"
+  }
+]
