@@ -6,7 +6,6 @@ import { GetPortfolioProjects } from '../domain/usecases/GetPortfolioProjects';
 import { PortfolioProjectRepository } from '../data/repositories/PortfolioProjectRepository';
 import { PagesConfigRepository } from '../data/repositories/PagesConfigRepository';
 import ferramentas from '../data/sources/ferramentas.json';
-import decisoes from '../data/sources/decisoes.json';
 
 if (!new PagesConfigRepository().isEnabled('projetos')) {
 	return Astro.redirect('/', 302);
@@ -28,35 +27,14 @@ const WHATSAPP_URL =
 		<h1>Cada projeto aqui começou com uma pergunta simples<span class="cursor">&nbsp;</span></h1>
 		<p>
 			É simples assim: qual é o problema, e como a gente resolve isso? Foi essa pergunta que guiou
-			cada um dos projetos abaixo, de sistemas que uso todo santo dia até ferramentas que criei só
-			pra mim mesmo. Sem enrolação técnica: pra cada um, conto qual era a dor, o que eu fiz e o que
+			cada um dos projetos abaixo, de sistemas que uso todo santo dia até ferramentas abertas que
+			criei pra trabalhar com IA. Sem enrolação técnica: pra cada um, conto qual era a dor, o que eu fiz e o que
 			mudou na prática.
 		</p>
 	</header>
 
 	<section class="portfolio-section">
 		<PortfolioGrid projects={projects} />
-	</section>
-
-	<section class="decisoes-section" id="decisoes">
-		<p class="eyebrow" style="text-align: center;">Decisões de arquitetura</p>
-		<h2 class="section-title">Duas decisões reais, contadas de forma simples</h2>
-		<p class="section-lead">Os clientes estão anonimizados. O que importa aqui é o porquê de cada escolha.</p>
-		<div class="decisoes-list">
-			{
-				decisoes.map((d) => (
-					<article class="decisao">
-						<h3>{d.titulo}</h3>
-						<img src={d.imagem} alt={d.imagemAlt} loading="lazy" width="1280" height="546" />
-						<div class="decisao-grid">
-							<div><p class="decisao-label">🧩 O desafio</p><p>{d.desafio}</p></div>
-							<div><p class="decisao-label">✅ A decisão</p><p>{d.decisao}</p></div>
-							<div><p class="decisao-label">💡 Por quê</p><p>{d.porque}</p></div>
-						</div>
-					</article>
-				))
-			}
-		</div>
 	</section>
 
 	<section class="ferramentas-section" id="ferramentas">

@@ -1,9 +1,11 @@
 # Constituição — nathan-amorim (site pessoal)
 
 ## Missão
-Site pessoal (portfólio + currículo + blog) de Nathan Amorim: comunica "o
-que ele resolve" para empresários e negócios locais, não um portfólio
-técnico para desenvolvedores.
+Site pessoal (portfólio + currículo + blog) de Nathan Amorim, alinhado ao
+perfil do GitHub: mostra experiência, tomada de decisão (decisões de
+arquitetura, princípios, cases) e as ferramentas que ele cria para
+desenvolver com IA, em linguagem simples, para quem contrata e para quem é
+técnico.
 
 ## Stack
 | Camada | Escolha | Motivo |
