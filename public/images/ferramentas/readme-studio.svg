@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="420" viewBox="0 0 1280 420" role="img" aria-label="readme-studio: README comercial em um comando.">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1e3a8a"/>
+      <stop offset="0.6" stop-color="#2563eb"/>
+      <stop offset="1" stop-color="#06b6d4"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#e8f0ff"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1280" height="420" fill="url(#bg)"/>
+  <circle cx="1120" cy="-20" r="220" fill="#ffffff" opacity="0.07"/>
+  <circle cx="1220" cy="380" r="160" fill="#ffffff" opacity="0.08"/>
+  <circle cx="60" cy="420" r="140" fill="#ffffff" opacity="0.06"/>
+
+  <text x="80" y="150" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="26" font-weight="600" fill="#bfdbfe" letter-spacing="3">PLUGIN PARA CLAUDE CODE E AGY</text>
+  <text x="80" y="228" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="75" font-weight="800" fill="#ffffff">readme-studio</text>
+  <text x="80" y="285" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="30" fill="#e0ecff">README comercial em um comando.</text>
+  <text x="80" y="330" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="30" fill="#e0ecff">Banner, selos e versões prontos.</text>
+
+  <rect x="790" y="108" width="440" height="266" rx="16" fill="#0b1b4d" opacity="0.28" transform="translate(0 10)"/>
+  <rect x="790" y="100" width="440" height="266" rx="16" fill="#ffffff"/>
+  <rect x="790" y="100" width="440" height="34" rx="16" fill="#e8f0ff"/>
+  <rect x="790" y="118" width="440" height="16" fill="#e8f0ff"/>
+  <circle cx="812" cy="117" r="6" fill="#ef4444"/><circle cx="832" cy="117" r="6" fill="#f59e0b"/><circle cx="852" cy="117" r="6" fill="#22c55e"/>
+  <text x="880" y="123" font-family="SF Mono, Menlo, Consolas, monospace" font-size="15" font-weight="700" fill="#1e3a8a">README.md</text>
+  <rect x="808" y="146" width="404" height="78" rx="10" fill="url(#bg)"/>
+  <rect x="826" y="164" width="170" height="14" rx="7" fill="#ffffff"/>
+  <rect x="826" y="188" width="240" height="9" rx="4.5" fill="#ffffff" opacity="0.75"/>
+  <rect x="826" y="204" width="200" height="9" rx="4.5" fill="#ffffff" opacity="0.55"/>
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#ffffff">
+    <rect x="808" y="236" width="96" height="24" rx="12" fill="#2563eb"/><text x="856" y="253" text-anchor="middle">versão 1.0</text>
+    <rect x="912" y="236" width="70" height="24" rx="12" fill="#16a34a"/><text x="947" y="253" text-anchor="middle">MIT</text>
+    <rect x="990" y="236" width="104" height="24" rx="12" fill="#7c3aed"/><text x="1042" y="253" text-anchor="middle">Claude Code</text>
+  </g>
+  <rect x="808" y="278" width="150" height="10" rx="5" fill="#1e3a8a"/>
+  <rect x="808" y="298" width="404" height="8" rx="4" fill="#cbd5e1"/>
+  <rect x="808" y="314" width="360" height="8" rx="4" fill="#cbd5e1"/>
+  <rect x="808" y="330" width="320" height="8" rx="4" fill="#cbd5e1"/>
+  <path d="M1196 322l5 11 11 5-11 5-5 11-5-11-11-5 11-5z" fill="#f59e0b"/>
+
+</svg>
