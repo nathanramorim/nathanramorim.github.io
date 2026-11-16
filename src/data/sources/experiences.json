@@ -2,14 +2,14 @@
   {
     "company": "DTI Digital",
     "type": "Tempo Integral",
-    "tenure": "4 anos 10 meses",
+    "tenure": "5 anos 3 meses",
     "roles": [
       {
         "title": "Solutions Architect",
         "period": "jan/2025 · o momento",
-        "duration": "1 a 6 m",
+        "duration": "1 a 11 m",
         "badge": "ARCHITECT",
-        "description": "Liderança de iniciativas de modernização tecnológica em projeto estratégico no setor de logística e planejamento corporativo. Decisões de arquitetura com foco em escalabilidade, modularidade e resiliência. Atualmente trabalhando com o ecossistema Azure: Event Grid, Service Bus, Azure Functions, App Insights, Key Vault e Storage Account (Blob, Tables, Queues). Participação ativa em discovery de features, estruturação de serviços modulares e integração com mensageria assíncrona. Apoio estratégico em práticas de DevOps, padronização de branches e governança de código.",
+        "description": "Atuo como Arquiteto de Soluções em um projeto estratégico no setor de logística e planejamento corporativo, liderando iniciativas de modernização tecnológica. Decisões de arquitetura com foco em escalabilidade, modularidade e resiliência. Atualmente trabalhando com o ecossistema Azure: Event Grid, Service Bus, Azure Functions, App Insights, Key Vault e Storage Account (Blob, Tables, Queues). Participação ativa em discovery de features, estruturação de serviços modulares e integração com mensageria assíncrona. Apoio estratégico em práticas de DevOps, padronização de branches e governança de código.",
         "tags": ["Azure", "Event Grid", "Service Bus", "Azure Functions", "App Insights", "Key Vault", "Blob / Table / Queue", ".NET / C#", "Clean Architecture", "Feature Flags", "Microserviços", "Event-Driven"]
       },
       {
