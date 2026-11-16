@@ -32,6 +32,7 @@
     "company": "Busize Soluções",
     "type": "Autônomo · Fundador",
     "tenure": "6+ anos",
+    "tenureFixo": true,
     "roles": [
       {
         "title": "CEO",

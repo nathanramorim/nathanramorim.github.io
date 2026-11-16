@@ -4,6 +4,9 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  # reconstrói todo dia 1º para atualizar os tempos de experiência calculados no build
+  schedule:
+    - cron: '17 9 1 * *'
 
 permissions:
   contents: read
